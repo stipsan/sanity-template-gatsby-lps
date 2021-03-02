@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind Test</title>
+    <link rel="stylesheet" href="build.css" />
+
+    <!-- Custom font - needs plan -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <style>
+      .container div {
+        /* background-color: blueviolet; */
+      }
+      .ornament {
+        border-top: solid #f5d14f 2px;
+        max-width: 400px;
+        margin: 40px auto;
+      }
+      .ornament:after {
+        /* Controls the position of the logo */
+        left: 50%;
+        position: absolute;
+        transform: translateY(-50%) translateX(-50%);
+        /* Controls the whitespace around the symbol */
+        padding: 20px;
+      }
+      .ornament--brand:after {
+        content: url( 'img/favicon.png' );
+      }
+      .ornament--review:after {
+        content: url( 'img/review-icon.png' );
+      }
+      @media screen and (min-width: 992px){
+        .special-locations-bg {
+          background-color: #f5d14f;
+          background-image: url('img/attic-tech.jpg');
+          background-position: right;
+          background-repeat: no-repeat;
+          background-size: 50% 100%;
+        }
+      }
+
+      @media screen and (min-width: 320px) and (max-width: 576px){
+        .text-magic {
+          font-size: calc(20px + (30 - 19) * ((100vw - 300px)/(576 - 300)));
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- <div class="px-8 py-12">
+      <img class="rounded-lg" src="img/logo.png" alt="" />
+    </div>
+    <h1 class="text-4xl font-bold text-blue-500">
+      Cheese is taking over. <span class="text-gray-900">The world.</span>
+    </h1>
+    <p class="mt-2 text-gray-600">
+      This is some next to see what tailwind can really do.
+    </p>
+    <button
+      class="px-5 py-3 phablet:uppercase font-semibold bg-red-500 rounded-lg text-white shadow-lg tracking-wider mt-3"
+    >
+      Click Me
+    </button> -->
+    <header class="sticky top-0 laptop:static laptop:top-auto bg-white">
+      <div class="laptop:container mx-auto flex flex-wrap laptop:items-center">
+        <div class="flex-none rounded-md w-full laptop:w-auto laptop:flex-1">
+          <img class="py-6 mx-auto laptop:mx-0" src="img/logo.png" />
+        </div>
+        <div
+          class="flex-none flex w-full phablet:flex-1 phablet:w-auto laptop:justify-end laptop:items-center"
+        >
+          <button
+            class="w-full laptop:w-auto laptop:rounded-lg bg-blue-primary font-bold text-xl uppercase px-8 py-3 text-white"
+          >
+            Schedule Now
+          </button>
+        </div>
+        <div
+          class="flex-1 flex items-center laptop:flex-initial laptop:justify-end"
+        >
+          <button
+            class="w-full laptop:w-auto font-semibold laptop:rounded-lg text-xl bg-yellow-primary px-8 py-3 laptop:ml-7"
+          >
+            Call Now! <br class="visible laptop:hidden" />
+            <span class="font-bold">888-888-8888</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section id="hero" class="bg-hero bg-no-repeat bg-center bg-top px-4 phablet:px-0">
+      <div class="container mx-auto flex">
+        <div
+          class="flex-2 text-white flex flex-col justify-center laptop:pr-60 my-8"
+        >
+          <div class="text-7xl font-extrabold uppercase">
+            $50 off <br />
+            <span class="font-semibold mt-1 inline-block">any repair</span>
+          </div>
+          <p class="mt-7 text-xl mb-16">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro
+            numquam earum sunt illo aliquid ut, placeat totam maiores nihil nisi
+            explicabo est ratione adipisci perferendis modi?
+          </p>
+        </div>
+        <div class="flex-1 hidden laptop:block">
+          <div class="mt-28 py-6 pb-12 px-9 bg-blue-primary rounded-md relative">
+            <div class="uppercase text-center text-3xl text-white font-extrabold mb-5">
+              Schedule Now
+            </div>
+            <form action="" class="flex justify-center flex-col">
+              <input
+                class="w-full mb-3 rounded-md"
+                type="text"
+                placeholder="Name*"
+              />
+              <input
+                class="w-full mb-3 rounded-md"
+                type="text"
+                placeholder="Phone Number*"
+              />
+              <input
+                class="w-full mb-3 rounded-md"
+                type="text"
+                placeholder="Email Address*"
+              />
+              <input
+                class="w-full mb-3 rounded-md"
+                type="text"
+                placeholder="Are You a New Customer?"
+              />
+              <textarea
+                class="rounded-md"
+                name=""
+                id=""
+                rows="3"
+                cols="25"
+                placeholder="Message"
+              ></textarea>
+              <input class="uppercase rounded-lg px-8 py-2 text-2xl bg-yellow-primary font-extrabold mx-auto absolute -bottom-6 left-20" type="submit" value="Submit">
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="intro" class="py-20 bg-cheese-1 px-4 phablet:px-0">
+      <div class="container mx-auto flex">
+        <div class="flex-1">
+          <h1 class="text-magic phablet:text-3xl laptop:text-4xl font-extrabold text-blue-primary mb-14">
+            Primary Intro Title Will Shine Here
+          </h1>
+          <p>
+            <ul class="laptop:mr-16">
+              <li class="mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate incidunt eius dicta minus unde, excepturi assumenda debitis quae fuga expedita architecto, dignissimos deserunt perspiciatis.</li>
+              <li class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam cumque quidem ad incidunt quisquam esse quam numquam dolorem modi blanditiis?</li>
+              <li class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora natus omnis aliquam veritatis eveniet culpa accusamus nesciunt.</li>
+              <li class="mb-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur temporibus in ratione dicta id delectus minima dolore nostrum modi.</li>
+            </ul>
+            <button class="mt-5 rounded-md font-extrabold text-xl bg-yellow-secondary px-8 py-2 uppercase">Request Heating Repair</button>
+          </p>
+        </div>
+        <div class="flex-none">
+          <img class="hidden laptop:inline-block" src="img/pengion-tools.png" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section id="call-out-bar"
+      class="bg-gradient-to-r from-blue-primary via-blue-secondary to-blue-primary clear-both"
+    >
+      <div
+        class="container mx-auto flex flex-col laptop:flex-row py-8 items-center"
+      >
+        <div class="flex-none">
+          <img
+            class="mb-8 laptop:mb-0"
+            src="img/satisfaction-badge.png"
+            alt=""
+          />
+        </div>
+        <div class="flex-1 text-white px-12 text-center text-2xl font-semibold">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, culpa
+          debitis quaerat maxime soluta rem laborum velit, rerum molestias quam
+          quas quod cum eum atque? Assumenda harum a obcaecati autem.
+        </div>
+      </div>
+    </section>
+
+    <section id="service-ctas" class="bg-gray-custom py-12 tablet:pt-24 tablet:pb-36">
+      <div class="container mx-auto text-center">
+        <hr class="ornament ornament--brand after:bg-gray-primary">
+        <h2 class="text-blue-primary text-4xl font-extrabold mb-8">We Can Assist You With:</h2>
+        <div class="flex flex-wrap justify-center mx-auto">
+          <div class="flex-grow-0 flex-shrink-0 flex justify-center items-center flex-col capitalize py-6 px-10 m-7 bg-white rounded-md">
+            <div><img class="mb-4" src="img/wrench-icon.png" alt=""></div>
+            <div class="w-32">Heating Repair test test</div>
+          </div>
+          <div class="flex-grow-0 flex-shrink-0 flex justify-center items-center flex-col capitalize py-6 px-10 m-7 bg-white rounded-md">
+            <div><img class="mb-4" src="img/wrench-icon.png" alt=""></div>
+            <div class="w-32">Duct Cleaning & Maintenance</div>
+          </div>
+          <div class="flex-grow-0 flex-shrink-0 flex justify-center items-center flex-col capitalize py-6 px-10 m-7 bg-white rounded-md">
+            <div><img class="mb-4" src="img/wrench-icon.png" alt=""></div>
+            <div class="w-32">Heating Repair</div>
+          </div>
+          <div class="flex-grow-0 flex-shrink-0 flex justify-center items-center flex-col capitalize py-6 px-10 m-7 bg-white rounded-md">
+            <div><img class="mb-4" src="img/wrench-icon.png" alt=""></div>
+            <div class="w-32">Heating Repair</div>
+          </div>
+          <div class="flex-grow-0 flex-shrink-0 flex justify-center items-center flex-col capitalize py-6 px-10 m-7 bg-white rounded-md">
+            <div><img class="mb-4" src="img/wrench-icon.png" alt=""></div>
+            <div class="w-32">Heating Repair</div>
+          </div>
+          <div class="flex-grow-0 flex-shrink-0 flex justify-center items-center flex-col capitalize py-6 px-10 m-7 bg-white rounded-md">
+            <div><img class="mb-4" src="img/wrench-icon.png" alt=""></div>
+            <div class="w-32">Heating Repair</div>
+          </div>
+          <div class="flex-grow-0 flex-shrink-0 flex justify-center items-center flex-col capitalize py-6 px-10 m-7 bg-white rounded-md">
+            <div><img class="mb-4" src="img/wrench-icon.png" alt=""></div>
+            <div class="w-32">Heating Repair</div>
+          </div>
+        </div>
+        <a class="uppercase rounded-lg px-8 mt-5 py-2 text-2xl bg-yellow-primary font-extrabold mx-auto inline-block" href="">Ready To Contact Us?</a>
+      </div>
+    </section>
+
+    <section id="testimonials" class="bg-blue-primary py-14 text-white">
+      <div class="container mx-auto">
+        <hr class="ornament ornament--review after:bg-blue-primary">
+        <h2 class="text-center text-4xl font-extrabold mb-9">Heating Repair Reviews</h2>
+        <div class="h-96 bg-yellow-primary rounded-md"></div>
+      </div>
+    </section>
+
+    <section id="interlude">
+      <div class="container mx-auto py-36 text-center flex flex-col-reverse laptop:flex-row">
+        <div class="flex-1 pr-7">
+          <p class="mb-12">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum illo vero eum veritatis enim aliquam illum tempore necessitatibus officia quam voluptatem, rem iusto laboriosam quae impedit temporibus odio itaque debitis.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam culpa eius quis? Sapiente eaque, autem obcaecati, eligendi suscipit tempora placeat eveniet facilis incidunt vero fuga repellendus omnis sequi, quos quia!</p>
+          <button class="mt-11 rounded-md font-extrabold text-xl bg-yellow-secondary px-8 py-2 uppercase">Contact Us Today</button> 
+        </div>
+        <div class="flex-1">
+          <img class="mx-auto mb-8 laptop:mb-0" src="img/lennox-units.png" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section id="specials-locations" class="special-locations-bg">
+      <div class="laptop:container mx-auto flex flex-col laptop:flex-row">
+        <aside id="specials" class="flex-1 py-10 bg-yellow-primary laptop:bg-none">
+          <div class="h-24 bg-white rounded-md mr-20">
+            test
+          </div>
+          <div class="h-24 bg-white rounded-md mr-20">
+            test
+          </div>
+        </aside>
+        <aside id="locations" class="flex-1 text-center text-white py-20 bg-blue-primary laptop:bg-opacity-0">
+          <h2 class="text-5xl font-extrabold mb-3">Proudly Serving</h2>
+          <h4 class="text-xl mb-14 border-b-2 border-yellow-primary inline-block mx-auto">Residents in the surrounding areas</h4>
+          <ul class="grid grid-cols-3">
+            <li>Sample City 1</li>
+            <li>Sample City 2</li>
+            <li>Sample City 3</li>
+            <li>Sample City 4</li>
+            <li>Sample City 5</li>
+            <li>Sample City 6</li>
+            <li>Sample City 7</li>
+            <li>Sample City 8</li>
+            <li>Sample City 1</li>
+            <li>Sample City 2</li>
+            <li>Sample City 3</li>
+            <li>Sample City 4</li>
+            <li>Sample City 5</li>
+            <li>Sample City 6</li>
+            <li>Sample City 7</li>
+            <li>Sample City 8</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="contact" class="my-24">
+      <div class="container mx-auto bg-blue-primary py-11 rounded-md">
+        <h2 class="text-white text-5xl text-center mb-5">Contact Our Specialists Today</h2>
+        <form action="" class="px-24">
+          <div class="laptop:flex justify-center">
+            <div class="text-center flex flex-col flex-1 laptop:pr-2">
+              <input class="mb-4 rounded-sm" type="text" placeholder="Full Name*">
+              <input class="mb-4 rounded-sm" type="text" placeholder="Phone*">
+              <input class="mb-4 rounded-sm" type="text" placeholder="Email*">
+            </div>
+            <div class="text-center flex flex-col flex-1 laptop:pl-2">
+              <input class="mb-4 rounded-sm" type="text" placeholder="Are You A New Customer?">
+              <input class="mb-4 rounded-sm" type="text" placeholder="Inquiry About...">
+              <input class="mb-4 rounded-sm" type="text" placeholder="How Did You Hear About Us?">
+            </div>
+          </div>
+          <input class="uppercase rounded-lg px-8 py-2 text-2xl bg-yellow-primary font-extrabold mx-auto block" type="submit">
+        </form>
+      </div>
+    </section>
+
+    <secton id="tagline">
+      <div class="container mx-auto text-center">
+        <hr class="ornament ornament--brand after:bg-white">
+        <h2 class="font-extrabold text-4xl text-blue-primary mb-12">Awesome Tagline Goes Here</h2>
+      </div>
+    </secton>
+
+    <section id="badges">
+      <div class="container mx-auto flex justify-center content-center pb-9">
+        <div class="flex-1 self-center">
+          <img class="mx-auto" src="img/badge-nate.png" alt="">
+        </div>
+        <div class="flex-1 self-center"><img class="mx-auto" src="img/badge-family.png" alt=""></div>
+        <div class="flex-1 self-center"><img class="mx-auto" src="img/badge-lennox.png" alt=""></div>          
+        <div class="flex-1 self-center"><img class="mx-auto" src="img/badge-bbb.png" alt=""></div>
+      </div>
+    </section>
+
+    <footer class="text-center text-gray-900 text-sm pb-12 pt-9">
+      <p>© 2020 Gilmore Heating Air And Solar | 4429 Missouri Flat Road, Placerville, CA 95667</p>
+      <p>Call Us Today – 530-903-4109 | Marketing by <a class="text-black font-semibold" href="https://rynoss.com" target="_blank">RYNO Strategic Solutions</a></p>
+    </footer>
+  </body>
+</html>
