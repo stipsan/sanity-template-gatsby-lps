@@ -35,11 +35,17 @@ module.exports = {
         },
         'gray': {
           'custom': '#f0f0f0',
-        } 
+        },
+        'black': {
+          'custom': '#231f20'
+        }
       },
       fontFamily: {
         sans: ['Poppins', ...defaultTheme.fontFamily.sans],
       },
+      boxShadow: {
+        'custom': '0 0 0 12px #fff, 2px 1px 6px 4px #fff'
+      }
     },
   },
   variants: {
