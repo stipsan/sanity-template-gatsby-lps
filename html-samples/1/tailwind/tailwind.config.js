@@ -13,9 +13,9 @@ module.exports = {
       // => @media (min-width: 576px) { ... }
       'tablet': '768px',
       // => @media (min-width: 768px) { ... }
-      'laptop': '992px',
+      'laptop': '1025px',
       // => @media (min-width: 992px) { ... }
-      'desktop': '1200px',
+      'desktop': '1441px',
       // => @media (min-width: 1200px) { ... }
       //'retina': '1920px'
       // => @media (min-width: 1920px) { ... }
@@ -45,12 +45,16 @@ module.exports = {
       },
       boxShadow: {
         'custom': '0 0 0 12px #fff, 2px 1px 6px 4px #fff'
-      }
+      },
+      fontSize: {
+        'magic': 'calc(20px + (30 - 20) * ((100vw - 300px)/(576 - 300)))',
+      },
+      
     },
   },
   variants: {
       // Defaults are ['responsive', 'hover', 'focus']
-      backgroundColor: ({ after }) => after(['before', 'after']),
+      //backgroundColor: ({ after }) => after(['before', 'after']),
       // Output: ['responsive', 'hover', 'focus', 'before', 'after']
     extend: {},
   },
