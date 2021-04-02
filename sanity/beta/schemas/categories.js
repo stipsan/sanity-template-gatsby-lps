@@ -151,13 +151,28 @@ export default {
                     to: [{type: 'testimonial'}]
                 }
             ]
-        }
+        },
+        {
+            name: 'publishedAt',
+            type: 'datetime',
+            title: 'Published at',
+            description: 'This can be used to schedule post for publishing',
+        },
     ],
     preview: {
         select: {
-          title: 'title',
-          subtitle: '',
-          media: 'logo'
-        }
-      }
+            title: 'title',
+            publishedAt: 'publishedAt',
+            slug: 'slug',
+            media: 'logo.image.asset.url',
+          },
+          prepare({ title = 'No title', publishedAt, slug = {}, media }) {
+            const path = `/blog/${slug.current}`
+            return {
+              title,
+              media,
+              subtitle: publishedAt ? path : 'Missing publishing date',
+            }
+          },
+    }
 }
