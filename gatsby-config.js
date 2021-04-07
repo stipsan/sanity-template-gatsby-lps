@@ -24,5 +24,13 @@ module.exports = {
       },
       __key: "images",
     },
+    {
+      resolve: "gatsby-plugin-postcss",
+      options: {
+        cssLoaderOptions: {
+          camelCase: false,
+        },
+      },
+    },
   ],
 };
