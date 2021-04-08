@@ -1,3 +1,9 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV || "development"}`
+});
+
+const isProd = process.env.NODE_ENV === "production";
+
 module.exports = {
   siteMetadata: {
     title: "beta",
@@ -6,8 +12,10 @@ module.exports = {
     {
       resolve: "gatsby-source-sanity",
       options: {
-        projectId: "xjpwmgyc",
-        dataset: "production",
+        projectId: process.env.SANITY_PROJECT_ID || "<#< sanity.projectId >#>",
+        dataset: process.env.SANITY_DATASET || "<#< sanity.dataset >#>",
+        watchMode: !isProd,
+        token: process.env.SANITY_TOKEN,
       },
     },
     "gatsby-plugin-styled-components",

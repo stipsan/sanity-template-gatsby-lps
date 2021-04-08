@@ -1,11 +1,17 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+import { getGatsbyImageData } from 'gatsby-source-sanity'
 
-export default function Header() {
+
+
+export default function Header({logo, phone}) {
+    //const logo = getGatsbyImageData(logo);
+    console.log(logo, 'logo url')
     return (
         <header className="bg-white sticky top-0 z-10 laptop:static laptop:top-auto">
             <div className="mx-auto flex flex-wrap laptop:items-center laptop:container">
                 <div className="flex-none rounded-md w-full laptop:w-auto laptop:flex-1">
-                    <img className="py-6 mx-auto laptop:mx-0" alt="logo" src="img/logo.png" />
+                    <img className="py-6 mx-auto laptop:mx-0" alt="logo" src={logo} />
                 </div>
                 <div
                     className="flex-none flex w-full phablet:flex-1 phablet:w-auto laptop:justify-end laptop:items-center"
@@ -22,8 +28,8 @@ export default function Header() {
                     <button
                     className="w-full font-semibold text-xl bg-yellow-primary px-8 py-3 laptop:ml-7 laptop:rounded-lg laptop:w-auto"
                     >
-                    Call Tomorrow! <br className="visible laptop:hidden" />
-                    <span className="font-bold">888-888-8888</span>
+                        Call Tomorrow! <br className="visible laptop:hidden" />
+                        <span className="font-bold">{phone}</span>
                     </button>
                 </div>
             </div>
