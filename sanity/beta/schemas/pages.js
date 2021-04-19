@@ -44,11 +44,24 @@ export default {
             fieldset: 'hero'
         },
         {
+            name: 'hero_sub_title',
+            title: 'Sub Title',
+            description: '',
+            type: 'string',
+            fieldset: 'hero'
+        },
+        {
             name: 'hero_content',
             title: 'Content',
             description: 'Optional content for hero section.',
             type: 'string',
             fieldset: 'hero'
+        },
+        {
+            name: 'intro',
+            title: 'Intro',
+            type: 'array', 
+            of: [{type: 'block'}]          
         },
         {
             name: 'interlude_text',
@@ -68,12 +81,19 @@ export default {
             type: 'array',
             description: '',
             of: [{type:'header'}, {type:'footer'}]
-        },
+        }
     ],
     preview: {
         select: {
-            title: 'label',
-            subtitle: 'slug',
+            category: 'category',
+            label: 'label',
+            slug: 'slug',
+        },
+        prepare: (fields) => {
+            return {
+                title: fields.label,
+                subtitle: `/${fields.slug.current}`,
+            }
         }
     }
 }

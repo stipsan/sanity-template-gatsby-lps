@@ -23,5 +23,11 @@ export default {
             type: 'string',
             description: '',
         },
-    ]
+    ],
+    preview: {
+        select: {
+            title: 'title',
+            subtitle: 'details'
+        },
+    }
 }

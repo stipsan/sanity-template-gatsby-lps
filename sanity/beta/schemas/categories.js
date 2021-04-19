@@ -12,8 +12,8 @@ export default {
     type: 'document',
     fields: [
         {
-            name: 'title',
-            title: 'Category Label',
+            name: 'label',
+            title: 'Label',
             type: 'string',
             description: 'Used for organization on the backend but not visible on site'
         },
@@ -152,27 +152,15 @@ export default {
                 }
             ]
         },
-        {
-            name: 'publishedAt',
-            type: 'datetime',
-            title: 'Published at',
-            description: 'This can be used to schedule post for publishing',
-        },
     ],
     preview: {
         select: {
-            title: 'title',
-            publishedAt: 'publishedAt',
-            slug: 'slug',
-            media: 'logo.image.asset.url',
-          },
-          prepare({ title = 'No title', publishedAt, slug = {}, media }) {
-            const path = `/blog/${slug.current}`
+            label: 'label',
+        },
+        prepare: (fields) => {
             return {
-              title,
-              media,
-              subtitle: publishedAt ? path : 'Missing publishing date',
+                title: fields.label
             }
-          },
+        }
     }
 }
