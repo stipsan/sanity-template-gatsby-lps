@@ -25,7 +25,6 @@ async function turnDataIntoPages({ graphql, actions }) {
     
     //loop over data and create pages
     data.allSanityPage.edges.forEach( (page) => {
-        console.log('here------>>>', page);
         actions.createPage({
             path: page.node.slug.current,
             component: LandingPageTemplate,

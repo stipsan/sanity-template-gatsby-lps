@@ -1,6 +1,6 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import { getGatsbyImageData } from 'gatsby-source-sanity'
+//import { graphql } from 'gatsby';
+//import { getGatsbyImageData } from 'gatsby-source-sanity'
 
 
 
@@ -28,7 +28,7 @@ export default function Header({logo, phone}) {
                     <button
                     className="w-full font-semibold text-xl bg-yellow-primary px-8 py-3 laptop:ml-7 laptop:rounded-lg laptop:w-auto"
                     >
-                        Call Tomorrow! <br className="visible laptop:hidden" />
+                        Call Now! <br className="visible laptop:hidden" />
                         <span className="font-bold">{phone}</span>
                     </button>
                 </div>

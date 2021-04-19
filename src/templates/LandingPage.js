@@ -2,7 +2,6 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import 'tailwindcss/tailwind.css'
 import Layout from "../components/layout"
-import Header from '../components/header';
 
 export const query = graphql`
     query GetPage ($slug: String!) {
@@ -12,6 +11,15 @@ export const query = graphql`
                 current
             }
             label
+            hero_banner {
+                asset {
+                    url
+                }
+            }
+            hero_content
+            hero_title
+            hero_sub_title
+            intro
             category {
                 email
                 label
@@ -47,7 +55,7 @@ export const query = graphql`
 `
 
 // markup
-const landingPageTemplate = ({data}) => {
+export default function LandingPageTemplate({data}){
   //console.log('----------->', data, '<-----------');
   return (
     <Layout sanityData={data.sanityPage}>
@@ -55,6 +63,4 @@ const landingPageTemplate = ({data}) => {
     </Layout>
   )
 }
-
-export default landingPageTemplate
 
