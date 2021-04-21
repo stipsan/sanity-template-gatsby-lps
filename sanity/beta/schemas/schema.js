@@ -10,9 +10,11 @@ import pages from './pages';
 import specials from './specials';
 import testimonials from './testimonials';
 import serviceArea from './serviceArea';
+import locations from './locations';
+
 import header from './objects/header';
 import footer from './objects/footer';
-import locations from './objects/locations';
+import location from './objects/location';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -24,6 +26,7 @@ export default createSchema({
     /* Your types here! */
     header,
     footer,
+    location,
     locations,
     categories,
     pages,
