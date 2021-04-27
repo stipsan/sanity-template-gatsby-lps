@@ -49,8 +49,10 @@ module.exports = {
       },
       fontSize: {
         'magic': `calc(30px + (${fontFun} - 20) * ((100vw - 300px)/(576 - 300)))`,
-        'cheese': `${fontFun}`
       },
+      gridTemplateColumns: {
+        'layout': '1fr auto 1fr',
+      }
     },
   },
   variants: {

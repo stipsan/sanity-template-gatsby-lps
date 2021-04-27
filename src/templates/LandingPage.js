@@ -19,7 +19,20 @@ export const query = graphql`
             hero_content
             hero_title
             hero_sub_title
-            intro
+            _rawIntro
+            intro {
+                children {
+                    text
+                    marks
+                    _key
+                    _type
+                }
+                _key
+                _rawChildren
+                _type
+                list
+                style
+            }
             category {
                 email
                 label
@@ -40,6 +53,11 @@ export const query = graphql`
                         url
                     }
                 }
+                icon {
+                    asset {
+                        url
+                    }
+                }
                 phone
                 phoneConversionLabel
                 primaryColor {
@@ -49,6 +67,14 @@ export const query = graphql`
                     hex
                 }
                 tagline
+                services {
+                    icon {
+                      asset {
+                        url
+                      }
+                    }
+                    label
+                }
             }
         }
     }

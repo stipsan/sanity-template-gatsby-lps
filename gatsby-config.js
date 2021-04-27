@@ -16,6 +16,7 @@ module.exports = {
         dataset: process.env.SANITY_DATASET || "<#< sanity.dataset >#>",
         watchMode: !isProd,
         token: process.env.SANITY_TOKEN,
+        graphqlTag: 'default',  //default but can be used to customize the name of the deployed sanity api
       },
     },
     "gatsby-plugin-styled-components",

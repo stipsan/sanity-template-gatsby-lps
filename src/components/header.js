@@ -6,7 +6,6 @@ import React from 'react';
 
 export default function Header({logo, phone}) {
     //const logo = getGatsbyImageData(logo);
-    console.log(logo, 'logo url')
     return (
         <header className="bg-white sticky top-0 z-10 laptop:static laptop:top-auto">
             <div className="mx-auto flex flex-wrap laptop:items-center laptop:container">
