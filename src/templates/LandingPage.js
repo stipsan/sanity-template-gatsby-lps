@@ -75,6 +75,10 @@ export const query = graphql`
                     }
                     label
                 }
+                testimonials {
+                    author
+                    excerpt
+                }
             }
         }
     }

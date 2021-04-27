@@ -5,7 +5,7 @@ import Hero from "./hero";
 import Intro from "./intro";
 import Services from "./services";
 import Testimonials from "./testimonials";
-import testimonials from "./testimonials";
+
 
 export default function Layout({sanityData, children}){
     console.log('Sanity Data',sanityData);
@@ -21,7 +21,7 @@ export default function Layout({sanityData, children}){
     const intro = sanityData?._rawIntro;
     const services = sanityData?.category?.services;
     const primaryColor = sanityData?.category?.primaryColor?.hex;
-
+    const testimonials = sanityData?.category?.testimonials;
     return (
         <>
             <Header logo={ logoSrc } phone={ phone } />
@@ -29,7 +29,7 @@ export default function Layout({sanityData, children}){
             <Intro intro={intro} />
             <CalloutBar message={calloutMessage} badgeSrc={calloutBadge} />
             <Services services={services} color={primaryColor} icon={iconSrc} />
-            <Testimonials color={primaryColor} />
+            <Testimonials color={primaryColor} testimonials={testimonials}/>
             { children }
         </>
     )
