@@ -1,9 +1,11 @@
 import { string } from "prop-types";
+import { FiDollarSign } from 'react-icons/fi';
 
 export default {
     name: 'specials',
     title: 'Specials',
     type: 'document',
+    icon: FiDollarSign,
     fields: [
         {
             name: 'title',

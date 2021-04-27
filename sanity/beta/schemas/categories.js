@@ -1,4 +1,5 @@
 import { string } from "prop-types";
+import { FiFolder } from 'react-icons/fi';
 
 export default {
     name: 'category',
@@ -10,6 +11,7 @@ export default {
         {name: 'callout', title: 'Callout Bar'},
       ],
     type: 'document',
+    icon: FiFolder,
     fields: [
         {
             name: 'label',
@@ -22,6 +24,13 @@ export default {
             title: 'Logo',
             type: 'image',
             description: '',
+            fieldset: 'companyInfo'
+        },
+        {
+            name: 'icon',
+            title: 'Business Icon',
+            type: 'image',
+            description: 'Frequently used for the site favicon and ornament icons',
             fieldset: 'companyInfo'
         },
         {
@@ -129,6 +138,16 @@ export default {
             title: 'Callout Badge',
             type: 'image',
             fieldset: 'callout',
+        },
+        {
+            title: 'Services & Highlights',
+            name: 'services',
+            type: 'array', 
+            of: [
+                {
+                    type: 'service', 
+                }
+            ]
         },
         {
             title: 'Specials',

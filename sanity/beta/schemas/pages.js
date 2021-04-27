@@ -1,9 +1,11 @@
 import { string } from "prop-types";
+import { FiFileText } from 'react-icons/fi';
 
 export default {
     name: 'page',
     title: 'Pages',
     type: 'document',
+    icon: FiFileText,
     fieldsets: [
         {name: 'hero', title: 'Hero'},
         {name: 'interlude', title: 'Interlude'},

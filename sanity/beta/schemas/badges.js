@@ -1,7 +1,10 @@
+import { FiImage } from 'react-icons/fi';
+
 export default {
     name: 'badge',
     title: 'Badges',
     type: 'document',
+    icon: FiImage,
     description: '',
     fields: [
         {

@@ -1,9 +1,11 @@
 import { string } from "prop-types";
+import { FiFeather } from 'react-icons/fi';
 
 export default {
     name: 'testimonial',
     title: 'Testimonials',
     type: 'document',
+    icon: FiFeather,
     fields: [
         {
             name: 'excerpt',
