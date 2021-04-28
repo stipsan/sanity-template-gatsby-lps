@@ -33,6 +33,12 @@ export const query = graphql`
                 list
                 style
             }
+            interlude_text
+            interlude_image {
+              asset {
+                url
+              }
+            }
             category {
                 email
                 label
@@ -78,6 +84,15 @@ export const query = graphql`
                 testimonials {
                     author
                     excerpt
+                }
+                serviceArea {
+                    locations {
+                        location {
+                            city
+                            county
+                            state
+                        }
+                    }
                 }
             }
         }

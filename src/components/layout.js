@@ -2,8 +2,10 @@ import React from "react"
 import CalloutBar from "./calloutBar";
 import Header from "./header"
 import Hero from "./hero";
+import Interlude from "./interlude";
 import Intro from "./intro";
 import Services from "./services";
+import SpecialsLocations from "./specials-locations";
 import Testimonials from "./testimonials";
 
 
@@ -22,6 +24,10 @@ export default function Layout({sanityData, children}){
     const services = sanityData?.category?.services;
     const primaryColor = sanityData?.category?.primaryColor?.hex;
     const testimonials = sanityData?.category?.testimonials;
+    const interludeText = sanityData?.interlude_text;
+    const interludeImageSrc = sanityData?.interlude_image?.asset?.url;
+    const locations = sanityData?.category?.serviceArea?.locations;
+
     return (
         <>
             <Header logo={ logoSrc } phone={ phone } />
@@ -30,6 +36,8 @@ export default function Layout({sanityData, children}){
             <CalloutBar message={calloutMessage} badgeSrc={calloutBadge} />
             <Services services={services} color={primaryColor} icon={iconSrc} />
             <Testimonials color={primaryColor} testimonials={testimonials}/>
+            <Interlude text={interludeText} image={interludeImageSrc} />
+            <SpecialsLocations locations={locations} />
             { children }
         </>
     )
