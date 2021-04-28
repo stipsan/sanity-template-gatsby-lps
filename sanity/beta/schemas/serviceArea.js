@@ -20,12 +20,19 @@ export default {
             type: 'string',
             fieldset: 'serviceAreaGroup'
         },
-        // {
-        //    name: 'locations',
-        //    title: 'Locations',
-        //    type: 'array',
-        //    of: [{type: 'location'}],
-        //    fieldset: 'serviceAreaGroup'
-        // }
+        {
+           name: 'locations',
+           title: 'Locations',
+           type: 'array',
+           of: [
+               {
+                   type: 'reference',
+                   to: {
+                       type: 'locations'
+                   }
+                }
+            ],
+           fieldset: 'serviceAreaGroup'
+        }
     ]
 }

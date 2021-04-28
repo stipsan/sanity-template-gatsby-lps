@@ -11,19 +11,19 @@ export default {
             type: 'location',
             description: '',
         },
-        {
-            name: 'serviceAreas',
-            title: 'Service Areas',
-            type: 'array',
-            of: [
-                {
-                    type: 'reference',
-                    to: {
-                        type: 'serviceArea'
-                    }
-                }
-            ]
-        }
+        // {
+        //     name: 'serviceAreas',
+        //     title: 'Service Areas',
+        //     type: 'array',
+        //     of: [
+        //         {
+        //             type: 'reference',
+        //             to: {
+        //                 type: 'serviceArea'
+        //             }
+        //         }
+        //     ]
+        // }
     ],
     preview: {
         select: {

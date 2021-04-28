@@ -171,6 +171,12 @@ export default {
                 }
             ]
         },
+        {
+            title: 'Service Area',
+            name: 'serviceArea',
+            type: 'reference',
+            to: [{type: 'serviceArea'}]
+        }
     ],
     preview: {
         select: {

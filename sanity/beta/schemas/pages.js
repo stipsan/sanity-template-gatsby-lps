@@ -68,7 +68,8 @@ export default {
         {
             name: 'interlude_text',
             title: 'Text',
-            type: 'string',
+            type: 'array',
+            of:[{type: 'text'}],
             fieldset: 'interlude' 
         },
         {
