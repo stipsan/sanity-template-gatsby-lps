@@ -27,6 +27,8 @@ export default function Layout({sanityData, children}){
     const interludeText = sanityData?.interlude_text;
     const interludeImageSrc = sanityData?.interlude_image?.asset?.url;
     const locations = sanityData?.category?.serviceArea?.locations;
+    const serviceAreaBackground =sanityData?.category?.serviceAreaBackground?.asset?.url;
+    const specials = sanityData?.category?.specials;
 
     return (
         <>
@@ -37,7 +39,7 @@ export default function Layout({sanityData, children}){
             <Services services={services} color={primaryColor} icon={iconSrc} />
             <Testimonials color={primaryColor} testimonials={testimonials}/>
             <Interlude text={interludeText} image={interludeImageSrc} />
-            <SpecialsLocations locations={locations} />
+            <SpecialsLocations locations={locations} specials={specials} background={serviceAreaBackground} />
             { children }
         </>
     )

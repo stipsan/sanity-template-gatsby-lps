@@ -41,7 +41,7 @@ export default function Testimonials({testimonials,color}) {
         testimonials.map(testimonial => (
             <blockquote className="p-3">
                 <Bubble className="bg-yellow-primary rounded-2xl text-black-custom p-8 text-lg font-medium relative mb-7" color={color}>
-                    <div class="custom-scroller overflow-y-auto h-36">
+                    <div className="custom-scroller overflow-y-auto h-36">
                         {testimonial.excerpt}
                     </div>                    
                 </Bubble>

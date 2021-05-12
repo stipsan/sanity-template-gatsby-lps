@@ -52,6 +52,10 @@ module.exports = {
       },
       gridTemplateColumns: {
         'layout': '1fr auto 1fr',
+      },
+      width: {
+        '512-5': '512.5px',
+        '720-5': '720.5px'
       }
     },
   },

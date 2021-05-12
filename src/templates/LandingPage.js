@@ -94,6 +94,16 @@ export const query = graphql`
                         }
                     }
                 }
+                serviceAreaBackground {
+                    asset {
+                        url
+                    }
+                }
+                specials {
+                    title
+                    disclaimer
+                    details
+                }
             }
         }
     }
