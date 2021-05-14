@@ -1,5 +1,6 @@
 import React from "react"
 import CalloutBar from "./calloutBar";
+import Contact from "./contact";
 import Header from "./header"
 import Hero from "./hero";
 import Interlude from "./interlude";
@@ -29,6 +30,7 @@ export default function Layout({sanityData, children}){
     const locations = sanityData?.category?.serviceArea?.locations;
     const serviceAreaBackground =sanityData?.category?.serviceAreaBackground?.asset?.url;
     const specials = sanityData?.category?.specials;
+    const emailRecipient = sanityData?.category?.email;
 
     return (
         <>
@@ -40,6 +42,7 @@ export default function Layout({sanityData, children}){
             <Testimonials color={primaryColor} testimonials={testimonials}/>
             <Interlude text={interludeText} image={interludeImageSrc} />
             <SpecialsLocations locations={locations} specials={specials} background={serviceAreaBackground} />
+            <Contact recipient={emailRecipient} />
             { children }
         </>
     )
