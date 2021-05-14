@@ -6,8 +6,7 @@ export default function Contact({recipient}) {
         <section id="contact" className="my-24">
             <div className="container mx-auto bg-blue-primary py-11 rounded-md">
                 <h2 className="text-white text-4xl text-center mb-5 text-magic phablet:text-2xl desktop:text-4xl tablet:text-5xl">Contact Our Specialists Today</h2>
-                <form method="post" name="footerForm" className="px-6 tablet:px-24">
-                    <input type="hidden" name="footerForm" value="contact" />
+                <form method="post" name="footerForm" className="px-6 tablet:px-24" netlify>
                     <input name="recipient" type="hidden" value={recipient} />
                     <div className="justify-center laptop:flex">
                         <div className="text-center flex flex-col flex-1 laptop:pr-3">
@@ -21,7 +20,7 @@ export default function Contact({recipient}) {
                             <input className="mb-4 rounded-sm" type="text" placeholder="How Did You Hear About Us?" />
                         </div>
                     </div>
-                    <button className="uppercase rounded-lg px-8 py-2 text-2xl bg-yellow-primary font-extrabold mx-auto block" type="submit" />
+                    <button className="uppercase rounded-lg px-8 py-2 text-2xl bg-yellow-primary font-extrabold mx-auto block" type="submit" value="Submit" />
                 </form>
             </div>
         </section>
