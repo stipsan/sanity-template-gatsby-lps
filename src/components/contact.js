@@ -6,7 +6,8 @@ export default function Contact({recipient}) {
         <section id="contact" className="my-24">
             <div className="container mx-auto bg-blue-primary py-11 rounded-md">
                 <h2 className="text-white text-4xl text-center mb-5 text-magic phablet:text-2xl desktop:text-4xl tablet:text-5xl">Contact Our Specialists Today</h2>
-                <form action="" className="px-6 tablet:px-24" netlify>
+                <form action="" method="post" name="footerForm" className="px-6 tablet:px-24">
+                    <input type="hidden" name="form-name" value="contact" />
                     <input name="recipient" type="hidden" value={recipient} />
                     <div className="justify-center laptop:flex">
                         <div className="text-center flex flex-col flex-1 laptop:pr-3">
