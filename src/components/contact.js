@@ -20,7 +20,7 @@ export default function Contact({recipient}) {
                             <input className="mb-4 rounded-sm" type="text" placeholder="How Did You Hear About Us?" />
                         </div>
                     </div>
-                    <button className="uppercase rounded-lg px-8 py-2 text-2xl bg-yellow-primary font-extrabold mx-auto block" type="submit" value="Submit" />
+                    <button className="uppercase rounded-lg px-8 py-2 text-2xl bg-yellow-primary font-extrabold mx-auto block" type="submit" >Submit</button>
                 </form>
             </div>
         </section>
