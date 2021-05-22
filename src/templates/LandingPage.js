@@ -104,6 +104,13 @@ export const query = graphql`
                     disclaimer
                     details
                 }
+                badges {
+                    image {
+                        asset {
+                            url
+                        }
+                    }
+                }
             }
         }
     }

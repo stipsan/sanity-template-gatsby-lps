@@ -1,4 +1,5 @@
-import React from "react"
+import React from "react";
+import Badges from "./badges";
 import CalloutBar from "./calloutBar";
 import Contact from "./contact";
 import Header from "./header"
@@ -7,6 +8,7 @@ import Interlude from "./interlude";
 import Intro from "./intro";
 import Services from "./services";
 import SpecialsLocations from "./specials-locations";
+import Tagline from "./tagline";
 import Testimonials from "./testimonials";
 
 
@@ -31,11 +33,13 @@ export default function Layout({sanityData, children}){
     const serviceAreaBackground =sanityData?.category?.serviceAreaBackground?.asset?.url;
     const specials = sanityData?.category?.specials;
     const emailRecipient = sanityData?.category?.email;
+    const tagline = sanityData?.category?.tagline;
+    const badgeObjs = sanityData?.category?.badges;
 
     return (
         <>
             <Header logo={ logoSrc } phone={ phone } />
-            <Hero heroBg={heroBackground} title={heroTitle} subTitle={heroSubTitle} content={heroContent} />
+            <Hero heroBg={heroBackground} title={heroTitle} subTitle={heroSubTitle} content={heroContent} email={emailRecipient} />
             <Intro intro={intro} />
             <CalloutBar message={calloutMessage} badgeSrc={calloutBadge} />
             <Services services={services} color={primaryColor} icon={iconSrc} />
@@ -43,6 +47,8 @@ export default function Layout({sanityData, children}){
             <Interlude text={interludeText} image={interludeImageSrc} />
             <SpecialsLocations locations={locations} specials={specials} background={serviceAreaBackground} />
             <Contact recipient={emailRecipient} />
+            <Tagline tagline={tagline} color={primaryColor} icon={iconSrc} />
+            <Badges badges={badgeObjs} />
             { children }
         </>
     )
