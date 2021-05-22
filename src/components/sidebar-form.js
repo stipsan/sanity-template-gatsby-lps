@@ -3,7 +3,7 @@ import React from 'react';
 export default function SidebarForm({recipient}) {
     //const logo = getGatsbyImageData(logo);
     return (
-        <form name="Sidebar Form" action="" method="POST" className="flex justify-center flex-col" data-netlify="true">
+        <form name="Sidebar Form" method="POST" className="flex justify-center flex-col" data-netlify="true">
             <input
                 type="hidden"
                 name="form-name"
