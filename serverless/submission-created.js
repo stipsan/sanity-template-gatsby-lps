@@ -2,7 +2,7 @@ const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.LP_SENDGRID_API_KEY);
 
 exports.handler = async function(event, context, callback) {
-    console.log('event:', event);
+    // console.log('event:', event);
     const { name, phone, email, newCustomer, message, recipient } = JSON.parse(event.body).payload.data;
     const msg = {
         to: recipient,
@@ -14,6 +14,7 @@ exports.handler = async function(event, context, callback) {
 
     try {
       await sgMail.send(msg);
+      console.log('sent!', msg);
       return {
         statusCode: 200,
         body: 'Message sent',
