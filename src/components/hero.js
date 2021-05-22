@@ -11,7 +11,7 @@ const Hero = styled.div`
 `
 
 
-export default function HeroSection({heroBg, title, subTitle, content}){
+export default function HeroSection({heroBg, title, subTitle, content, email}){
     return (
         <Hero id="hero" className="bg-hero bg-no-repeat bg-center bg-top px-4 py-7 phablet:px-0 tablet:py-0" bg={heroBg}>
             <div className="container mx-auto flex justify-center tablet:justify-start">
@@ -29,7 +29,7 @@ export default function HeroSection({heroBg, title, subTitle, content}){
                         <div className="uppercase text-center text-3xl text-white font-extrabold mb-5">
                             Schedule Now
                         </div>
-                        <SidebarForm />
+                        <SidebarForm recipient={email} />
                     </div>
                 </div>
             </div>

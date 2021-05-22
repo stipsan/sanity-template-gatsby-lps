@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function SidebarForm({email}) {
+export default function SidebarForm({recipient}) {
     //const logo = getGatsbyImageData(logo);
     return (
         <form name="Sidebar Form" action="" method="POST" className="flex justify-center flex-col" data-netlify="true">
@@ -12,7 +12,7 @@ export default function SidebarForm({email}) {
             <input
                 type="hidden"
                 name="recipient"
-                value={email}
+                value={recipient}
             />
             <input
                 className="w-full mb-3 rounded-md"
