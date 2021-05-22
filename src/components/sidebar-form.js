@@ -35,7 +35,7 @@ export default function SidebarForm({recipient}) {
             <input
                 className="w-full mb-3 rounded-md"
                 type="text"
-                name="new-customer"
+                name="newCustomer"
                 placeholder="Are You a New Customer?"
             />
             <textarea
