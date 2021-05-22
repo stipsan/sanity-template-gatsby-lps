@@ -17,26 +17,30 @@ export default function SidebarForm({recipient}) {
             <input
                 className="w-full mb-3 rounded-md"
                 type="text"
+                name="name"
                 placeholder="Name*"
             />
             <input
                 className="w-full mb-3 rounded-md"
                 type="text"
+                name="phone"
                 placeholder="Phone Number*"
             />
             <input
                 className="w-full mb-3 rounded-md"
                 type="text"
+                name="email"
                 placeholder="Email Address*"
             />
             <input
                 className="w-full mb-3 rounded-md"
                 type="text"
+                name="new-customer"
                 placeholder="Are You a New Customer?"
             />
             <textarea
                 className="rounded-md"
-                name=""
+                name="message"
                 id=""
                 rows="3"
                 cols="25"
