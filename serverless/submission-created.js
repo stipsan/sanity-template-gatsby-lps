@@ -9,11 +9,7 @@ exports.handler = async function(event, context, callback) {
         from: email, // Use the email address or domain you verified above
         subject: `Email From LP Test - ${name}`,
         //text: 'and easy to do anywhere, even with Node.js',
-        html: `<strong>Name:</strong> ${name}
-          <strong>Phone:</strong> ${phone}
-          <strong>Email:</strong> ${email}
-          <strong>New Customer?</strong> ${newCustomer}
-          <strong>Message:</strong> ${message}`,
+        html: `<strong>Name:</strong> ${name}<br/><strong>Phone:</strong> ${phone}<br/><strong>Email:</strong> ${email}<br/><strong>New Customer?</strong> ${newCustomer}<br/><strong>Message:</strong> ${message}`,
     };
 
     try {
