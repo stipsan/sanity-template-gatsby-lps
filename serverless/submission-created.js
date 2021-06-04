@@ -14,7 +14,7 @@ exports.handler = async function(event, context, callback) {
           <strong>Phone:</strong> ${phone}<br/>
           <strong>Email:</strong> ${email}<br/>
           <strong>New Customer?</strong> ${newCustomer}<br/>
-          <strong>Referral</strong>${referral}<br/>
+          <strong>Referral:</strong> ${referral}<br/>
           <strong>Message:</strong> ${message}
         `,
     };
