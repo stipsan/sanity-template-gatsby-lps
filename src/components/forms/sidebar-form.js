@@ -1,4 +1,5 @@
 import React from 'react';
+import SubmitButton from '../utils/submitButton';
 
 export default function SidebarForm({recipient}) {
     //const logo = getGatsbyImageData(logo);
@@ -46,11 +47,7 @@ export default function SidebarForm({recipient}) {
                 cols="25"
                 placeholder="Message"
             ></textarea>
-            <input
-                className="uppercase rounded-lg px-8 py-2 text-2xl bg-yellow-primary font-extrabold mx-auto absolute -bottom-6 left-20"
-                type="submit"
-                value="Submit"
-            />
+            <SubmitButton text={'Submit'} className={'absolute -bottom-6 left-20'} />
         </form>
     );
 }

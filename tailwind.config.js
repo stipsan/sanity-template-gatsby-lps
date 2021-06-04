@@ -56,7 +56,10 @@ module.exports = {
       width: {
         '512-5': '512.5px',
         '720-5': '720.5px'
-      }
+      },
+      minHeight: {
+        '400': '400px',
+       }
     },
   },
   variants: {
