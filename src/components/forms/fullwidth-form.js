@@ -30,6 +30,3 @@ export default function FullwidthForm({recipient}) {
         </form>
     );
 }
-
-
-
