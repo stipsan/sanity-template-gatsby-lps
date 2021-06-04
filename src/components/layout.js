@@ -10,10 +10,12 @@ import Services from "./services";
 import SpecialsLocations from "./specials-locations";
 import Tagline from "./tagline";
 import Testimonials from "./testimonials";
-
+import Footer from "./footer";
 
 export default function Layout({sanityData, children}){
     console.log('Sanity Data',sanityData);
+    const address = sanityData?.category?.address;
+    const company = sanityData?.category?.company;
     const logoSrc = sanityData?.category?.logo?.asset?.url;
     const iconSrc = sanityData?.category?.icon?.asset?.url;
     const phone = sanityData?.category?.phone;
@@ -38,17 +40,18 @@ export default function Layout({sanityData, children}){
 
     return (
         <>
-            <Header logo={ logoSrc } phone={ phone } />
+            <Header logo={logoSrc} phone={phone} />
             <Hero heroBg={heroBackground} title={heroTitle} subTitle={heroSubTitle} content={heroContent} email={emailRecipient} />
             <Intro intro={intro} />
             <CalloutBar message={calloutMessage} badgeSrc={calloutBadge} />
             <Services services={services} color={primaryColor} icon={iconSrc} />
-            <Testimonials color={primaryColor} testimonials={testimonials}/>
+            <Testimonials color={primaryColor} testimonials={testimonials} />
             <Interlude text={interludeText} image={interludeImageSrc} />
             <SpecialsLocations locations={locations} specials={specials} background={serviceAreaBackground} />
             <Contact email={emailRecipient} />
             <Tagline tagline={tagline} color={primaryColor} icon={iconSrc} />
             <Badges badges={badgeObjs} />
+            <Footer company={company} address={address} phone={phone} />
             { children }
         </>
     )
