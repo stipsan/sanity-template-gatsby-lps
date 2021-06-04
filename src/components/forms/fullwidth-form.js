@@ -3,7 +3,7 @@ import React from 'react';
 export default function FullwidthForm({recipient}) {
     //const logo = getGatsbyImageData(logo);
     return (
-        <form name="Sidebar Form" method="POST" className="px-6 tablet:px-24" data-netlify="true">
+        <form name="Fullwidth Form" method="POST" className="px-6 tablet:px-24" data-netlify="true">
             <input
                 type="hidden"
                 name="form-name"
