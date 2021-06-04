@@ -8,7 +8,7 @@ export default function Tagline({tagline, color, icon}) {
             <div className="container mx-auto text-center">
                 {/* <hr className="ornament ornament--brand after:bg-white" /> */}
                 <Ornament color={color} icon={icon} alt={'Review Icon'} />
-                <h2 className="font-extrabold text-4xl text-blue-primary mb-12">{ tagline }</h2>
+                <h2 className="font-extrabold text-4xl text-blue-primary mb-6 tablet:mb-12">{ tagline }</h2>
             </div>
         </secton>
     );

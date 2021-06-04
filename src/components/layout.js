@@ -46,7 +46,7 @@ export default function Layout({sanityData, children}){
             <Testimonials color={primaryColor} testimonials={testimonials}/>
             <Interlude text={interludeText} image={interludeImageSrc} />
             <SpecialsLocations locations={locations} specials={specials} background={serviceAreaBackground} />
-            <Contact recipient={emailRecipient} />
+            <Contact email={emailRecipient} />
             <Tagline tagline={tagline} color={primaryColor} icon={iconSrc} />
             <Badges badges={badgeObjs} />
             { children }

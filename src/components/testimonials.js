@@ -48,12 +48,47 @@ export default function Testimonials({testimonials,color}) {
                 <cite class="ml-8">{testimonial.author}</cite>
             </blockquote>
     ));
+    var settings = {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 0,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              infinite: true,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              initialSlide: 2
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+      };
     return (
         <section id="testimonials" className="bg-blue-primary py-14 text-white">
             <div className="container mx-auto">
                 <Ornament color={color} icon={icon} alt={'Review Icon'} />
                 <h2 className="text-center text-4xl font-extrabold mb-9">Heating Repair Reviews</h2>
-                <Slider dots={true} slidesToShow={2} slidesToScroll={2}>{renderSlides()}</Slider>
+                <Slider {...settings}>{renderSlides()}</Slider>
             </div>
         </section>
     );

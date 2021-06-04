@@ -1,8 +1,6 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import { getGatsbyImageData } from 'gatsby-source-sanity';
 import styled from "styled-components"
-import SidebarForm from './sidebar-form';
+import SidebarForm from './forms/sidebar-form';
 
 
 

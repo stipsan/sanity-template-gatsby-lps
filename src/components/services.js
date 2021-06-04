@@ -17,7 +17,7 @@ export default function Services({services, color, icon}) {
                 })
             }
           </div>
-          <a className="uppercase rounded-xl px-8 mt-5 py-3 text-2xl bg-yellow-primary font-extrabold mx-auto inline-block" href="">Ready To Contact Us?</a>
+          <a className="uppercase rounded-xl px-8 mt-5 py-3 text-2xl bg-yellow-primary font-extrabold mx-auto inline-block" href="#contact">Ready To Contact Us?</a>
         </div>
       </section>
     );
