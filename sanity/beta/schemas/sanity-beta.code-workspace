@@ -1,11 +1,7 @@
 {
-	"folders": [
-		{
-			"path": ".."
-		},
-		{
-			"path": "../../../gatsby/beta"
-		}
-	],
-	"settings": {}
+    "folders": [
+        {
+            "path": "../../../gatsby/beta"
+        }
+    ]
 }
