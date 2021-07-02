@@ -40,9 +40,24 @@ export const query = graphql`
               }
             }
             category {
-                email
+                companyInfo {
+                    logo {
+                        asset {
+                            url
+                        }
+                    }
+                    icon {
+                        asset {
+                            url
+                        }
+                    }
+                    company
+                    phone
+                    email
+                    address
+                    tagline
+                }
                 label
-                address
                 calloutBadge {
                     asset {
                         url
@@ -50,21 +65,9 @@ export const query = graphql`
                 }
                 calloutMessage
                 chatConversionLabel
-                company
                 conversionId
                 formConversionLabel
                 layout
-                logo {
-                    asset {
-                        url
-                    }
-                }
-                icon {
-                    asset {
-                        url
-                    }
-                }
-                phone
                 phoneConversionLabel
                 primaryColor {
                     hex
@@ -72,7 +75,6 @@ export const query = graphql`
                 secondaryColor {
                     hex
                 }
-                tagline
                 services {
                     icon {
                       asset {
@@ -109,6 +111,32 @@ export const query = graphql`
                         asset {
                             url
                         }
+                    }
+                }
+            }
+            company_overrides {
+                company
+                phone
+                email
+                address
+                tagline
+                logo {
+                    asset {
+                        url
+                    }
+                }
+                icon {
+                    asset {
+                        url
+                    }
+                }
+            }
+            service_area_overrides {
+                locations {
+                    location {
+                        city
+                        county
+                        state
                     }
                 }
             }

@@ -14,11 +14,16 @@ import Footer from "./footer";
 
 export default function Layout({sanityData, children}){
     console.log('Sanity Data',sanityData);
-    const address = sanityData?.category?.address;
-    const company = sanityData?.category?.company;
-    const logoSrc = sanityData?.category?.logo?.asset?.url;
-    const iconSrc = sanityData?.category?.icon?.asset?.url;
-    const phone = sanityData?.category?.phone;
+    //overwriteable
+    const address = sanityData?.company_overrides?.address || sanityData?.category?.companyInfo?.address;
+    const company = sanityData?.company_overrides?.company || sanityData?.category?.companyInfo?.company;
+    const phone = sanityData?.company_overrides?.phone || sanityData?.category?.companyInfo?.phone;
+    const emailRecipient = sanityData?.company_overrides?.email || sanityData?.category?.email;
+    const logoSrc = sanityData?.company_overrides?.logo?.asset?.url || sanityData?.category?.companyInfo?.logo?.asset?.url;
+    const iconSrc = sanityData?.company_overrides?.icon?.asset?.url || sanityData?.category?.companyInfo?.icon?.asset?.url;
+    const tagline = sanityData?.company_overrides?.tagline || sanityData?.category?.tagline;
+    const locations = sanityData?.service_area_overrides?.locations || sanityData?.category?.serviceArea?.locations;
+
     const heroBackground = sanityData?.hero_banner?.asset?.url;
     const heroTitle = sanityData?.hero_title;
     const heroSubTitle = sanityData?.hero_sub_title;
@@ -31,11 +36,8 @@ export default function Layout({sanityData, children}){
     const testimonials = sanityData?.category?.testimonials;
     const interludeText = sanityData?.interlude_text;
     const interludeImageSrc = sanityData?.interlude_image?.asset?.url;
-    const locations = sanityData?.category?.serviceArea?.locations;
     const serviceAreaBackground =sanityData?.category?.serviceAreaBackground?.asset?.url;
     const specials = sanityData?.category?.specials;
-    const emailRecipient = sanityData?.category?.email;
-    const tagline = sanityData?.category?.tagline;
     const badgeObjs = sanityData?.category?.badges;
 
     return (

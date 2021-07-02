@@ -1,5 +1,9 @@
 import React from 'react';
-import PortableText from "react-portable-text"
+import PortableText from 'react-portable-text';
+import { CheckIcon } from '@heroicons/react/solid';
+import styled from "styled-components"
+
+
 
 const serializers = {
     h2: props => <h1 className="text-magic font-extrabold text-blue-primary mb-3 phablet:text-3xl tablet:mb-14 laptop:text-4xl" {...props} />,

@@ -45,7 +45,7 @@ export default function Testimonials({testimonials,color}) {
                         {testimonial.excerpt}
                     </div>                    
                 </Bubble>
-                <cite class="ml-8">{testimonial.author}</cite>
+                <cite className="ml-8">{testimonial.author}</cite>
             </blockquote>
     ));
     var settings = {
