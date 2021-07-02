@@ -9,6 +9,15 @@ export default {
     fieldsets: [
         {name: 'hero', title: 'Hero'},
         {name: 'interlude', title: 'Interlude'},
+        {
+            name: 'category_overrides',
+            title: 'Category Overrides',
+            options: {
+                collapsible: true, // Makes the whole fieldset collapsible
+                collapsed: true, // Defines if the fieldset should be collapsed by default or not
+                columns: 1 // Defines a grid for the fields and how many columns it should have
+            }
+        },
       ],
     fields: [
         {
@@ -79,11 +88,18 @@ export default {
             fieldset: 'interlude' 
         },
         {
-            name: 'customization',
-            title: 'Customization',
-            type: 'array',
+            name: 'company_overrides',
+            title: 'Company Overrides',
+            type: 'companyInfo',
             description: '',
-            of: [{type:'header'}, {type:'footer'}]
+            fieldset: 'category_overrides'
+        },
+        {
+            name: 'service_area_overrides',
+            title: 'Service Area Override',
+            type: 'reference',
+            to: [{type: 'serviceArea'}],
+            fieldset: 'category_overrides'
         }
     ],
     preview: {

@@ -1,5 +1,6 @@
 // tailwind.config.js
 const defaultTheme = require('tailwindcss/defaultTheme');
+var fontFun = '30';
 
 module.exports = {
   purge: [
@@ -47,9 +48,16 @@ module.exports = {
         'custom': '0 0 0 12px #fff, 2px 1px 6px 4px #fff'
       },
       fontSize: {
-        'magic': 'calc(20px + (30 - 20) * ((100vw - 300px)/(576 - 300)))',
+        'magic': `calc(30px + (${fontFun} - 20) * ((100vw - 300px)/(576 - 300)))`,
+        'cheese': `${fontFun}`
       },
-      
+      gridTemplateColumns: {
+        'layout': '1fr auto 1fr',
+      },
+      width: {
+        '512-5': '512.5px',
+        '720-5': '720.5px'
+      }
     },
   },
   variants: {

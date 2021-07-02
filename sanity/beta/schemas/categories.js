@@ -5,10 +5,18 @@ export default {
     name: 'category',
     title: 'Categories',
     fieldsets: [
-        {name: 'companyInfo', title: 'Company Info'},
-        {name: 'meta', title: 'Meta'},
+        {name: 'meta', title: 'Meta', description: 'Category level hidden page information.'},
         {name: 'styles', title: 'Styles'},
         {name: 'callout', title: 'Callout Bar'},
+        {
+            name: 'serviceArea',
+            title: 'Service Area',
+            options: {
+                collapsible: true, // Makes the whole fieldset collapsible
+                collapsed: false, // Defines if the fieldset should be collapsed by default or not
+                columns: 2 // Defines a grid for the fields and how many columns it should have
+            }
+        }
       ],
     type: 'document',
     icon: FiFolder,
@@ -20,53 +28,10 @@ export default {
             description: 'Used for organization on the backend but not visible on site'
         },
         {
-            name: 'logo',
-            title: 'Logo',
-            type: 'image',
-            description: '',
-            fieldset: 'companyInfo'
-        },
-        {
-            name: 'icon',
-            title: 'Business Icon',
-            type: 'image',
-            description: 'Frequently used for the site favicon and ornament icons',
-            fieldset: 'companyInfo'
-        },
-        {
-            name: 'company',
-            title: 'Business Name',
-            type: 'string',
-            description: '',
-            fieldset: 'companyInfo',
-        },
-        {
-            name: 'phone',
-            title: 'Phone Number',
-            type: 'string',
-            description: '',
-            fieldset: 'companyInfo',
-        },
-        {
-            name: 'email',
-            title: 'Email',
-            type: 'string',
-            description: 'Contact Form Recipient',
-            fieldset: 'companyInfo',
-        },
-        {
-            name: 'address',
-            title: 'Address',
-            type: 'string',
-            description: '',
-            fieldset: 'companyInfo',
-        },
-        {
-            name: 'tagline',
-            title: 'Tagline',
-            type: 'string',
-            description: '',
-            fieldset: 'companyInfo',
+            name: 'companyInfo',
+            title: 'Company Info',
+            type: 'companyInfo',
+            description: 'Category level company information.'
         },
         {
             name: 'gtm',
@@ -169,14 +134,32 @@ export default {
                     type: 'reference', 
                     to: [{type: 'testimonial'}]
                 }
-            ]
+            ],
+        },
+        {
+            title: 'Service Area Background',
+            name: 'serviceAreaBackground',
+            type: 'image',
+            fieldset: 'serviceArea'
         },
         {
             title: 'Service Area',
             name: 'serviceArea',
             type: 'reference',
-            to: [{type: 'serviceArea'}]
-        }
+            to: [{type: 'serviceArea'}],
+            fieldset: 'serviceArea'
+        },
+        {
+            title: 'Badges',
+            name: 'badges',
+            type: 'array',
+            of: [
+                {
+                    type: 'reference', 
+                    to: [{type: 'badge'}]
+                }
+            ],
+        }, 
     ],
     preview: {
         select: {

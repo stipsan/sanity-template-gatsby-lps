@@ -5,6 +5,7 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 import categories from './categories';
+import companyInfo from './objects/companyInfo';
 import badges from './badges';
 import pages from './pages';
 import specials from './specials';
@@ -30,6 +31,7 @@ export default createSchema({
     location,
     locations,
     categories,
+    companyInfo,
     pages,
     badges,
     specials,
