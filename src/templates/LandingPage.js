@@ -113,6 +113,11 @@ export const query = graphql`
                         }
                     }
                 }
+                gtm
+                conversionId
+                phoneConversionLabel
+                formConversionLabel
+                chatConversionLabel
             }
             company_overrides {
                 company

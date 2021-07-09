@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import Badges from "./badges";
 import CalloutBar from "./calloutBar";
 import Contact from "./contact";
@@ -23,7 +24,12 @@ export default function Layout({sanityData, children}){
     const iconSrc = sanityData?.company_overrides?.icon?.asset?.url || sanityData?.category?.companyInfo?.icon?.asset?.url;
     const tagline = sanityData?.company_overrides?.tagline || sanityData?.category?.tagline;
     const locations = sanityData?.service_area_overrides?.locations || sanityData?.category?.serviceArea?.locations;
+    const gtmId = sanityData?.category?.gtm;
 
+    const conversionId = sanityData?.category?.conversionId;
+    const phoneConversionLabel = sanityData?.category?.phoneConversionLabel;
+    const formConversionLabel = sanityData?.category?.formConversionLabel;
+    const chatConversionLabel = sanityData?.category?.chatConversionLabel;
     const heroBackground = sanityData?.hero_banner?.asset?.url;
     const heroTitle = sanityData?.hero_title;
     const heroSubTitle = sanityData?.hero_sub_title;
@@ -42,6 +48,28 @@ export default function Layout({sanityData, children}){
 
     return (
         <>
+            <Helmet>
+                <script>
+                    {`
+                        window.dataLayer = window.dataLayer || [];
+                        window.dataLayer.push({
+                            'formSubmitted': false,
+                            'formattedPhone': '${phone}',
+                            'phoneConversionId': '${conversionId}',
+                            'phoneConversionLabel': '${phoneConversionLabel}',
+                            'formConversionId': '${conversionId}',
+                            'formConversionLabel': '${formConversionLabel}',
+                            'chatConversionLabel': '${chatConversionLabel}'
+                        });
+
+                        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                        })(window,document,'script','dataLayer','${gtmId}');
+                    `}
+                </script>
+            </Helmet>
             <Header logo={logoSrc} phone={phone} />
             <Hero heroBg={heroBackground} title={heroTitle} subTitle={heroSubTitle} content={heroContent} email={emailRecipient} />
             <Intro intro={intro} />
