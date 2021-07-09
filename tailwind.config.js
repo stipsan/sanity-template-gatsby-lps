@@ -18,7 +18,7 @@ module.exports = {
       // => @media (min-width: 992px) { ... }
       'desktop': '1441px',
       // => @media (min-width: 1200px) { ... }
-      //'retina': '1920px'
+      'retina': '1600px'
       // => @media (min-width: 1920px) { ... }
     },
     extend: {
