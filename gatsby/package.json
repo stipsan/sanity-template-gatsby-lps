@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "gatsby-plugin-react-helmet": "^4.8.0",
+    "react-helmet": "^6.1.0"
+  }
+}
