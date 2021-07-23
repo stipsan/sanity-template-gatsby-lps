@@ -1,4 +1,10 @@
 import React from 'react';
+import { AnchorLink } from "gatsby-plugin-anchor-links";
+
+//import scrollTo from 'gatsby-plugin-smoothscroll';
+
+
+
 //import { graphql } from 'gatsby';
 //import { getGatsbyImageData } from 'gatsby-source-sanity'
 
@@ -16,10 +22,16 @@ export default function Header({logo, phone}) {
                     className="flex-none flex w-full phablet:flex-1 phablet:w-auto laptop:justify-end laptop:items-center"
                 >
                     <a
-                       className="flex justify-center items-center w-full bg-blue-primary font-bold text-xl uppercase px-8 py-3 text-white laptop:inline-block laptop:w-auto laptop:rounded-lg"
+                       
+                       
                     >
-                    Schedule Now
+                    
                     </a>
+                    <AnchorLink
+                        className="flex justify-center items-center w-full bg-blue-primary font-bold text-xl uppercase px-8 py-3 text-white laptop:inline-block laptop:w-auto laptop:rounded-lg"
+                        to="#contact" title="Schedule Now">
+                        Schedule Now
+                    </AnchorLink>
                 </div>
                 <div className="flex-1 flex items-center laptop:flex-initial laptop:justify-end">
                     <a

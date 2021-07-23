@@ -2,7 +2,7 @@ import React from 'react';
 import PortableText from 'react-portable-text';
 import { CheckIcon } from '@heroicons/react/solid';
 import styled from "styled-components"
-
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 
 const serializers = {
@@ -20,7 +20,11 @@ export default function Intro({intro}) {
                         content={intro}
                         serializers={serializers}
                     />
-                    <button className="mt-5 rounded-xl font-extrabold text-xl bg-yellow-secondary px-8 py-3 uppercase">Request Heating Repair</button>
+                    <AnchorLink
+                        className="mt-5 rounded-xl font-extrabold text-xl bg-yellow-secondary px-8 py-3 uppercase"
+                        to="#contact" title="Contact Us">
+                        Request Heating Repair
+                    </AnchorLink>
                 </div>
                 <div className="flex-none">
                     <img className="hidden laptop:inline-block" src="img/pengion-tools.png" alt="" />

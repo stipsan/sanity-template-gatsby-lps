@@ -1,5 +1,6 @@
 import React from 'react';
 import Ornament from './utils/ornament';
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 export default function Services({services, color, icon}) {
     return (
@@ -17,7 +18,11 @@ export default function Services({services, color, icon}) {
                 })
             }
           </div>
-          <a className="uppercase rounded-xl px-8 mt-5 py-3 text-2xl bg-yellow-primary font-extrabold mx-auto inline-block" href="#contact">Ready To Contact Us?</a>
+          <AnchorLink
+              className="uppercase rounded-xl px-8 mt-5 py-3 text-2xl bg-yellow-primary font-extrabold mx-auto inline-block"
+              to="#contact" title="Contact Us">
+              Ready To Contact Us?
+          </AnchorLink>
         </div>
       </section>
     );

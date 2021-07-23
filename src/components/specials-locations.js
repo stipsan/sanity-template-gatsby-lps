@@ -1,5 +1,8 @@
 import React from 'react';
-import styled from "styled-components"
+import styled from "styled-components";
+import { LocationMarkerIcon } from '@heroicons/react/solid'
+
+
 
 const Aside = styled.section`
   background-image: url(${props => props.bg});
@@ -27,15 +30,21 @@ export function Specials({specials}) {
     )
 }
 export function Locations({locations, bg}) {
+    locations = locations.map( ({location}) => location);
+
+    let sortedLocations = locations.sort(function(locationA, locationB){
+        //console.log('location A: ',locationA, 'locationB: ', locationB)
+        return locationA.city.localeCompare(locationB.city);
+    });
     return (
         <Aside className="flex flex-1 justify-start special-locations-bg" bg={bg}>
             <div className="flex-grow-1 w-full text-center text-white py-20 bg-blue-primary laptop:bg-opacity-0 laptop:flex-grow-0 laptop:w-512-5 desktop:w-720-5">
                 <h2 className="text-5xl font-extrabold mb-3">Proudly Serving</h2>
                 <h4 className="text-xl mb-14 border-b-2 border-yellow-primary inline-block mx-auto">Residents in the surrounding areas</h4>
-                <ul className="grid grid-cols-3">
+                <ul className="col-count-2 text-left">
                 {
-                    locations.map(({ location }) => (
-                        <li>{location.city}</li>
+                    sortedLocations.map((location) => (
+                        <li class="ml-14 mb-3"><LocationMarkerIcon class="inline-block h-5 w-6 mr-1"/>{location.city}</li>
                     ))
                 }
                 </ul>

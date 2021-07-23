@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { AnchorLink } from "gatsby-plugin-anchor-links";
   
 export default function Interlude({text, image}) {
     return (
@@ -9,7 +9,11 @@ export default function Interlude({text, image}) {
                     {text.map( (paragraph) => (
                         <p className="mb-12 text-2xl">{paragraph}</p>
                     ))}                    
-                    <button className="rounded-xl font-extrabold text-xl bg-yellow-secondary px-8 py-3 uppercase">Contact Us Today</button> 
+                    <AnchorLink
+                        className="rounded-xl font-extrabold text-xl bg-yellow-secondary px-8 py-3 uppercase"
+                        to="#contact" title="Contact Us">
+                        Contact Us Today
+                    </AnchorLink>
                 </div>
                 <div className="flex-1 flex justify-center items-center">
                     <img className="mx-auto mb-8 laptop:mb-0" src={image} alt="" />

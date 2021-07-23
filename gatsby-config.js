@@ -23,6 +23,12 @@ module.exports = {
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -300
+      }
+    },
     "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",

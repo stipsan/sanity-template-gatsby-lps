@@ -71,6 +71,7 @@ module.exports = {
   plugins: [
    require('@tailwindcss/forms'),
    require('tailwind-pseudo-elements'),
+   require('tailwindcss-multi-column')()
   ],
   corePlugins: {
     textOpacity: false,
