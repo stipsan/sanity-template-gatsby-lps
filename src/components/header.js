@@ -15,21 +15,20 @@ export default function Header({logo, phone}) {
                 <div
                     className="flex-none flex w-full phablet:flex-1 phablet:w-auto laptop:justify-end laptop:items-center"
                 >
-                    <button
-                    className="w-full bg-blue-primary font-bold text-xl uppercase px-8 py-3 text-white laptop:w-auto laptop:rounded-lg"
+                    <a
+                       className="flex justify-center items-center w-full bg-blue-primary font-bold text-xl uppercase px-8 py-3 text-white laptop:inline-block laptop:w-auto laptop:rounded-lg"
                     >
                     Schedule Now
-                    </button>
+                    </a>
                 </div>
-                <div
-                    className="flex-1 flex items-center laptop:flex-initial laptop:justify-end"
-                >
-                    <button
-                    className="w-full font-semibold text-xl bg-yellow-primary px-8 py-3 laptop:ml-7 laptop:rounded-lg laptop:w-auto"
+                <div className="flex-1 flex items-center laptop:flex-initial laptop:justify-end">
+                    <a
+                        href={`tel:${phone}`}
+                        className="flex justify-center flex-col items-center w-full font-semibold text-xl bg-yellow-primary px-8 py-3 laptop:inline-block laptop:ml-7 laptop:rounded-lg laptop:w-auto"
                     >
                         Call Now! <br className="visible laptop:hidden" />
                         <span className="font-bold">{phone}</span>
-                    </button>
+                    </a>
                 </div>
             </div>
         </header>
