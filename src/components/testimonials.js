@@ -40,12 +40,12 @@ export default function Testimonials({testimonials,color}) {
     const renderSlides = () =>
         testimonials.map(testimonial => (
             <blockquote className="p-3">
-                <Bubble className="bg-yellow-primary rounded-2xl text-black-custom p-8 text-lg font-medium relative mb-7" color={color}>
+                <Bubble className="bg-yellow-primary rounded-2xl text-gray-alt p-8 text-lg font-medium relative mb-7" color={color}>
                     <div className="custom-scroller overflow-y-auto h-36">
                         {testimonial.excerpt}
                     </div>                    
                 </Bubble>
-                <cite className="ml-8">{testimonial.author}</cite>
+                <cite className="ml-8 text-lg">{testimonial.author}</cite>
             </blockquote>
     ));
     var settings = {

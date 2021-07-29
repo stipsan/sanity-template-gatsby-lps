@@ -4,7 +4,7 @@ import SubmitButton from '../utils/submitButton';
 export default function FullwidthForm({recipient}) {
     //const logo = getGatsbyImageData(logo);
     return (
-        <form name="Fullwidth Form" method="POST" className="px-6 tablet:px-24" data-netlify="true">
+        <form name="Fullwidth Form" method="POST" className="px-6 text-gray-alt tablet:px-24" data-netlify="true">
             <input
                 type="hidden"
                 name="form-name"

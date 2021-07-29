@@ -22,9 +22,6 @@ module.exports = {
       // => @media (min-width: 1920px) { ... }
     },
     extend: {
-      // backgroundImage: theme => ({
-      //   'hero': "url('img/attic-tech.jpg')"
-      // }),
       colors: {
         'blue': {
           'primary': '#053f5b',
@@ -36,10 +33,8 @@ module.exports = {
         },
         'gray': {
           'custom': '#f0f0f0',
+          'alt': '#231f20',
         },
-        'black': {
-          'custom': '#231f20'
-        }
       },
       fontFamily: {
         sans: ['Poppins', ...defaultTheme.fontFamily.sans],
