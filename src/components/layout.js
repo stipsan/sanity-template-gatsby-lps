@@ -104,7 +104,7 @@ export default function Layout({sanityData, children}){
             <Header {...{logoSrc,phone}} />
             <Hero {...{heroBackground, formBgColor, heroTitle, heroSubTitle, emailRecipient, heroContent}} />
             <Intro {...{introText}} />
-            <CalloutBar message={calloutMessage} badgeSrc={calloutBadge} />
+            <CalloutBar {...{calloutMessage,calloutBadge }} />
             <Services {...{lineColor, services,iconSrc}} />
             <Testimonials {...{testimonialBackground, reviewBgColor, reviewBubbleColor, testimonials, lineColor}} />
             <Interlude {...{interludeText, interludeImageSrc}} />
