@@ -2,12 +2,12 @@ import React from 'react';
 import Ornament from './utils/ornament';
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 
-export default function Services({services, color, icon}) {
+export default function Services({services, lineColor, iconSrc}) {
     return (
       <section id="service-ctas" className="bg-gray-custom text-gray-alt py-12 tablet:pt-24 tablet:pb-36">
         <div className="container mx-auto text-center">
-          <Ornament color={color} icon={icon} alt={'Company Icon'} />
-          <h2 className="text-blue-primary text-magic laptop:text-5xl font-extrabold mb-8">We Can Assist You With:</h2>
+          <Ornament {...{lineColor, iconSrc}} alt={'Company Icon'} />
+          <h2 className="text--secondary text-magic laptop:text-5xl font-extrabold mb-8">We Can Assist You With:</h2>
           <div className="flex flex-wrap justify-center mx-auto">
             {
                 services.map((service) => {
@@ -19,7 +19,7 @@ export default function Services({services, color, icon}) {
             }
           </div>
           <AnchorLink
-              className="uppercase rounded-xl px-10 mt-5 py-3 text-2xl bg-yellow-primary font-black mx-auto inline-block"
+              className="bg--primary uppercase rounded-xl px-10 mt-5 py-3 text-2xl font-black mx-auto inline-block"
               to="#contact" title="Contact Us">
               Ready To Contact Us?
           </AnchorLink>

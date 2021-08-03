@@ -14,12 +14,12 @@ module.exports = {
       // => @media (min-width: 576px) { ... }
       'tablet': '768px',
       // => @media (min-width: 768px) { ... }
-      'laptop': '1025px',
-      // => @media (min-width: 992px) { ... }
+      'laptop': '1100px',
+      // => @media (min-width: 1100px) { ... }
       'desktop': '1441px',
-      // => @media (min-width: 1200px) { ... }
+      // => @media (min-width: 1441px) { ... }
       'retina': '1600px'
-      // => @media (min-width: 1920px) { ... }
+      // => @media (min-width: 1600px) { ... }
     },
     extend: {
       colors: {
@@ -44,6 +44,7 @@ module.exports = {
       },
       fontSize: {
         'magic': `calc(30px + (${fontFun} - 20) * ((100vw - 300px)/(576 - 300)))`,
+        '5xl': '2.75rem'
       },
       gridTemplateColumns: {
         'layout': '1fr auto 1fr',

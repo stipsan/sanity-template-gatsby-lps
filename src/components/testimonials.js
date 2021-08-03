@@ -1,6 +1,6 @@
 import React from 'react';
 import Ornament from './utils/ornament';
-import icon from '../images/review-icon.png';
+import iconSrc from '../images/review-icon.png';
 import styled from 'styled-components';
 
 import "slick-carousel/slick/slick.css";
@@ -13,10 +13,10 @@ const Bubble = styled.div`
        content: "";
        position: absolute;
        top: 100%;
-       left: 30px;
-       border-top: 20px solid ${props => props.color};
-       border-left: 20px solid transparent;
-       border-right: 20px solid transparent; 
+       left: 40px;
+       border-top: 30px solid ${props => props.reviewBubbleColor};
+       border-left: 30px solid transparent;
+       border-right: 30px solid transparent; 
     }
 
     & .custom-scroller::-webkit-scrollbar {
@@ -36,19 +36,23 @@ const Bubble = styled.div`
       }
 `
 
-export default function Testimonials({testimonials,color}) {
+const Section = styled.section`
+  background-image: url(${props => props.bg});
+`
+
+export default function Testimonials({testimonials,reviewBubbleColor,testimonialBackground, lineColor}) {
     const renderSlides = () =>
         testimonials.map(testimonial => (
-            <blockquote className="p-3">
-                <Bubble className="bg-yellow-primary rounded-2xl text-gray-alt p-8 text-lg font-medium relative mb-7" color={color}>
+            <blockquote className="px-3">
+                <Bubble className="bg--primary rounded-2xl text-gray-alt p-8 text-lg font-medium relative mb-10" {...{reviewBubbleColor}}>
                     <div className="custom-scroller overflow-y-auto h-36">
                         {testimonial.excerpt}
-                    </div>                    
+                    </div>
                 </Bubble>
-                <cite className="ml-8 text-lg">{testimonial.author}</cite>
+                <cite className="text-lg ml-12">{testimonial.author}</cite>
             </blockquote>
     ));
-    var settings = {
+    let settings = {
         dots: true,
         infinite: false,
         speed: 500,
@@ -82,14 +86,18 @@ export default function Testimonials({testimonials,color}) {
             }
           }
         ]
-      };
+    };
     return (
-        <section id="testimonials" className="bg-blue-primary py-14 text-white">
+        <Section
+            bg={testimonialBackground}
+            id="testimonials"
+            className="bg--secondary bg-no-repeat bg-center bg-top py-14 text-white laptop:pb-36 laptop:py-24 retina:bg-cover"
+        >
             <div className="container mx-auto">
-                <Ornament color={color} icon={icon} alt={'Review Icon'} />
-                <h2 className="text-center text-4xl font-extrabold mb-9">Heating Repair Reviews</h2>
+                <Ornament {...{iconSrc, lineColor}} alt={'Review Icon'} />
+                <h2 className="text-center text-magic font-extrabold mb-9 tablet:text-4xl laptop:text-5xl laptop:mb-12">Heating Repair Reviews</h2>
                 <Slider {...settings}>{renderSlides()}</Slider>
             </div>
-        </section>
+        </Section>
     );
 }

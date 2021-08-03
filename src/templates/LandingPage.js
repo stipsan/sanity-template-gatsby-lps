@@ -87,6 +87,11 @@ export const query = graphql`
                     author
                     excerpt
                 }
+                testimonialBackground {
+                    asset {
+                        url
+                    }
+                }
                 serviceArea {
                     locations {
                         location {

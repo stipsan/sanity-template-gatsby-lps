@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import { createGlobalStyle } from 'styled-components'
 import Badges from "./badges";
 import CalloutBar from "./calloutBar";
 import Contact from "./contact";
@@ -25,6 +26,17 @@ export default function Layout({sanityData, children}){
     const tagline = sanityData?.company_overrides?.tagline || sanityData?.category?.tagline;
     const locations = sanityData?.service_area_overrides?.locations || sanityData?.category?.serviceArea?.locations;
     const gtmId = sanityData?.category?.gtm;
+    //colors
+    const primaryColor = sanityData?.category?.primaryColor?.hex;
+    const secondaryColor = sanityData?.category?.secondaryColor?.hex;
+    const primaryBtnColor = primaryColor;
+    const secondaryBtnColor = secondaryColor;
+    const formBgColor = secondaryColor;
+    const lineColor = primaryColor;
+    const reviewBgColor = secondaryColor;
+    const reviewBubbleColor = primaryColor;
+    const specialsBgColor = primaryColor;
+    const headingTextColor = secondaryColor;
 
     const conversionId = sanityData?.category?.conversionId;
     const phoneConversionLabel = sanityData?.category?.phoneConversionLabel;
@@ -36,9 +48,9 @@ export default function Layout({sanityData, children}){
     const heroContent = sanityData?.hero_content;
     const calloutMessage = sanityData?.category?.calloutMessage;
     const calloutBadge = sanityData?.category?.calloutBadge?.asset?.url;
-    const intro = sanityData?._rawIntro;
+    const introText = sanityData?._rawIntro;
     const services = sanityData?.category?.services;
-    const primaryColor = sanityData?.category?.primaryColor?.hex;
+    const testimonialBackground =sanityData?.category?.testimonialBackground?.asset?.url;
     const testimonials = sanityData?.category?.testimonials;
     const interludeText = sanityData?.interlude_text;
     const interludeImageSrc = sanityData?.interlude_image?.asset?.url;
@@ -46,8 +58,27 @@ export default function Layout({sanityData, children}){
     const specials = sanityData?.category?.specials;
     const badgeObjs = sanityData?.category?.badges;
 
+    const GlobalStyle = createGlobalStyle`
+        .bg--primary {
+            background-color: ${({primaryBtnColor, primaryColor}) => (primaryBtnColor ? primaryBtnColor : primaryColor)};
+        }
+        .bg--secondary {
+            background-color: ${({secondaryBtnColor, secondaryColor}) => (secondaryBtnColor ? secondaryBtnColor : secondaryColor)}; 
+        }
+        .bg--form {
+            background-color: ${({formBgColor,primaryColor}) => (formBgColor ? formBgColor : primaryColor)};  
+        }
+        .text--secondary {
+            color: ${({headingTextColor,secondaryColor}) => (headingTextColor ? headingTextColor : secondaryColor)};
+        }
+        .bb--primary {
+            border-bottom-color: ${({lineColor,primaryColor}) => (lineColor ? lineColor : primaryColor)}
+        }
+    `
+
     return (
         <>
+            <GlobalStyle {...{primaryBtnColor,secondaryBtnColor,lineColor,headingTextColor,primaryColor,secondaryColor,formBgColor}} />
             <Helmet>
                 <script>
                     {`
@@ -70,18 +101,18 @@ export default function Layout({sanityData, children}){
                     `}
                 </script>
             </Helmet>
-            <Header logo={logoSrc} phone={phone} />
-            <Hero heroBg={heroBackground} title={heroTitle} subTitle={heroSubTitle} content={heroContent} email={emailRecipient} />
-            <Intro intro={intro} />
+            <Header {...{logoSrc,phone}} />
+            <Hero {...{heroBackground, formBgColor, heroTitle, heroSubTitle, emailRecipient, heroContent}} />
+            <Intro {...{introText}} />
             <CalloutBar message={calloutMessage} badgeSrc={calloutBadge} />
-            <Services services={services} color={primaryColor} icon={iconSrc} />
-            <Testimonials color={primaryColor} testimonials={testimonials} />
-            <Interlude text={interludeText} image={interludeImageSrc} />
-            <SpecialsLocations locations={locations} specials={specials} background={serviceAreaBackground} />
+            <Services {...{lineColor, services,iconSrc}} />
+            <Testimonials {...{testimonialBackground, reviewBgColor, reviewBubbleColor, testimonials, lineColor}} />
+            <Interlude {...{interludeText, interludeImageSrc}} />
+            <SpecialsLocations {...{locations, specials, serviceAreaBackground, specialsBgColor, lineColor}} />
             <Contact email={emailRecipient} />
-            <Tagline tagline={tagline} color={primaryColor} icon={iconSrc} />
+            <Tagline {...{tagline,lineColor,iconSrc}} />
             <Badges badges={badgeObjs} />
-            <Footer company={company} address={address} phone={phone} />
+            <Footer {...{company,address,phone}} />
             { children }
         </>
     )

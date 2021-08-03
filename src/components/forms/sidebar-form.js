@@ -47,7 +47,7 @@ export default function SidebarForm({recipient}) {
                 cols="25"
                 placeholder="Message"
             ></textarea>
-            <SubmitButton text={'Submit'} className={'absolute -bottom-6 left-20 font-black'} />
+            <SubmitButton text={'Submit'} className={'bg--primary absolute -bottom-6 left-20 font-black'} />
         </form>
     );
 }
