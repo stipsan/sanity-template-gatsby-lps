@@ -17,6 +17,7 @@ import header from './objects/header';
 import footer from './objects/footer';
 import location from './objects/location';
 import service from './objects/service';
+import colorOverides from './objects/colorOverrides';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -37,6 +38,7 @@ export default createSchema({
     specials,
     testimonials,
     serviceArea,
-    service
+    service,
+    colorOverides
   ]),
 })

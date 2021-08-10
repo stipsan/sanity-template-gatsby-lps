@@ -16,6 +16,15 @@ export default {
                 collapsed: false, // Defines if the fieldset should be collapsed by default or not
                 columns: 2 // Defines a grid for the fields and how many columns it should have
             }
+        },
+        {
+            name: 'testimonials',
+            title: 'Testimonials',
+            options: {
+                collapsible: true, // Makes the whole fieldset collapsible
+                collapsed: false, // Defines if the fieldset should be collapsed by default or not
+                columns: 1 // Defines a grid for the fields and how many columns it should have
+            }
         }
       ],
     type: 'document',
@@ -81,6 +90,13 @@ export default {
             fieldset: 'styles',
         },
         {
+            name: 'colorOverrides',
+            title: 'Color Correction',
+            type: 'colorOverrides',
+            description: 'When the primary & secondary color populations do not work for all element these overrides provide additional flexibility',
+            fieldset: 'styles'
+        },
+        {
             name: 'layout',  //needs review 
             title: 'Layout',
             type: 'string', 
@@ -126,6 +142,12 @@ export default {
             ]
         },
         {
+            title: 'Testimonial Section Background',
+            name: 'testimonialBackground',
+            type: 'image',
+            fieldset: 'testimonials'
+        },
+        {
             title: 'Testimonials',
             name: 'testimonials',
             type: 'array',
@@ -135,6 +157,7 @@ export default {
                     to: [{type: 'testimonial'}]
                 }
             ],
+            fieldset: 'testimonials'
         },
         {
             title: 'Service Area Background',
