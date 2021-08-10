@@ -14,17 +14,14 @@ module.exports = {
       // => @media (min-width: 576px) { ... }
       'tablet': '768px',
       // => @media (min-width: 768px) { ... }
-      'laptop': '1025px',
-      // => @media (min-width: 992px) { ... }
+      'laptop': '1100px',
+      // => @media (min-width: 1100px) { ... }
       'desktop': '1441px',
-      // => @media (min-width: 1200px) { ... }
-      //'retina': '1920px'
-      // => @media (min-width: 1920px) { ... }
+      // => @media (min-width: 1441px) { ... }
+      'retina': '1600px'
+      // => @media (min-width: 1600px) { ... }
     },
     extend: {
-      backgroundImage: theme => ({
-        'hero': "url('img/attic-tech.jpg')"
-      }),
       colors: {
         'blue': {
           'primary': '#053f5b',
@@ -36,10 +33,8 @@ module.exports = {
         },
         'gray': {
           'custom': '#f0f0f0',
+          'alt': '#231f20',
         },
-        'black': {
-          'custom': '#231f20'
-        }
       },
       fontFamily: {
         sans: ['Poppins', ...defaultTheme.fontFamily.sans],
@@ -49,7 +44,7 @@ module.exports = {
       },
       fontSize: {
         'magic': `calc(30px + (${fontFun} - 20) * ((100vw - 300px)/(576 - 300)))`,
-        'cheese': `${fontFun}`
+        '5xl': '2.75rem'
       },
       gridTemplateColumns: {
         'layout': '1fr auto 1fr',
@@ -57,7 +52,10 @@ module.exports = {
       width: {
         '512-5': '512.5px',
         '720-5': '720.5px'
-      }
+      },
+      minHeight: {
+        '400': '400px',
+       }
     },
   },
   variants: {
@@ -69,21 +67,9 @@ module.exports = {
   plugins: [
    require('@tailwindcss/forms'),
    require('tailwind-pseudo-elements'),
+   require('tailwindcss-multi-column')()
   ],
   corePlugins: {
     textOpacity: false,
   }
 }
-
-
-
-// fonts
-//   FontAwesome5Pro-Solid
-//   FontAwesome5ProSolid
-//   MyriadPro-Regular
-//   Poppins-Black
-//   Poppins-Bold
-//   Poppins-ExtraBold
-//   Poppins-Medium
-//   Poppins-Regular
-//   Poppins-SemiBold

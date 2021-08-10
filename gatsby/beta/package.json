@@ -1,0 +1,49 @@
+{
+  "name": "beta",
+  "version": "1.0.0",
+  "private": true,
+  "description": "beta",
+  "author": "Chad Mueller",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.12.0",
+    "gatsby": "^3.2.1",
+    "gatsby-plugin-image": "^1.2.0",
+    "gatsby-plugin-postcss": "^4.2.0",
+    "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
+    "gatsby-plugin-react-helmet": "^4.2.0",
+    "gatsby-plugin-sharp": "^3.2.0",
+    "gatsby-plugin-sitemap": "^3.2.0",
+    "gatsby-plugin-styled-components": "^4.2.0",
+    "gatsby-source-filesystem": "^3.2.0",
+    "gatsby-transformer-sharp": "^3.2.0",
+    "postcss": "^8.2.6",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-slick": "^0.28.1",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^5.2.3"
+  },
+  "devDependencies": {
+    "@heroicons/react": "^1.0.1",
+    "@sendgrid/mail": "^7.4.4",
+    "@tailwindcss/forms": "^0.3.2",
+    "autoprefixer": "^10.2.5",
+    "gatsby-plugin-anchor-links": "^1.2.1",
+    "gatsby-source-sanity": "^7.0.2",
+    "react-portable-text": "^0.3.0",
+    "tailwind-pseudo-elements": "^0.4.0",
+    "tailwindcss": "^2.1.1",
+    "tailwindcss-multi-column": "^1.0.2"
+  }
+}

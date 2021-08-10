@@ -1,0 +1,17 @@
+{
+  "name": "html-samples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch 1/sass/custom.scss 1/custom.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "^5.0.0-beta2",
+    "dart-sass": "^1.25.0"
+  }
+}

@@ -15,12 +15,12 @@
       .container div {
         /* background-color: blueviolet; */
       }
-      .ornament {
+      .Xornament {
         border-top: solid #ffcb08 2px;
         max-width: 400px;
         margin: 40px auto;
       }
-      .ornament:after {
+      .Xornament:after {
         /* Controls the position of the logo */
         left: 50%;
         position: absolute;
@@ -28,11 +28,16 @@
         /* Controls the whitespace around the symbol */
         padding: 20px;
       }
-      .ornament--brand:after {
+      .Xornament--brand:after {
         content: url( 'img/favicon.png' );
       }
-      .ornament--review:after {
+      .Xornament--review:after {
         content: url( 'img/review-icon.png' );
+      }
+      .ornament:before, .ornament:after {
+        align-self: center;
+        border-top: 2px solid #ffcb08; 
+        content: "";
       }
       .arrow-down:after {
         content: "";
@@ -41,7 +46,7 @@
         position: absolute;
         border-left: 32px solid transparent;
         border-right: 32px solid transparent;
-        border-top: 32px solid #ffcb08;
+        border-top: 32px solid #8f8c83;
         border-bottom: 32px solid transparent;
         left: 50px;
         bottom: -64px;
@@ -50,20 +55,26 @@
         /* calc */
       }
       @media screen and (min-width: 992px){
-        .special-locations-bg {
+        /* .special-locations-bg {
           background-color: #ffcb08;
           background-image: url('img/attic-tech.jpg');
           background-position: right;
           background-repeat: no-repeat;
           background-size: 50% 100%;
+        } */
+        .special-locations-bg {
+          background-color: #ffcb08;
+          background-image: url('img/attic-tech.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
         }
       }
 
-      @media screen and (min-width: 320px) and (max-width: 576px){
+      /* @media screen and (min-width: 320px) and (max-width: 576px){
         .text-magic {
           font-size: calc(20px + (30 - 19) * ((100vw - 300px)/(576 - 300)));
         }
-      }
+      } */
 
     </style>
   </head>
@@ -102,7 +113,7 @@
           <button
             class="w-full font-semibold text-xl bg-yellow-primary px-8 py-3 laptop:ml-7 laptop:rounded-lg laptop:w-auto"
           >
-            Call Now! <br class="visible laptop:hidden" />
+            Call Tomorrow! <br class="visible laptop:hidden" />
             <span class="font-bold">888-888-8888</span>
           </button>
         </div>
@@ -210,7 +221,7 @@
 
     <section id="service-ctas" class="bg-gray-custom py-12 tablet:pt-24 tablet:pb-36">
       <div class="container mx-auto text-center">
-        <hr class="ornament ornament--brand after:bg-gray-primary">
+        <hr class="Xornament xornament--brand after:bg-gray-primary">
         <h2 class="text-blue-primary text-5xl font-extrabold mb-8">We Can Assist You With:</h2>
         <div class="flex flex-wrap justify-center mx-auto">
           <div class="flex-grow-0 flex-shrink-0 flex justify-center items-center flex-col capitalize py-6 px-10 m-7 bg-white rounded-md">
@@ -245,10 +256,11 @@
         <a class="uppercase rounded-xl px-8 mt-5 py-3 text-2xl bg-yellow-primary font-extrabold mx-auto inline-block" href="">Ready To Contact Us?</a>
       </div>
     </section>
-
     <section id="testimonials" class="bg-blue-primary py-14 text-white">
       <div class="container mx-auto">
-        <hr class="ornament ornament--review after:bg-blue-primary">
+        <div class="ornament grid gap-4 grid-cols-layout max-w-xs mx-auto">
+          <img src="http://theme3.rynosites.com/wp-content/uploads/favicon-2.png" alt="company icon">
+        </div>
         <h2 class="text-center text-4xl font-extrabold mb-9">Heating Repair Reviews</h2>
         <div class="h-96 bg-yellow-primary rounded-2xl text-black-custom p-8 text-lg font-medium relative arrow-down">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, quia fugiat voluptatem possimus animi voluptatum asperiores. Laudantium possimus cum voluptatum nobis reiciendis quidem dignissimos quis molestias maiores! Ipsa, ducimus maiores.
@@ -269,7 +281,7 @@
       </div>
     </section>
 
-    <section id="specials-locations" class="special-locations-bg">
+    <!-- <section id="specials-locations" class="special-locations-bg">
       <div class="mx-auto flex flex-col laptop:container laptop:flex-row">
         <aside id="specials" class="flex-1 py-10 bg-yellow-primary laptop:bg-none">
           <div class="mx-auto w-3/4 mb-10 bg-white rounded-lg border-2 border-dashed border-black-custom shadow-custom p-3 tablet:mr-20">
@@ -307,11 +319,55 @@
           </ul>
         </aside>
       </div>
+    </section> -->
+
+
+    <section id="specials-locations" class="bg-red-600 flex flex-wrap flex-col laptop:flex-row laptop:flex-nowrap">
+      <aside class="flex bg-yellow-primary py-20 flex-1 justify-end">
+        <div class="flex flex-col justify-evenly items-center flex-grow-1 -my-7 w-full laptop:pr-20 laptop:flex-grow-0 laptop:w-512-5 desktop:pr-24 desktop:w-720-5">
+          <div class="flex flex-col items-center justify-between my-7 bg-white rounded-md border-2 border-dashed border-black-custom shadow-custom p-3 laptop:w-full">
+            <div class="text-4xl font-extrabold uppercase text-blue-primary">
+              $50 Off Service Call
+            </div>
+            <div class="capitalize font-medium text-black-custom">Call 888-888-8888 to redeem this offer!</div>
+          </div>
+          <div class="flex flex-col items-center justify-between my-7 bg-white rounded-md border-2 border-dashed border-black-custom shadow-custom p-3 laptop:w-full">
+            <div class="text-4xl font-extrabold uppercase text-blue-primary">
+              $50 Off Service Call
+            </div>
+            <div class="capitalize font-medium text-black-custom">Call 888-888-8888 to redeem this offer!</div>
+          </div>   
+        </div>
+      </aside>
+      <aside class="flex special-locations-bg flex-1 justify-start">
+        <div class="flex-grow-1 w-full text-center text-white py-20 bg-blue-primary laptop:bg-opacity-0 laptop:flex-grow-0 laptop:w-512-5 desktop:w-720-5">
+          <h2 class="text-5xl font-extrabold mb-3">Proudly Serving</h2>
+          <h4 class="text-xl mb-14 border-b-2 border-yellow-primary inline-block mx-auto">Residents in the surrounding areas</h4>
+          <ul class="grid grid-cols-3">
+            <li>Sample City 1</li>
+            <li>Sample City 2</li>
+            <li>Sample City 3</li>
+            <li>Sample City 4</li>
+            <li>Sample City 5</li>
+            <li>Sample City 6</li>
+            <li>Sample City 7</li>
+            <li>Sample City 8</li>
+            <li>Sample City 1</li>
+            <li>Sample City 2</li>
+            <li>Sample City 3</li>
+            <li>Sample City 4</li>
+            <li>Sample City 5</li>
+            <li>Sample City 6</li>
+            <li>Sample City 7</li>
+            <li>Sample City 8</li>
+          </ul>
+        </div>
+      </aside>
     </section>
 
     <section id="contact" class="my-24">
       <div class="container mx-auto bg-blue-primary py-11 rounded-md">
-        <h2 class="text-white text-4xl text-center mb-5 tablet:text-5xl">Contact Our Specialists Today</h2>
+        <h2 class="text-white text-4xl text-center mb-5 text-magic phablet:text-2xl desktop:text-4xl tablet:text-5xl">Contact Our Specialists Today</h2>
         <form action="" class="px-6 tablet:px-24">
           <div class="justify-center laptop:flex">
             <div class="text-center flex flex-col flex-1 laptop:pr-3">
