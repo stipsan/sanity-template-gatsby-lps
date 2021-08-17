@@ -12,7 +12,8 @@ import specials from './specials';
 import testimonials from './testimonials';
 import serviceArea from './serviceArea';
 import locations from './locations';
-
+import portableText from './objects/portableText';
+import figure from './objects/figure';
 import header from './objects/header';
 import footer from './objects/footer';
 import location from './objects/location';
@@ -39,6 +40,8 @@ export default createSchema({
     testimonials,
     serviceArea,
     service,
-    colorOverides
+    colorOverides,
+    portableText,
+    figure
   ]),
 })

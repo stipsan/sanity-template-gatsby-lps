@@ -71,8 +71,7 @@ export default {
         {
             name: 'intro',
             title: 'Intro',
-            type: 'array', 
-            of: [{type: 'block'}]          
+            type: 'portableText',
         },
         {
             name: 'interlude_text',
