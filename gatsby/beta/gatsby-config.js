@@ -1,7 +1,7 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV || "development"}`
 });
-
+const clientConfig = require("./client-config");
 const isProd = process.env.NODE_ENV === "production";
 
 module.exports = {
@@ -13,8 +13,7 @@ module.exports = {
     {
       resolve: "gatsby-source-sanity",
       options: {
-        projectId: process.env.SANITY_PROJECT_ID || "<#< sanity.projectId >#>",
-        dataset: process.env.SANITY_DATASET || "<#< sanity.dataset >#>",
+        ...clientConfig.sanity,
         watchMode: !isProd,
         token: process.env.SANITY_TOKEN,
         graphqlTag: 'default',  //default but can be used to customize the name of the deployed sanity api
