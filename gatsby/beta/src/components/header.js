@@ -22,7 +22,7 @@ export default function Header({logoSrc, phone}) {
                     className="flex-none flex w-full phablet:flex-1 phablet:w-auto laptop:justify-end laptop:items-center"
                 >
                     <AnchorLink
-                        className="bg--secondary flex justify-center items-center w-full font-bold text-xl uppercase px-8 py-3 text-white laptop:inline-block laptop:w-auto laptop:rounded-lg"
+                        className="bg--secondary flex justify-center items-center w-full font-bold text-xl uppercase px-8 py-3 text-white laptop:px-12 laptop:inline-block laptop:w-auto laptop:rounded-lg"
                         to="#contact"
                         title="Schedule Now">
                         Schedule Now
@@ -31,7 +31,7 @@ export default function Header({logoSrc, phone}) {
                 <div className="flex-1 flex items-center laptop:flex-initial laptop:justify-end">
                     <a
                         href={`tel:${phone}`}
-                        className="bg--primary flex justify-center flex-col items-center w-full text-gray-alt font-semibold text-xl px-8 py-3 laptop:inline-block laptop:ml-7 laptop:rounded-lg laptop:w-auto"
+                        className="bg--primary flex justify-center flex-col items-center w-full text-gray-alt font-semibold text-xl px-8 py-3 laptop:px-12 laptop:inline-block laptop:ml-7 laptop:rounded-lg laptop:w-auto"
                     >
                         Call Now! <br className="visible laptop:hidden" />
                         <span className="font-bold">{phone}</span>
