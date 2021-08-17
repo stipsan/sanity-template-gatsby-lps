@@ -53,6 +53,9 @@ module.exports = {
         '512-5': '512.5px',
         '720-5': '720.5px'
       },
+      minWidth: {
+        '275': '275px',
+      },
       minHeight: {
         '400': '400px',
        }
