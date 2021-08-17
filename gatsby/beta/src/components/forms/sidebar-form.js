@@ -4,7 +4,12 @@ import SubmitButton from '../utils/submitButton';
 export default function SidebarForm({recipient}) {
     //const logo = getGatsbyImageData(logo);
     return (
-        <form name="Sidebar Form" method="POST" className="flex justify-center flex-col text-gray-alt" data-netlify="true">
+        <form
+            name="Sidebar Form"
+            method="POST"
+            className="flex justify-center flex-col text-gray-alt min-w-275"
+            data-netlify="true"
+        >
             <input
                 type="hidden"
                 name="form-name"
