@@ -13,6 +13,8 @@ import SpecialsLocations from "./specials-locations";
 import Tagline from "./tagline";
 import Testimonials from "./testimonials";
 import Footer from "./footer";
+import lightenDarkenColor from "./utils/lightenDarkenColor";
+import getContrastingColor from './utils/getContrastingColor'
 
 export default function Layout({sanityData, children}){
     console.log('Sanity Data',sanityData);
@@ -29,14 +31,15 @@ export default function Layout({sanityData, children}){
     //colors
     const primaryColor = sanityData?.category?.primaryColor?.hex;
     const secondaryColor = sanityData?.category?.secondaryColor?.hex;
-    const primaryBtnColor = primaryColor;
-    const secondaryBtnColor = secondaryColor;
-    const formBgColor = secondaryColor;
-    const lineColor = primaryColor;
-    const reviewBgColor = secondaryColor;
-    const reviewBubbleColor = primaryColor;
-    const specialsBgColor = primaryColor;
-    const headingTextColor = secondaryColor;
+    const primaryBtnColor = sanityData?.category?.colorOverrides?.primaryBtnColor?.hex || primaryColor;
+    const secondaryBtnColor = sanityData?.category?.colorOverrides?.secondaryBtnColor?.hex || secondaryColor;
+    const formBgColor = sanityData?.category?.colorOverrides?.formBgColor?.hex || secondaryColor;
+    const lineColor = sanityData?.category?.colorOverrides?.lineColor?.hex || primaryColor;
+    const calloutBarBgColor = sanityData?.category?.colorOverrides?.calloutBarBgColor?.hex || secondaryColor;
+    const reviewBgColor = sanityData?.category?.colorOverrides?.reviewBgColor?.hex || secondaryColor;
+    const reviewBubbleColor = sanityData?.category?.colorOverrides?.reviewBubbleColor?.hex || primaryColor;
+    const specialsBgColor = sanityData?.category?.colorOverrides?.specialsBgColor?.hex || primaryColor;
+    const headingTextColor = sanityData?.category?.colorOverrides?.headingTextColor?.hex || secondaryColor;
 
     const conversionId = sanityData?.category?.conversionId;
     const phoneConversionLabel = sanityData?.category?.phoneConversionLabel;
@@ -54,31 +57,74 @@ export default function Layout({sanityData, children}){
     const testimonials = sanityData?.category?.testimonials;
     const interludeText = sanityData?.interlude_text;
     const interludeImageSrc = sanityData?.interlude_image?.asset?.url;
-    const serviceAreaBackground =sanityData?.category?.serviceAreaBackground?.asset?.url;
+    const serviceAreaBackground = sanityData?.category?.serviceAreaBackground?.asset?.url;
     const specials = sanityData?.category?.specials;
     const badgeObjs = sanityData?.category?.badges;
 
     const GlobalStyle = createGlobalStyle`
         .bg--primary {
-            background-color: ${({primaryBtnColor, primaryColor}) => (primaryBtnColor ? primaryBtnColor : primaryColor)};
+            background-color: ${({primaryColor}) => primaryColor};
+            color: ${getContrastingColor(primaryColor)};
         }
         .bg--secondary {
-            background-color: ${({secondaryBtnColor, secondaryColor}) => (secondaryBtnColor ? secondaryBtnColor : secondaryColor)}; 
+            background-color: ${({secondaryColor}) => secondaryColor}; 
+            color: ${getContrastingColor(secondaryColor)};
         }
         .bg--form {
-            background-color: ${({formBgColor,primaryColor}) => (formBgColor ? formBgColor : primaryColor)};  
+            background-color: ${({formBgColor}) => formBgColor};
+            color: ${getContrastingColor(formBgColor)};
+        }
+        .bg--callout {
+            background: radial-gradient(circle at center,${({calloutBarBgColor}) => lightenDarkenColor(calloutBarBgColor, 60)}, ${({calloutBarBgColor}) => calloutBarBgColor});
+            color: ${getContrastingColor(calloutBarBgColor)};
+        }
+        .bg--reviews {
+            background-color: ${({reviewBgColor}) => reviewBgColor};
+            color: ${getContrastingColor(reviewBgColor)};
+            &-bubble {
+                background-color: ${({reviewBubbleColor}) => reviewBubbleColor};
+                color: ${getContrastingColor(reviewBubbleColor)};
+                &:after {
+                    border-top: 30px solid ${props => props.reviewBubbleColor};
+                }
+            }
+        }
+        .bg--specials {
+            background-color: ${({specialsBgColor}) => specialsBgColor}; 
+        }
+        .button--primary {
+            background-color: ${({primaryBtnColor}) => primaryBtnColor};
+            color: ${getContrastingColor(primaryBtnColor)};
+        }
+        .button--secondary {
+            background-color: ${({secondaryBtnColor}) => secondaryBtnColor}; 
+            color: ${getContrastingColor(secondaryBtnColor)};
+        }
+        .border-highlight, .border-highlight:after,.border-highlight:before{
+            border-color: ${({lineColor}) => lineColor};
         }
         .text--secondary {
-            color: ${({headingTextColor,secondaryColor}) => (headingTextColor ? headingTextColor : secondaryColor)};
-        }
-        .bb--primary {
-            border-bottom-color: ${({lineColor,primaryColor}) => (lineColor ? lineColor : primaryColor)}
+            color: ${({headingTextColor}) => headingTextColor};
         }
     `
 
     return (
         <>
-            <GlobalStyle {...{primaryBtnColor,secondaryBtnColor,lineColor,headingTextColor,primaryColor,secondaryColor,formBgColor}} />
+            <GlobalStyle {
+                ...{
+                    primaryBtnColor,
+                    secondaryBtnColor,
+                    lineColor,
+                    headingTextColor,
+                    primaryColor,
+                    secondaryColor,
+                    formBgColor,
+                    calloutBarBgColor,
+                    reviewBgColor,
+                    reviewBubbleColor,
+                    specialsBgColor
+                    }
+                } />
             <Helmet>
                 <script>
                     {`

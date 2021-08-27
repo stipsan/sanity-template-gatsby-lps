@@ -19,7 +19,7 @@ export default function Services({services, lineColor, iconSrc}) {
             }
           </div>
           <AnchorLink
-              className="bg--primary uppercase rounded-xl px-10 mt-5 py-3 text-2xl font-black mx-auto inline-block"
+              className="button--primary uppercase rounded-xl px-10 mt-5 py-3 text-2xl font-black mx-auto inline-block"
               to="#contact" title="Contact Us">
               Ready To Contact Us?
           </AnchorLink>

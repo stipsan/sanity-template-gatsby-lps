@@ -27,7 +27,7 @@ export default function FullwidthForm({recipient}) {
                     <input name="referral" className="mb-4 rounded-sm" type="text" placeholder="How Did You Hear About Us?" />
                 </div>
             </div>
-            <SubmitButton text={'Submit'} className={'bg--primary block mx-auto mt-3'} />
+            <SubmitButton text={'Submit'} className={'button--primary block mx-auto mt-3'} />
         </form>
     );
 }

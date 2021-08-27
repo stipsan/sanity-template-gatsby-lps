@@ -14,7 +14,6 @@ const Bubble = styled.div`
        position: absolute;
        top: 100%;
        left: 40px;
-       border-top: 30px solid ${props => props.reviewBubbleColor};
        border-left: 30px solid transparent;
        border-right: 30px solid transparent; 
     }
@@ -44,7 +43,7 @@ export default function Testimonials({testimonials,reviewBubbleColor,testimonial
     const renderSlides = () =>
         testimonials.map(testimonial => (
             <blockquote className="px-3">
-                <Bubble className="bg--primary rounded-2xl text-gray-alt p-8 text-lg font-medium relative mb-10" {...{reviewBubbleColor}}>
+                <Bubble className="bg--reviews-bubble rounded-2xl p-8 text-lg font-medium relative mb-10">
                     <div className="custom-scroller overflow-y-auto h-36">
                         {testimonial.excerpt}
                     </div>
@@ -91,7 +90,7 @@ export default function Testimonials({testimonials,reviewBubbleColor,testimonial
         <Section
             bg={testimonialBackground}
             id="testimonials"
-            className="bg--secondary bg-no-repeat bg-center bg-top py-14 text-white laptop:pb-36 laptop:py-24 retina:bg-cover"
+            className="bg--reviews bg-no-repeat bg-center bg-top py-14 text-white laptop:pb-36 laptop:py-24 retina:bg-cover"
         >
             <div className="container mx-auto">
                 <Ornament {...{iconSrc, lineColor}} alt={'Review Icon'} />

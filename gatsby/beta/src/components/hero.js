@@ -24,7 +24,7 @@ export default function HeroSection({heroBackground, heroTitle, heroSubTitle, he
                 </div>
                 <div className="hidden laptop:block laptop:pt-16">
                     <div className="bg--form py-6 pb-12 px-9 rounded-md relative tablet:-mb-8 tablet:xmt-16 desktop:xmt-28">
-                        <div className="uppercase text-center text-3xl text-white font-extrabold mb-5">
+                        <div className="uppercase text-center text-3xl font-extrabold mb-5">
                             Schedule Now
                         </div>
                         <SidebarForm recipient={emailRecipient} />

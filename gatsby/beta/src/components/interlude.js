@@ -10,7 +10,7 @@ export default function Interlude({interludeText, interludeImageSrc}) {
                         <p className="text-2xl leading-9 mb-8">{paragraph}</p>
                     ))}                    
                     <AnchorLink
-                        className="bg--primary inline-block rounded-xl font-black text-2xl px-8 py-3 uppercase"
+                        className="button--primary inline-block rounded-xl font-black text-2xl px-8 py-3 uppercase"
                         to="#contact" title="Contact Us">
                         Contact Us Today
                     </AnchorLink>

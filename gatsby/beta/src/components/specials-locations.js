@@ -13,7 +13,7 @@ const Aside = styled.section`
 
 export function Specials({specials}) {
     return (
-        <aside className="flex bg-yellow-primary py-12 flex-1 justify-end laptop:py-24">
+        <aside className="bg--specials flex py-12 flex-1 justify-end laptop:py-24">
             <div className="flex flex-col justify-evenly items-center flex-grow-1 x-my-7 w-full laptop:pr-20 laptop:flex-grow-0 laptop:w-512-5 desktop:pr-24 desktop:w-720-5">
                 {
                     specials.map( (special, index, specials) => {
@@ -40,7 +40,7 @@ export function Locations({locations, lineColor, serviceAreaBackground}) {
         <Aside className="flex flex-1 justify-start special-locations-bg" {...{serviceAreaBackground}}>
             <div className="flex-grow-1 w-full text-center text-white py-20 laptop:bg-opacity-0 laptop:flex-grow-0 laptop:w-512-5 desktop:w-720-5">
                 <h2 className="text-5xl font-extrabold mb-1">Proudly Serving</h2>
-                <h4 className="text-xl mb-14 border-b-2 bb--primary inline-block mx-auto">Residents in the surrounding areas</h4>
+                <h4 className="border-highlight text-xl mb-14 border-b-2 inline-block mx-auto">Residents in the surrounding areas</h4>
                 <ul className="col-count-2 text-left ml-7 text-lg">
                 {
                     sortedLocations.map((location) => (

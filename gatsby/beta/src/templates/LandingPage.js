@@ -75,6 +75,35 @@ export const query = graphql`
                 secondaryColor {
                     hex
                 }
+                colorOverrides {
+                    primaryBtnColor {
+                        hex
+                    }
+                    secondaryBtnColor {
+                        hex
+                    }
+                    formBgColor {
+                        hex
+                    }
+                    calloutBarBgColor {
+                        hex
+                    }
+                    reviewBgColor {
+                        hex
+                    }
+                    reviewBubbleColor {
+                        hex
+                    }
+                    specialsBgColor {
+                        hex
+                    }
+                    lineColor {
+                        hex
+                    }
+                    headingTextColor {
+                        hex
+                    }
+                }
                 services {
                     icon {
                       asset {
