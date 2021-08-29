@@ -41,8 +41,8 @@ const Section = styled.section`
 
 export default function Testimonials({testimonials,reviewBubbleColor,testimonialBackground, lineColor}) {
     const renderSlides = () =>
-        testimonials.map(testimonial => (
-            <blockquote className="px-3">
+        testimonials.map((testimonial,index) => (
+            <blockquote className="px-3" key={index}>
                 <Bubble className="bg--reviews-bubble rounded-2xl p-8 text-lg font-medium relative mb-10">
                     <div className="custom-scroller overflow-y-auto h-36">
                         {testimonial.excerpt}

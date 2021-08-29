@@ -1,7 +1,7 @@
 export default function lightenDarkenColor(hex, amt) {
     var usePound = false;
   
-    if (hex[0] == "#") {
+    if (hex[0] === "#") {
         hex = hex.slice(1);
         usePound = true;
     }

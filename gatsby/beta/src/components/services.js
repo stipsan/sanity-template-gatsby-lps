@@ -10,8 +10,8 @@ export default function Services({services, lineColor, iconSrc}) {
           <h2 className="text--secondary text-magic laptop:text-5xl font-extrabold mb-8">We Can Assist You With:</h2>
           <div className="flex flex-wrap justify-center mx-auto">
             {
-                services.map((service) => {
-                    return <div className="flex-grow-0 flex-shrink-0 flex justify-center items-center flex-col capitalize py-5 px-6 m-3 phablet:m-4 bg-white rounded-md phablet:px-11 phablet:py-4">
+                services.map((service, index) => {
+                    return <div className="flex-grow-0 flex-shrink-0 flex justify-center items-center flex-col capitalize py-5 px-6 m-3 phablet:m-4 bg-white rounded-md phablet:px-11 phablet:py-4" key={index}>
                         <div><img className="mb-4" src={service.icon.asset.url} alt={`${service.label} Icon`} /></div>
                         <div className="w-36 text-xl leading-7 tracking-tighter font-semibold">{service.label}</div>
                     </div>

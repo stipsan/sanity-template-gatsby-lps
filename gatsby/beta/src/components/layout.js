@@ -16,9 +16,55 @@ import Footer from "./footer";
 import lightenDarkenColor from "./utils/lightenDarkenColor";
 import getContrastingColor from './utils/getContrastingColor'
 
+const GlobalStyle = createGlobalStyle`
+    .bg--primary {
+        background-color: ${({primaryColor}) => primaryColor};
+        color: ${({primaryColor}) => getContrastingColor(primaryColor)};
+    }
+    .bg--secondary {
+        background-color: ${({secondaryColor}) => secondaryColor}; 
+        color: ${({secondaryColor}) => getContrastingColor(secondaryColor)};
+    }
+    .bg--form {
+        background-color: ${({formBgColor}) => formBgColor};
+        color: ${({formBgColor}) => getContrastingColor(formBgColor)};
+    }
+    .bg--callout {
+        background: radial-gradient(circle at center,${({calloutBarBgColor}) => lightenDarkenColor(calloutBarBgColor, 60)}, ${({calloutBarBgColor}) => calloutBarBgColor});
+        color: ${({calloutBarBgColor}) => getContrastingColor(calloutBarBgColor)};
+    }
+    .bg--reviews {
+        background-color: ${({reviewBgColor}) => reviewBgColor};
+        color: ${({reviewBgColor}) => getContrastingColor(reviewBgColor)};
+        &-bubble {
+            background-color: ${({reviewBubbleColor}) => reviewBubbleColor};
+            color: ${({reviewBubbleColor}) => getContrastingColor(reviewBubbleColor)};
+            &:after {
+                border-top: 30px solid ${({reviewBubbleColor}) => reviewBubbleColor};
+            }
+        }
+    }
+    .bg--specials {
+        background-color: ${({specialsBgColor}) => specialsBgColor}; 
+    }
+    .button--primary {
+        background-color: ${({primaryBtnColor}) => primaryBtnColor};
+        color: ${({primaryBtnColor}) => getContrastingColor(primaryBtnColor)};
+    }
+    .button--secondary {
+        background-color: ${({secondaryBtnColor}) => secondaryBtnColor}; 
+        color: ${({secondaryBtnColor}) => getContrastingColor(secondaryBtnColor)};
+    }
+    .border-highlight, .border-highlight:after,.border-highlight:before{
+        border-color: ${({lineColor}) => lineColor};
+    }
+    .text--secondary {
+        color: ${({headingTextColor}) => headingTextColor};
+    }
+`
+
 export default function Layout({sanityData, children}){
-    console.log('Sanity Data',sanityData);
-    //overwriteable
+    //overwriteable per page
     const address = sanityData?.company_overrides?.address || sanityData?.category?.companyInfo?.address;
     const company = sanityData?.company_overrides?.company || sanityData?.category?.companyInfo?.company;
     const phone = sanityData?.company_overrides?.phone || sanityData?.category?.companyInfo?.phone;
@@ -28,19 +74,7 @@ export default function Layout({sanityData, children}){
     const tagline = sanityData?.company_overrides?.tagline || sanityData?.category?.tagline;
     const locations = sanityData?.service_area_overrides?.locations || sanityData?.category?.serviceArea?.locations;
     const gtmId = sanityData?.category?.gtm;
-    //colors
-    const primaryColor = sanityData?.category?.primaryColor?.hex;
-    const secondaryColor = sanityData?.category?.secondaryColor?.hex;
-    const primaryBtnColor = sanityData?.category?.colorOverrides?.primaryBtnColor?.hex || primaryColor;
-    const secondaryBtnColor = sanityData?.category?.colorOverrides?.secondaryBtnColor?.hex || secondaryColor;
-    const formBgColor = sanityData?.category?.colorOverrides?.formBgColor?.hex || secondaryColor;
-    const lineColor = sanityData?.category?.colorOverrides?.lineColor?.hex || primaryColor;
-    const calloutBarBgColor = sanityData?.category?.colorOverrides?.calloutBarBgColor?.hex || secondaryColor;
-    const reviewBgColor = sanityData?.category?.colorOverrides?.reviewBgColor?.hex || secondaryColor;
-    const reviewBubbleColor = sanityData?.category?.colorOverrides?.reviewBubbleColor?.hex || primaryColor;
-    const specialsBgColor = sanityData?.category?.colorOverrides?.specialsBgColor?.hex || primaryColor;
-    const headingTextColor = sanityData?.category?.colorOverrides?.headingTextColor?.hex || secondaryColor;
-
+    //Not overwriteable per page
     const conversionId = sanityData?.category?.conversionId;
     const phoneConversionLabel = sanityData?.category?.phoneConversionLabel;
     const formConversionLabel = sanityData?.category?.formConversionLabel;
@@ -60,53 +94,18 @@ export default function Layout({sanityData, children}){
     const serviceAreaBackground = sanityData?.category?.serviceAreaBackground?.asset?.url;
     const specials = sanityData?.category?.specials;
     const badgeObjs = sanityData?.category?.badges;
-
-    const GlobalStyle = createGlobalStyle`
-        .bg--primary {
-            background-color: ${({primaryColor}) => primaryColor};
-            color: ${getContrastingColor(primaryColor)};
-        }
-        .bg--secondary {
-            background-color: ${({secondaryColor}) => secondaryColor}; 
-            color: ${getContrastingColor(secondaryColor)};
-        }
-        .bg--form {
-            background-color: ${({formBgColor}) => formBgColor};
-            color: ${getContrastingColor(formBgColor)};
-        }
-        .bg--callout {
-            background: radial-gradient(circle at center,${({calloutBarBgColor}) => lightenDarkenColor(calloutBarBgColor, 60)}, ${({calloutBarBgColor}) => calloutBarBgColor});
-            color: ${getContrastingColor(calloutBarBgColor)};
-        }
-        .bg--reviews {
-            background-color: ${({reviewBgColor}) => reviewBgColor};
-            color: ${getContrastingColor(reviewBgColor)};
-            &-bubble {
-                background-color: ${({reviewBubbleColor}) => reviewBubbleColor};
-                color: ${getContrastingColor(reviewBubbleColor)};
-                &:after {
-                    border-top: 30px solid ${props => props.reviewBubbleColor};
-                }
-            }
-        }
-        .bg--specials {
-            background-color: ${({specialsBgColor}) => specialsBgColor}; 
-        }
-        .button--primary {
-            background-color: ${({primaryBtnColor}) => primaryBtnColor};
-            color: ${getContrastingColor(primaryBtnColor)};
-        }
-        .button--secondary {
-            background-color: ${({secondaryBtnColor}) => secondaryBtnColor}; 
-            color: ${getContrastingColor(secondaryBtnColor)};
-        }
-        .border-highlight, .border-highlight:after,.border-highlight:before{
-            border-color: ${({lineColor}) => lineColor};
-        }
-        .text--secondary {
-            color: ${({headingTextColor}) => headingTextColor};
-        }
-    `
+    //colors
+    const primaryColor = sanityData?.category?.primaryColor?.hex;
+    const secondaryColor = sanityData?.category?.secondaryColor?.hex;
+    const primaryBtnColor = sanityData?.category?.colorOverrides?.primaryBtnColor?.hex || primaryColor;
+    const secondaryBtnColor = sanityData?.category?.colorOverrides?.secondaryBtnColor?.hex || secondaryColor;
+    const formBgColor = sanityData?.category?.colorOverrides?.formBgColor?.hex || secondaryColor;
+    const lineColor = sanityData?.category?.colorOverrides?.lineColor?.hex || primaryColor;
+    const calloutBarBgColor = sanityData?.category?.colorOverrides?.calloutBarBgColor?.hex || secondaryColor;
+    const reviewBgColor = sanityData?.category?.colorOverrides?.reviewBgColor?.hex || secondaryColor;
+    const reviewBubbleColor = sanityData?.category?.colorOverrides?.reviewBubbleColor?.hex || primaryColor;
+    const specialsBgColor = sanityData?.category?.colorOverrides?.specialsBgColor?.hex || primaryColor;
+    const headingTextColor = sanityData?.category?.colorOverrides?.headingTextColor?.hex || secondaryColor;
 
     return (
         <>
@@ -123,8 +122,8 @@ export default function Layout({sanityData, children}){
                     reviewBgColor,
                     reviewBubbleColor,
                     specialsBgColor
-                    }
-                } />
+                }
+            }/>
             <Helmet>
                 <script>
                     {`

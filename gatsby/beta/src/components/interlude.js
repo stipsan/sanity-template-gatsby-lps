@@ -6,8 +6,8 @@ export default function Interlude({interludeText, interludeImageSrc}) {
         <section id="interlude">
             <div className="container flex flex-col-reverse mx-auto text-center py-16 text-gray-alt phablet:py-24 laptop:py-36 laptop:flex-row">
                 <div className="flex-1 pr-7">
-                    {interludeText.map( (paragraph) => (
-                        <p className="text-2xl leading-9 mb-8">{paragraph}</p>
+                    {interludeText.map( (paragraph, index) => (
+                        <p className="text-2xl leading-9 mb-8" key={index}>{paragraph}</p>
                     ))}                    
                     <AnchorLink
                         className="button--primary inline-block rounded-xl font-black text-2xl px-8 py-3 uppercase"

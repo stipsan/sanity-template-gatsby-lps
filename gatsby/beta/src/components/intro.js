@@ -2,15 +2,8 @@ import React from 'react';
 import BlockContent from '@sanity/block-content-to-react';
 import { GatsbyImage } from "gatsby-plugin-image";
 import { getGatsbyImageData } from "gatsby-source-sanity";
-import { CheckIcon } from '@heroicons/react/solid';
-import styled from "styled-components"
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import clientConfig from "../../client-config";
-
-//const checkIcon = 'PHN2ZyBjbGFzcz0idy0xNiBoLTE2IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiBkPSJNNSAxM2w0IDRMMTkgNyI+PC9wYXRoPjwvc3ZnPg==';
-// const Ul = styled.ul`
-//     xlist-style-image: url("data:image/svg+xml;base64,${checkIcon}");
-// `;
 
 // const serializers = {
 //     h1: props => <h1 className="text--secondary text-magic font-extrabold mb-3 phablet:text-3xl tablet:mb-14 laptop:text-5xl" {...props} />,
@@ -22,19 +15,12 @@ import clientConfig from "../../client-config";
 //     ul: ({children}) => <ul className="list-disc pl-4 laptop:mr-16">{children}</ul>,
 //     li: ({ children }) => <li className="mb-5">{children}</li>,
 // }
-const serializers = {
-    types: {
-        p: (props) => (
-            <p class="text-2xl leading-9 mb-8">{props.node}</p>
-        ),
-    },
-}
 const listRenderer = ({type, children}) => {
     if (type === 'bullet') {
-        return <ul class="list-disc list-inside text-xl">{children}</ul>;
+        return <ul className="list-disc list-inside text-xl">{children}</ul>;
     }
     if (type === 'number') {
-        return <ol class="list-decimal list-inside text-xl">{children}</ol>;
+        return <ol className="list-decimal list-inside text-xl">{children}</ol>;
     }
     return null;
 }
@@ -47,31 +33,31 @@ const BlockRenderer = (props) => {
     // }
 
     if (style === 'normal') {
-        return <p class="text-xl mb-5">{props.children}</p>
+        return <p className="text-xl mb-5">{props.children}</p>
     }
 
     if (style === 'h1') {
-        return <h1 class="text--secondary text-magic font-extrabold mb-5 phablet:text-3xl laptop:text-5xl">{props.children}</h1>
+        return <h1 className="text--secondary text-magic font-extrabold mb-5 phablet:text-3xl laptop:text-5xl">{props.children}</h1>
     }
 
     if (style === 'h2') {
-        return <h2 class="text--secondary text-magic font-extrabold mb-5 phablet:text-3xl laptop:text-4xl">{props.children}</h2>
+        return <h2 className="text--secondary text-magic font-extrabold mb-5 phablet:text-3xl laptop:text-4xl">{props.children}</h2>
     }
 
     if (style === 'h3') {
-        return <h3 class="text--secondary text-magic font-extrabold mb-5 phablet:text-3xl laptop:text-3xl">{props.children}</h3>
+        return <h3 className="text--secondary text-magic font-extrabold mb-5 phablet:text-3xl laptop:text-3xl">{props.children}</h3>
     }
 
     if (style === 'h4') {
-        return <h4 class="text--secondary text-magic font-extrabold mb-5 phablet:text-3xl laptop:text-2xl">{props.children}</h4>
+        return <h4 className="text--secondary text-magic font-extrabold mb-5 phablet:text-3xl laptop:text-2xl">{props.children}</h4>
     }
 
     if (style === 'h5') {
-        return <h5 class="text--secondary text-magic font-extrabold mb-5 phablet:text-3xl laptop:text-xl">{props.children}</h5>
+        return <h5 className="text--secondary text-magic font-extrabold mb-5 phablet:text-3xl laptop:text-xl">{props.children}</h5>
     }
 
     if (style === 'h6') {
-        return <h6 class="text--secondary text-magic font-extrabold mb-5 phablet:text-3xl laptop:text-lg">{props.children}</h6>
+        return <h6 className="text--secondary text-magic font-extrabold mb-5 phablet:text-3xl laptop:text-lg">{props.children}</h6>
     }
 
     // if (style === 'figure') {
@@ -84,8 +70,7 @@ const BlockRenderer = (props) => {
 const FigureRenderer = ({node}) => {
     const imageAssetId = node.image.asset._ref;
     const imageData = getGatsbyImageData(imageAssetId, { maxWidth: 675 }, clientConfig.sanity);
-    console.log('check', imageData)
-    return <GatsbyImage image={imageData} style={{'float': 'right'}} />;
+    return <GatsbyImage image={imageData} style={{'float': 'right'}} alt="" />;
 }
 export default function Intro({introText}) {
     return (
@@ -100,7 +85,7 @@ export default function Intro({introText}) {
                                 figure: FigureRenderer
                             },
                             list: listRenderer,
-                            listItem: ({children}) => <li class="mb-5">{children}</li>,
+                            listItem: ({children}) => <li className="mb-5">{children}</li>,
                         }}
                     />
                     <AnchorLink
