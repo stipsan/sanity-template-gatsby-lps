@@ -14,9 +14,9 @@ export default function HeroSection({heroBackground, heroTitle, heroSubTitle, he
         <Hero id="hero" className="bg-hero bg-no-repeat bg-center bg-top px-4 flex items-center min-h-400 retina:bg-cover" {...{heroBackground}}>
             <div className="container mx-auto flex justify-center tablet:justify-start">
                 <div className="flex-1 text-white flex flex-col justify-center laptop:pr-44 laptop:py-16 desktop:pr-60">
-                    <div className="text-4xl font-extrabold uppercase tablet:text-6xl desktop:text-7xl">
+                    <div className="text-magic font-extrabold uppercase phablet:text-4xl tablet:text-6xl desktop:text-7xl">
                         {heroTitle} <br />
-                        <span className="font-semibold mt-1 phablet:text-5xl tablet:inline-block">{heroSubTitle}</span>
+                        <span className="text-magic font-semibold mt-1 phablet:text-4xl tablet:inline-block">{heroSubTitle}</span>
                     </div>
                     <p className="font-semibold mt-3 text-base tablet:font-normal tablet:text-xl">
                         {heroContent}

@@ -88,15 +88,17 @@ export default function Intro({introText}) {
                             listItem: ({children}) => <li className="mb-5">{children}</li>,
                         }}
                     />
-                    <AnchorLink
-                        className="button--primary inline-block mt-5 rounded-xl text-2xl font-black px-8 py-3 uppercase"
-                        to="#contact" title="Contact Us">
-                        Request Heating Repair
-                    </AnchorLink>
+                    <div className="text-center laptop:text-left">
+                        <AnchorLink
+                            className="button--primary block text-center mt-5 rounded-xl text-2xl font-black px-8 py-3 uppercase phablet:inline-block"
+                            to="#contact" title="Contact Us">
+                                Request Service
+                        </AnchorLink>
+                    </div>
                 </div>
-                <div className="flex-none">
+                {/* <div className="flex-none">
                     <img className="hidden laptop:inline-block" src="img/pengion-tools.png" alt="" />
-                </div>
+                </div> */}
             </div>
         </section>
     );
