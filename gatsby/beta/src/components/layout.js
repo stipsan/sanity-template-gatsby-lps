@@ -55,7 +55,7 @@ const GlobalStyle = createGlobalStyle`
         background-color: ${({secondaryBtnColor}) => secondaryBtnColor}; 
         color: ${({secondaryBtnColor}) => getContrastingColor(secondaryBtnColor)};
     }
-    .border-highlight, .border-highlight:after,.border-highlight:before{
+    .border-highlight, .border-highlight:after, .border-highlight:before {
         border-color: ${({lineColor}) => lineColor};
     }
     .text--secondary {

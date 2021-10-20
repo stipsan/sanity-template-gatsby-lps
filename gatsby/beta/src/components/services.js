@@ -7,7 +7,7 @@ export default function Services({services, lineColor, iconSrc}) {
       <section id="service-ctas" className="bg-gray-custom text-gray-alt py-12 tablet:pt-24 tablet:pb-36">
         <div className="container mx-auto text-center">
           <Ornament {...{lineColor, iconSrc}} alt={'Company Icon'} />
-          <h2 className="text--secondary text-magic phablet:text-4xl laptop:text-5xl font-extrabold mb-8">We Can Assist You With:</h2>
+          <h2 className="text--secondary text-magic font-extrabold mb-6 phablet:mb-8 phablet:text-4xl laptop:text-5xl">We Can Assist You With:</h2>
           <div className="flex flex-wrap justify-center mx-auto">
             {
                 services.map((service, index) => {
