@@ -71,7 +71,7 @@ export default function Layout({sanityData, children}){
     const emailRecipient = sanityData?.company_overrides?.email || sanityData?.category?.email;
     const logoSrc = sanityData?.company_overrides?.logo?.asset?.url || sanityData?.category?.companyInfo?.logo?.asset?.url;
     const iconSrc = sanityData?.company_overrides?.icon?.asset?.url || sanityData?.category?.companyInfo?.icon?.asset?.url;
-    const tagline = sanityData?.company_overrides?.tagline || sanityData?.category?.tagline;
+    const tagline = sanityData?.company_overrides?.tagline || sanityData?.category?.companyInfo?.tagline;
     const locations = sanityData?.service_area_overrides?.locations || sanityData?.category?.serviceArea?.locations;
     const gtmId = sanityData?.category?.gtm;
     //Not overwriteable per page
