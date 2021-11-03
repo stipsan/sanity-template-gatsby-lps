@@ -13,8 +13,8 @@ import SpecialsLocations from "./specials-locations";
 import Tagline from "./tagline";
 import Testimonials from "./testimonials";
 import Footer from "./footer";
-import lightenDarkenColor from "./utils/lightenDarkenColor";
-import getContrastingColor from './utils/getContrastingColor'
+import lightenDarkenColor from "../utils/lightenDarkenColor";
+import getContrastingColor from '../utils/getContrastingColor'
 
 const GlobalStyle = createGlobalStyle`
     .bg--primary {
