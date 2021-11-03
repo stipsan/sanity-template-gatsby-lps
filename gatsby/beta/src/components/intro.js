@@ -37,27 +37,27 @@ const BlockRenderer = (props) => {
     }
 
     if (style === 'h1') {
-        return <h1 className="text--secondary text-magic leading-tight font-extrabold mb-5 phablet:text-3xl laptop:text-5xl">{props.children}</h1>
+        return <h1 className="text--secondary text-magic leading-tight font-extrabold mb-8 phablet:text-3xl laptop:text-5xl">{props.children}</h1>
     }
 
     if (style === 'h2') {
-        return <h2 className="text--secondary text-magic leading-tight font-extrabold mb-5 phablet:text-3xl laptop:text-4xl">{props.children}</h2>
+        return <h2 className="text--secondary text-magic leading-tight font-extrabold mb-8 phablet:text-3xl laptop:text-4xl">{props.children}</h2>
     }
 
     if (style === 'h3') {
-        return <h3 className="text--secondary text-magic leading-tight font-extrabold mb-5 phablet:text-3xl laptop:text-3xl">{props.children}</h3>
+        return <h3 className="text--secondary text-magic leading-tight font-extrabold mb-8 phablet:text-3xl laptop:text-3xl">{props.children}</h3>
     }
 
     if (style === 'h4') {
-        return <h4 className="text--secondary text-magic leading-tight font-extrabold mb-5 phablet:text-3xl laptop:text-2xl">{props.children}</h4>
+        return <h4 className="text--secondary text-magic leading-tight font-extrabold mb-8 phablet:text-3xl laptop:text-2xl">{props.children}</h4>
     }
 
     if (style === 'h5') {
-        return <h5 className="text--secondary text-magic leading-tight font-extrabold mb-5 phablet:text-3xl laptop:text-xl">{props.children}</h5>
+        return <h5 className="text--secondary text-magic leading-tight font-extrabold mb-8 phablet:text-3xl laptop:text-xl">{props.children}</h5>
     }
 
     if (style === 'h6') {
-        return <h6 className="text--secondary text-magic leading-tight font-extrabold mb-5 phablet:text-3xl laptop:text-lg">{props.children}</h6>
+        return <h6 className="text--secondary text-magic leading-tight font-extrabold mb-8 phablet:text-3xl laptop:text-lg">{props.children}</h6>
     }
 
     // if (style === 'figure') {

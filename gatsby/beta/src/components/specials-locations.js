@@ -8,13 +8,34 @@ const Aside = styled.section`
   background-image: url(${props => props.serviceAreaBackground});
   background-repeat: no-repeat;
   background-size: cover;
+  max-width:100%;
+  @media (min-width: 1100px) & (max-width: 1600px) {
+    ul {
+        max-width: 500px;
+    }
+  }
+  @media (min-width: 1600px) {
+    ul {
+        max-width: 800px;
+    }
+  }
+  li {
+    overflow: hidden;
+    width: calc(100%);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    // display: -webkit-box;
+    -webkit-box-orient: vertical;
+    // -webkit-line-clamp: 1;
+    // -webkit-column-break-inside: avoid;
+  }
 `
 
 
 export function Specials({specials}) {
     return (
         <aside className="bg--specials flex py-12 flex-1 justify-end laptop:py-24">
-            <div className="flex flex-col justify-evenly items-center flex-grow-1 mb-7 w-full phablet:mb-0 laptop:pr-20 laptop:flex-grow-0 laptop:w-512-5 desktop:pr-24 desktop:w-720-5">
+            <div className="flex flex-col justify-evenly items-center flex-grow-1 mb-7 w-full phablet:mb-0 laptop:pr-20 laptop:flex-grow-0 laptop:w-512-5 desktop:pr-24 desktop:w-720-5 retina:w-800">
                 {
                     specials.map( (special, index, specials) => {
                         let couponMb = (index === specials.length - 1) ? 'mb-0' : ''; //excludes margin bottom from last coupon
@@ -43,18 +64,20 @@ export function Locations({locations, lineColor, serviceAreaBackground}) {
     });
     return (
         <Aside className="flex flex-1 justify-start special-locations-bg" {...{serviceAreaBackground}}>
-            <div className="flex-grow-1 w-full text-center text-white py-20 laptop:bg-opacity-0 laptop:flex-grow-0 laptop:w-512-5 desktop:w-720-5">
-                <h2 className="text-5xl font-extrabold mb-1">Proudly Serving</h2>
-                <h4 className="border-highlight text-xl mb-14 border-b-2 inline-block mx-auto">Residents in the surrounding areas</h4>
-                <ul className="col-count-2 text-left text-lg tablet:col-count-3 laptop:col-count-2 laptop:ml-7">
-                {
-                    sortedLocations.map((location,index) => (
-                        <li className="mb-3 laptop:ml-8" key={index}>
-                            <LocationMarkerIcon className="inline-block h-5 w-6 mr-1"/>{location.city}
-                        </li>
-                    ))
-                }
-                </ul>
+            <div className="container mx-auto flex-grow-1 w-full text-center text-white py-20 laptop:bg-opacity-0 laptop:flex-grow-0 laptop:w-512-5 laptop:mx-0 laptop:py-0 laptop:flex laptop:items-center desktop:w-720-5 retina:w-800">
+                <div className="max-w-full">
+                    <h2 className="text-5xl font-extrabold mb-1">Proudly Serving</h2>
+                    <h4 className="border-highlight text-xl mb-14 border-b-2 inline-block mx-auto">Residents in the surrounding areas</h4>
+                    <ul className="col-count-2 text-left text-lg tablet:col-count-3 laptop:col-count-2 laptop:ml-12">
+                    {
+                        sortedLocations.map((location,index) => (
+                            <li className="mb-3 xlaptop:ml-8" key={index} title={location.city}>
+                                <LocationMarkerIcon className="inline-block h-5 w-6 mr-1"/>{location.city}
+                            </li>
+                        ))
+                    }
+                    </ul>
+                </div>
             </div>
         </Aside>
     )

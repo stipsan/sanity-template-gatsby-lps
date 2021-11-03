@@ -50,10 +50,16 @@ const GlobalStyle = createGlobalStyle`
     .button--primary {
         background-color: ${({primaryBtnColor}) => primaryBtnColor};
         color: ${({primaryBtnColor}) => getContrastingColor(primaryBtnColor)};
+        &:hover {
+            background-color: ${({primaryBtnColor}) => lightenDarkenColor(primaryBtnColor,20)}; 
+        }
     }
     .button--secondary {
         background-color: ${({secondaryBtnColor}) => secondaryBtnColor}; 
         color: ${({secondaryBtnColor}) => getContrastingColor(secondaryBtnColor)};
+        &:hover {
+            background-color: ${({secondaryBtnColor}) => lightenDarkenColor(secondaryBtnColor,20)}; 
+        }
     }
     .border-highlight, .border-highlight:after, .border-highlight:before {
         border-color: ${({lineColor}) => lineColor};

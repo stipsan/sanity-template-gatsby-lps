@@ -10,16 +10,11 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
-      'phablet': '576px',
-      // => @media (min-width: 576px) { ... }
-      'tablet': '768px',
-      // => @media (min-width: 768px) { ... }
-      'laptop': '1100px',
-      // => @media (min-width: 1100px) { ... }
-      'desktop': '1441px',
-      // => @media (min-width: 1441px) { ... }
-      'retina': '1600px'
-      // => @media (min-width: 1600px) { ... }
+      'phablet': '576px', // => @media (min-width: 576px) { ... }
+      'tablet': '768px',  // => @media (min-width: 768px) { ... }
+      'laptop': '1100px', // => @media (min-width: 1100px) { ... }
+      'desktop': '1441px',// => @media (min-width: 1441px) { ... }
+      'retina': '1600px'  // => @media (min-width: 1600px) { ... }
     },
     extend: {
       colors: {
@@ -51,7 +46,8 @@ module.exports = {
       },
       width: {
         '512-5': '512.5px',
-        '720-5': '720.5px'
+        '720-5': '720.5px',
+        '800': '800px'
       },
       minWidth: {
         '275': '275px',

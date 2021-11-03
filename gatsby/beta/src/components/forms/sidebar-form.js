@@ -45,14 +45,14 @@ export default function SidebarForm({recipient}) {
                 placeholder="Are You a New Customer?"
             />
             <textarea
-                className="rounded-md"
+                className="rounded-md mb-3"
                 name="message"
                 id=""
                 rows="3"
                 cols="25"
                 placeholder="Message"
             ></textarea>
-            <SubmitButton text={'Submit'} className={'button--primary absolute -bottom-6 left-20 font-black'} />
+            <SubmitButton text={'Submit'} className={'button--primary inline-block mx-auto -mb-16'} />
         </form>
     );
 }
