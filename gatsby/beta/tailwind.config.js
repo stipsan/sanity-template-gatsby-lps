@@ -3,6 +3,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 var fontFun = '30';
 
 module.exports = {
+  mode: 'jit',
   purge: [
     './src/**/*.html',
     './src/**/*.js',
