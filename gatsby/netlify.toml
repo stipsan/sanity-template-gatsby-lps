@@ -1,5 +1,5 @@
-[build]
-    functions = "./serverless"
+[functions]
+    directory = "serverless"
 [[redirects]]
     from = "/api/*"
     to = "/.netlify/functions/:splat"
