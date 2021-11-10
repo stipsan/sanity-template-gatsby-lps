@@ -47,6 +47,7 @@ export default {
             type: 'string',
             description: '',
             fieldset: 'companyInfo',
+            validation: Rule => Rule.required(),
         },
         {
             name: 'address',
