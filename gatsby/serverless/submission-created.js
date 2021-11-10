@@ -27,7 +27,11 @@ exports.handler = async function(event, context, callback) {
         body: 'Message sent',
       };    
     } catch (error) {
-      console.log(error);
+      console.error(error);
+
+      if (error.response) {
+        console.error(error.response.body)
+      }
       return {
         statusCode: error.code,
         body: JSON.stringify({ msg: error.message }),
