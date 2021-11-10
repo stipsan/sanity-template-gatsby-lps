@@ -44,10 +44,10 @@ export function Specials({specials}) {
                             className={`flex flex-col items-center justify-between w-3/4 my-6 bg-white text-gray-alt rounded-md border-2 border-dashed border-black-alt shadow-custom p-3 laptop:w-full laptop:my-7 ${couponMb}`}
                             key={index}
                             >
-                                <div className="text-xl font-extrabold uppercase text-blue-primary phablet:text-2xl tablet:text-4xl">
+                                <div className="text-xl font-extrabold uppercase text-blue-primary phablet:text-2xl tablet:text-4xl desktop:text-[40px]">
                                     {special.title}
                                 </div>
-                                <div className="capitalize font-medium text-black-custom">{special.disclaimer}</div>
+                                <div className="capitalize font-medium text-black-custom text-[18px]">{special.disclaimer}</div>
                             </div>
                         )
                     })
@@ -72,7 +72,7 @@ export function Locations({locations, lineColor, serviceAreaBackground}) {
                     {
                         sortedLocations.map((location,index) => (
                             <li className="mb-3 xlaptop:ml-8" key={index} title={location.city}>
-                                <LocationMarkerIcon className="inline-block h-5 w-6 mr-1"/>{location.city}
+                                <LocationMarkerIcon className="inline-block h-5 w-6 mr-1 text-[18px]"/>{location.city}
                             </li>
                         ))
                     }

@@ -12,7 +12,7 @@ export default function CalloutBar({calloutMessage, calloutBadge}) {
                         alt=""
                     />
                 </div>
-                <div className="flex-1 px-12 text-center text-xl font-semibold tablet:text-2xl">
+                <div className="flex-1 px-12 text-center text-[26px] font-semibold tablet:text-2xl">
                     {calloutMessage}
                 </div>
             </div>

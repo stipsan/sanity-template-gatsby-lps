@@ -33,7 +33,7 @@ const BlockRenderer = (props) => {
     // }
 
     if (style === 'normal') {
-        return <p className="text-xl mb-5">{props.children}</p>
+        return <p className="text-[18px] mb-5">{props.children}</p>
     }
 
     if (style === 'h1') {
