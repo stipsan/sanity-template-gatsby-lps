@@ -1,7 +1,7 @@
 import React from 'react';
 import SubmitButton from '../utils/submitButton';
 
-export default function SidebarForm({emailRecipient}) {
+export default function SidebarForm({recipient}) {
     //const logo = getGatsbyImageData(logo);
     return (
         <form
@@ -18,7 +18,7 @@ export default function SidebarForm({emailRecipient}) {
             <input
                 type="hidden"
                 name="recipient"
-                value={emailRecipient}
+                value={recipient}
             />
             <input
                 className="w-full mb-3 rounded-md"
