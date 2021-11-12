@@ -21,13 +21,14 @@ exports.handler = async function(event, context, callback) {
 
     try {
       await sgMail.send(msg);
-      console.log('sent!', msg);
+      //console.log('sent!', msg);
+
       return {
         statusCode: 200,
         body: 'Message sent',
       };    
     } catch (error) {
-      console.error(error);
+      //console.error(error);
 
       if (error.response) {
         console.error(error.response.body)
