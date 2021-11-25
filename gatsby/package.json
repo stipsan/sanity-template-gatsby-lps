@@ -32,7 +32,8 @@
     "react-helmet": "^6.1.0",
     "react-slick": "^0.28.1",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^5.2.3"
+    "styled-components": "^5.2.3",
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "@heroicons/react": "^1.0.1",
