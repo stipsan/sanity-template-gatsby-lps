@@ -94,7 +94,31 @@ export default {
             fieldset: 'category_overrides'
         },
         {
-            name: 'service_area_overrides',
+            name: 'testimonials_override',
+            title: 'Testimonial Overrides',
+            type: 'array',
+            of: [
+                {
+                    type: 'reference', 
+                    to: [{type: 'testimonial'}]
+                }
+            ],
+            fieldset: 'category_overrides'
+        },
+        {
+            title: 'Specials',
+            name: 'specials_override',
+            type: 'array', 
+            of: [
+                {
+                    type: 'reference', 
+                    to: [{type: 'special'}]
+                }
+            ],
+            fieldset: 'category_overrides'
+        },
+        {
+            name: 'service_area_override',
             title: 'Service Area Override',
             type: 'reference',
             to: [{type: 'serviceArea'}],

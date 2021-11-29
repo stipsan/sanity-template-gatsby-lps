@@ -78,7 +78,9 @@ export default function Layout({sanityData, children}){
     const logoSrc = sanityData?.company_overrides?.logo?.asset?.url || sanityData?.category?.companyInfo?.logo?.asset?.url;
     const iconSrc = sanityData?.company_overrides?.icon?.asset?.url || sanityData?.category?.companyInfo?.icon?.asset?.url;
     const tagline = sanityData?.company_overrides?.tagline || sanityData?.category?.companyInfo?.tagline;
-    const locations = sanityData?.service_area_overrides?.locations || sanityData?.category?.serviceArea?.locations;
+    const testimonials = sanityData?.testimonials_override || sanityData?.category?.testimonials;
+    const specials = sanityData?.specials_override || sanityData?.category?.specials;
+    const locations = sanityData?.service_area_override?.locations || sanityData?.category?.serviceArea?.locations;
     const gtmId = sanityData?.category?.gtm;
     //Not overwriteable per page
     const conversionId = sanityData?.category?.conversionId;
@@ -94,11 +96,9 @@ export default function Layout({sanityData, children}){
     const introText = sanityData?._rawIntro;
     const services = sanityData?.category?.services;
     const testimonialBackground =sanityData?.category?.testimonialBackground?.asset?.url;
-    const testimonials = sanityData?.category?.testimonials;
     const interludeText = sanityData?.interlude_text;
     const interludeImageSrc = sanityData?.interlude_image?.asset?.url;
     const serviceAreaBackground = sanityData?.category?.serviceAreaBackground?.asset?.url;
-    const specials = sanityData?.category?.specials;
     const badgeObjs = sanityData?.category?.badges;
     //colors
     const primaryColor = sanityData?.category?.primaryColor?.hex;

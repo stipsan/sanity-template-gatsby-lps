@@ -170,7 +170,16 @@ export const query = graphql`
                     }
                 }
             }
-            service_area_overrides {
+            testimonials_override {
+                author
+                excerpt
+            }
+            specials_override {
+                title
+                disclaimer
+                details
+            }
+            service_area_override {
                 locations {
                     location {
                         city

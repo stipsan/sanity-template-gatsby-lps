@@ -137,7 +137,7 @@ export default {
             of: [
                 {
                     type: 'reference', 
-                    to: [{type: 'specials'}]
+                    to: [{type: 'special'}]
                 }
             ]
         },
