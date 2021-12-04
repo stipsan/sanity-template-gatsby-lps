@@ -1,7 +1,7 @@
-import * as React from 'react'
-import { graphql } from 'gatsby'
-import 'tailwindcss/tailwind.css'
-import Layout from "../components/layout"
+import * as React from 'react';
+import { graphql } from 'gatsby';
+import 'tailwindcss/tailwind.css';
+import Layout from '../components/layout';
 
 export const query = graphql`
     query GetPage ($slug: String!) {
@@ -201,4 +201,3 @@ export default function LandingPageTemplate({data}){
     </Layout>
   )
 }
-

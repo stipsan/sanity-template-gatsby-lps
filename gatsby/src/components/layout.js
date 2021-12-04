@@ -9,12 +9,21 @@ import Hero from "./hero";
 import Interlude from "./interlude";
 import Intro from "./intro";
 import Services from "./services";
-import SpecialsLocations from "./specials-locations";
 import Tagline from "./tagline";
 import Testimonials from "./testimonials";
 import Footer from "./footer";
 import lightenDarkenColor from "../utils/lightenDarkenColor";
 import getContrastingColor from '../utils/getContrastingColor'
+
+//temp
+import Split from "./layout/split";
+import Left from "./layout/left";
+import Right from "./layout/right";
+import FullwidthForm from "./forms/fullwidth-form";
+import Locations from './locations';
+import Specials from './specials';
+import { LocationMarkerIcon } from '@heroicons/react/solid'
+//end temp
 
 const GlobalStyle = createGlobalStyle`
     .bg--primary {
@@ -69,6 +78,24 @@ const GlobalStyle = createGlobalStyle`
     }
 `
 
+function pluckOverride(pageData, categoryData){
+    if (Array.isArray(pageData)){
+        console.log('is array')
+        if(!pageData.length){
+            console.log('cat')
+            return categoryData;
+        } else {
+            console.log('page')
+            return pageData;
+        }
+    }
+    if (!pageData || pageData.length === 0) {
+        return pageData;
+    } else {
+        return categoryData;
+    }
+}
+
 export default function Layout({sanityData, children}){
     //overwriteable per page
     const address = sanityData?.company_overrides?.address || sanityData?.category?.companyInfo?.address;
@@ -79,8 +106,9 @@ export default function Layout({sanityData, children}){
     const iconSrc = sanityData?.company_overrides?.icon?.asset?.url || sanityData?.category?.companyInfo?.icon?.asset?.url;
     const tagline = sanityData?.company_overrides?.tagline || sanityData?.category?.companyInfo?.tagline;
     const testimonials = sanityData?.testimonials_override || sanityData?.category?.testimonials;
-    const specials = sanityData?.specials_override || sanityData?.category?.specials;
-    const locations = sanityData?.service_area_override?.locations || sanityData?.category?.serviceArea?.locations;
+    const specials = pluckOverride(sanityData?.specials_override, sanityData?.category?.specials);
+    console.log('----->',specials) 
+    let locations = sanityData?.service_area_override?.locations || sanityData?.category?.serviceArea?.locations;
     const gtmId = sanityData?.category?.gtm;
     //Not overwriteable per page
     const conversionId = sanityData?.category?.conversionId;
@@ -112,6 +140,15 @@ export default function Layout({sanityData, children}){
     const reviewBubbleColor = sanityData?.category?.colorOverrides?.reviewBubbleColor?.hex || primaryColor;
     const specialsBgColor = sanityData?.category?.colorOverrides?.specialsBgColor?.hex || primaryColor;
     const headingTextColor = sanityData?.category?.colorOverrides?.headingTextColor?.hex || secondaryColor;
+
+
+    //tmp
+    let testLocations = locations.map( ({location}) => location);
+
+    let sortedLocations = testLocations.sort(function(locationA, locationB){
+        return locationA.city.localeCompare(locationB.city);
+    });
+    //end tmp
 
     return (
         <>
@@ -159,7 +196,26 @@ export default function Layout({sanityData, children}){
             <Services {...{lineColor, services,iconSrc}} />
             <Testimonials {...{testimonialBackground, reviewBgColor, reviewBubbleColor, testimonials, lineColor}} />
             <Interlude {...{interludeText, interludeImageSrc}} />
-            <SpecialsLocations {...{locations, specials, serviceAreaBackground, specialsBgColor, lineColor}} />
+            {/* <SpecialsLocations {...{locations, specials, serviceAreaBackground, specialsBgColor, lineColor, emailRecipient}} /> */}
+            <Split>
+                <Left>
+                    <Specials specials={specials} />
+                </Left>
+                <Right background={serviceAreaBackground}>
+                    <Locations locations={locations} />
+                </Right>
+            </Split>
+            <Split>
+                <Left>
+                    <h2 className="font-semibold text-center mb-7 text-3xl phablet:text-3xl tablet:text-5xl desktop:text-6xl xretina:text-7xl">
+                        Contact Our Specialists Today
+                    </h2>
+                    <FullwidthForm recipient={emailRecipient} splitLaptop={false} />
+                </Left>
+                <Right background={serviceAreaBackground}>
+                    <Locations locations={locations} />
+                </Right>
+            </Split>
             <Contact email={emailRecipient} />
             <Tagline {...{tagline,lineColor,iconSrc}} />
             <Badges badges={badgeObjs} />

@@ -1,6 +1,6 @@
 import React from 'react';
   
-export default function TextInput({name, placeholder, updateField, value, classNames}) {
+export default function TextInput({name, placeholder, updateField, value, classNames = ''}) {
     return (
         <input
             name={name}

@@ -5,12 +5,9 @@
  */
 const path = require('path');
 
-async function turnDataIntoPages({ graphql, actions, page }) {
-    console.error('cheeeeeeese-> ', page)
-    const LandingPageTemplate = path.resolve('./src/templates/LandingPage.js'); //get template for page
-
-    const { createPage, deletePage } = actions;
-
+async function turnDataIntoPages({ graphql, actions }) {
+    //const { createPage, deletePage } = actions;
+    
     //query data
     const { data } = await graphql(`
         query AllPages {
@@ -20,15 +17,29 @@ async function turnDataIntoPages({ graphql, actions, page }) {
                         slug {
                             current
                         }
+                        label
+                        category {
+                            label
+                            layout
+                        }
                     }
                 }
             }
         }
     `);
-    
+
     //loop over data and create pages
     data.allSanityPage.edges.forEach( (page) => {
-        createPage({
+        let LandingPageTemplate;
+        let layout = page.node.category.layout;
+        if(layout === 'style1'){
+            LandingPageTemplate = path.resolve('./src/templates/LandingPage.js'); //can update for dynamic templates based on graphql response   
+        } else {
+            LandingPageTemplate = path.resolve('./src/templates/LandingPage.js'); //get template for page    
+        }
+        
+    
+        actions.createPage({
             path: page.node.slug.current,
             component: LandingPageTemplate,
             context: {
@@ -39,7 +50,6 @@ async function turnDataIntoPages({ graphql, actions, page }) {
 }
 
 exports.createPages = async (params) => {
-    console.log('----->', params)
     //create pages dynamically
     await turnDataIntoPages(params);
 }

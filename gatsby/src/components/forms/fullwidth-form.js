@@ -52,12 +52,12 @@ export default class FullwidthForm extends React.Component {
     }
     
     render() {
-        const { recipient } = this.props;
+        const { recipient, splitLaptop } = this.props;
         return (
             <form
                 name="Fullwidth Form"
                 method="POST"
-                className="px-6 text-gray-alt relative tablet:px-24"
+                className="px-6 text-gray-alt relative w-full tablet:px-24"
                 data-netlify="true"
                 ref={this.domRef}
                 id="form"
@@ -73,8 +73,8 @@ export default class FullwidthForm extends React.Component {
                     name="recipient"
                     value={recipient}
                 />
-                <div className="justify-center laptop:flex">
-                    <div className="text-center flex flex-col flex-1 laptop:pr-3">
+                <div className={`justify-center ${splitLaptop ? 'laptop:flex' : ''}`}>
+                    <div className={`text-center flex flex-col flex-1 ${splitLaptop ? 'laptop:pr-3' : ''}`}>
                         <div className="relative">
                             <ValidationBox className={this.toggleValidationBox('name')} message="Name is required" />
                             <TextInput name="name" placeholder="Full Name*" value={this.state.fields.name.value} updateField={this.updateField} />
@@ -88,7 +88,7 @@ export default class FullwidthForm extends React.Component {
                             <TextInput name="email" placeholder="Email*" value={this.state.fields.email.value} updateField={this.updateField} />
                         </div>
                     </div>
-                    <div className="text-center flex flex-col flex-1 laptop:pl-3">
+                    <div className={`text-center flex flex-col flex-1 ${splitLaptop ? 'laptop:pr-3' : ''}`}>
                         <TextInput name="newCustomer" placeholder="Are You A New Customer?" value={this.state.fields.newCustomer.value} updateField={this.updateField} />
                         <TextInput name="message" placeholder="Inquiry About..." value={this.state.fields.message.value} updateField={this.updateField} />
                         <TextInput name="referral" placeholder="How Did You Hear About Us?" value={this.state.fields.referral.value} updateField={this.updateField} /> 
