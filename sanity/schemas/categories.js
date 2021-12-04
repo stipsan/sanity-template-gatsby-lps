@@ -184,6 +184,15 @@ export default {
             ],
         }, 
     ],
+    orderings: [
+        {
+          title: 'Label, ASC',
+          name: 'labelAsc',
+          by: [
+            {field: 'label', direction: 'asc'}
+          ]
+        }
+    ],
     preview: {
         select: {
             label: 'label',
