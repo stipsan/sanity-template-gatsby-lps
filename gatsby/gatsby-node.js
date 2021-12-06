@@ -32,6 +32,8 @@ async function turnDataIntoPages({ graphql, actions }) {
     data.allSanityPage.edges.forEach( (page) => {
         let LandingPageTemplate;
         let layout = page.node.category.layout;
+        let slug = page.node.slug.current;
+        let category = page.node.category.label;
         if(layout === 'style1'){
             LandingPageTemplate = path.resolve('./src/templates/LandingPage.js'); //can update for dynamic templates based on graphql response   
         } else {
@@ -40,10 +42,10 @@ async function turnDataIntoPages({ graphql, actions }) {
         
     
         actions.createPage({
-            path: page.node.slug.current,
+            path: `${slug}`,
             component: LandingPageTemplate,
             context: {
-                slug: page.node.slug.current
+                slug: slug
             }
         });
     });

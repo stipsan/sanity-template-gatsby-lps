@@ -24,7 +24,8 @@ export default {
             name: 'category',
             title: 'Category',
             type: 'reference',
-            to: {type: 'category'}
+            to: {type: 'category'},
+            validation: Rule => Rule.required()
         },
         {
             name: 'label',
@@ -36,8 +37,9 @@ export default {
             name: 'slug',
             title: 'Slug',
             type: 'slug',
+            hidden: 'true',
             options: {
-                source: doc => `${doc.label}`
+                source: doc => `${doc.label}`,
             }
         },
         {
@@ -127,15 +129,25 @@ export default {
     ],
     preview: {
         select: {
-            category: 'category',
+            category: 'category.label',
             label: 'label',
             slug: 'slug',
         },
         prepare: (fields) => {
             return {
-                title: fields.label,
-                subtitle: `/${fields.slug.current}`,
+                title: `${fields.label}`,
+                subtitle: `Category: ${fields.category}`,
+                //${fields.slug.current}
             }
         }
-    }
+    },
+    orderings: [
+        {
+            title: 'Category, ASC',
+            name: 'category',
+            by: [
+                {field: 'category.label', direction: 'asc'}
+            ]
+        }
+    ]
 }
