@@ -34,5 +34,14 @@ export default {
             ],
            fieldset: 'serviceAreaGroup'
         }
+    ],
+    orderings: [
+        {
+            title: 'Label, Asc',
+            name: 'labelAsc',
+            by: [
+                {field: 'serviceAreaLabel', direction: 'asc'}
+            ]
+        }
     ]
 }

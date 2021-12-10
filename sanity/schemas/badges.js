@@ -21,5 +21,14 @@ export default {
           type: 'string',
           title: 'Label',
         }
-    ]
+    ],
+    orderings: [
+      {
+          title: 'Label, Asc',
+          name: 'labelAsc',
+          by: [
+              {field: 'label', direction: 'asc'}
+          ]
+      }
+  ]
 }

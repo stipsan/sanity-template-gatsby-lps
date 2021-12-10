@@ -31,5 +31,14 @@ export default {
             title: 'title',
             subtitle: 'details'
         },
-    }
+    },
+    orderings: [
+        {
+          title: 'Title, ASC',
+          name: 'titleAsc',
+          by: [
+            {field: 'title', direction: 'asc'}
+          ]
+        }
+    ],
 }

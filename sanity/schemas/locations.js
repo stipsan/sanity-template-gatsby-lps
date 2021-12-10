@@ -30,5 +30,14 @@ export default {
             title: 'location.city',
             // subtitle: 'details'
         },
-    }
+    },
+    orderings: [
+        {
+            title: 'City, Asc',
+            name: 'cityAsc',
+            by: [
+                {field: 'location.city', direction: 'asc'}
+            ]
+        }
+    ]
 }

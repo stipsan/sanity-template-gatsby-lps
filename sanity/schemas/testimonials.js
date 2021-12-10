@@ -22,8 +22,31 @@ export default {
     ],
     preview: {
         select: {
-          title: 'author',
-          subtitle: 'excerpt'
+            excerpt: 'excerpt',
+            author: 'author'
+        },
+        prepare: (fields) => {
+            const {excerpt, author} = fields;
+            return {
+                title: `${excerpt}`,
+                subtitle: `Author: ${author}`,
+            }
         }
-    }
+    },
+    orderings: [
+        {
+          title: 'Excerpt, ASC',
+          name: 'titleAsc',
+          by: [
+            {field: 'excerpt', direction: 'asc'}
+          ]
+        },
+        {
+            title: 'Author, ASC',
+            name: 'authorAsc',
+            by: [
+              {field: 'author', direction: 'asc'}
+            ]
+          }
+    ],
 }

@@ -137,16 +137,15 @@ export default {
             return {
                 title: `${fields.label}`,
                 subtitle: `Category: ${fields.category}`,
-                //${fields.slug.current}
             }
         }
     },
     orderings: [
         {
-            title: 'Category, ASC',
-            name: 'category',
+            title: 'Label, Asc',
+            name: 'labelAsc',
             by: [
-                {field: 'category.label', direction: 'asc'}
+                {field: 'label', direction: 'asc'}
             ]
         }
     ]
