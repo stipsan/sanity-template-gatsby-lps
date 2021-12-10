@@ -50,10 +50,14 @@ export default function SetSlugAndPublishAction(props) {
             referenceLabel = !!category ? category.label : referenceLabel
           })
 
-          /// For the "page" type document, set the slug to [category.label]-[type]-[number]
+          // For the "page" type document, set the slug to [category.label]-[type]-[number]
           slug = `${slugify(referenceLabel)}/${slugify(props.draft.label)}`
-          /// Set name field for the "page" type document to be the same value as the slug
-          patch.execute([{set: { name: slug.toLowerCase() }}])
+          // Set name field for the "page" type document to be the same value as the slug
+          patch.execute([{set: { slug: slug.toLowerCase() }}])
+          
+          // Set the slug field of this document
+          patch.execute([{set: { slug: { _type: 'slug', current: slug.toLowerCase() }}}])
+
           break;
 
         default:
@@ -61,9 +65,6 @@ export default function SetSlugAndPublishAction(props) {
           break;
       }
 
-      /// Set the slug field of this document
-      patch.execute([{set: { slug: { _type: 'slug', current: slug.toLowerCase() }}}])
-      
       // Perform the publish
       publish.execute()
       

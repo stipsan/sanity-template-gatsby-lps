@@ -37,10 +37,10 @@ export default {
             name: 'slug',
             title: 'Slug',
             type: 'slug',
-            hidden: 'true',
-            options: {
-                source: doc => `${doc.label}`,
-            }
+            //hidden: 'false',
+            // options: {
+            //     source: doc => `${doc.label}`,
+            // }
         },
         {
             name: 'hero_banner',
