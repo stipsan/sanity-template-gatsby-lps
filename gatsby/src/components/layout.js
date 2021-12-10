@@ -199,23 +199,28 @@ export default function Layout({sanityData, children}){
             {/* <SpecialsLocations {...{locations, specials, serviceAreaBackground, specialsBgColor, lineColor, emailRecipient}} /> */}
             <Split>
                 <Left>
-                    <Specials specials={specials} />
+                    {(specials.length > 0)
+                        ? <Specials specials={specials} />
+                        : <div>
+                            <h2 className="font-semibold text-center mb-7 leading-9 text-2xl phablet:text-3xl tablet:text-4xl laptop:text-5xl desktop:text-6xl">
+                            Contact Our <span className="font-bold">Specialists Today</span>
+                            </h2>
+                            <FullwidthForm recipient={emailRecipient} isSplit={false} />
+                        </div>
+                    }
                 </Left>
                 <Right background={serviceAreaBackground}>
                     <Locations locations={locations} />
                 </Right>
             </Split>
-            <Split>
+            {/* <Split>
                 <Left>
-                    <h2 className="font-semibold text-center mb-7 text-3xl phablet:text-3xl tablet:text-5xl desktop:text-6xl xretina:text-7xl">
-                        Contact Our Specialists Today
-                    </h2>
-                    <FullwidthForm recipient={emailRecipient} splitLaptop={false} />
+
                 </Left>
                 <Right background={serviceAreaBackground}>
                     <Locations locations={locations} />
                 </Right>
-            </Split>
+            </Split> */}
             <Contact email={emailRecipient} />
             <Tagline {...{tagline,lineColor,iconSrc}} />
             <Badges badges={badgeObjs} />
