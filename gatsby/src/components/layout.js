@@ -107,7 +107,6 @@ export default function Layout({sanityData, children}){
     const tagline = sanityData?.company_overrides?.tagline || sanityData?.category?.companyInfo?.tagline;
     const testimonials = sanityData?.testimonials_override || sanityData?.category?.testimonials;
     const specials = pluckOverride(sanityData?.specials_override, sanityData?.category?.specials);
-    console.log('----->',specials) 
     let locations = sanityData?.service_area_override?.locations || sanityData?.category?.serviceArea?.locations;
     const gtmId = sanityData?.category?.gtm;
     //Not overwriteable per page

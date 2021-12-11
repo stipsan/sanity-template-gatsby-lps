@@ -9,47 +9,63 @@ const pageStyles = {
   padding: "96px",
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 }
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
+const listStyles= {
+  margin: "initial",
+  padding: "revert",
+  marginBottom: "15px",
 }
 
 export const query = graphql`
-    query getAllGatsbyPages {
-        allSitePage {
-            edges {
-                node {
-                    path
+  query AllPages {
+    allSanityPage {
+        edges {
+            node {
+                slug {
+                    current
+                }
+                label
+                category {
+                    label
+                    layout
                 }
             }
         }
     }
-`
-
+  }
+`;
 // markup
 const Index = ({data}) => {
-  const pages = data.allSitePage.edges.map(({ node }) => node.path);
-  
+  data.allSanityPage.edges.sort(function(pageA, pageB){
+    let catA = pageA.node.category.label;
+    let catB = pageB.node.category.label;
+    return catA.localeCompare(catB);
+  });
+  let categories = {};
+  data.allSanityPage.edges.forEach( (page) => {
+      let slug = page.node.slug.current;
+      let category = page.node.category.label;
+      if(!categories.hasOwnProperty(category)){
+        categories[category] = [];
+      }
+      categories[category].push(slug);
+  });
+  //const pages = data.allSitePage.edges.map(({ node }) => node.path);
   return (
     <main style={pageStyles}>
-      <h1 style={headingStyles}>Page Listing:</h1>
-      <ul>
-        {pages.map((page, i) => (
-            <li key={i}><a href={page}>{page}</a></li>
-        ))}
-      </ul>
-      {/* <p style={paragraphStyles}>
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p> */}
+        {Object.entries(categories).map(function([categoryName, pageList], catI){
+          return (
+            <div>
+              <strong>{categoryName}:</strong>
+              <ul style={listStyles}>
+              {pageList.map(function(slug){
+                return (
+                  <li><a href={`/${slug}`}>/{slug}</a></li>
+                )
+              })}
+              </ul>
+            </div>
+          )
+        })}
     </main>
   )
 }
