@@ -14,7 +14,10 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "eslint --ignore-path ../.gitignore .",
-    "format": "prettier --ignore-path ../.gitignore --write \"**/*.+(js|json)\""
+    "prettier": "prettier --ignore-path ../.gitignore \"**/*.+(js|json)\"",
+    "format": "npm run prettier -- --write",
+    "check-format": "npm run prettier -- --list-different",
+    "validate": "npm run lint && npm run build"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.12.0",
