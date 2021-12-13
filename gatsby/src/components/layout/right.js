@@ -1,22 +1,22 @@
-import React from 'react';
+import React from "react";
 import styled from "styled-components";
 
 const Aside = styled.section`
-background-image: url(${props => props.background});
-background-repeat: no-repeat;
-background-size: cover;
-max-width: 100%;
-@media (min-width: 1100px) & (max-width: 1600px) {
+  background-image: url(${(props) => props.background});
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 100%;
+  @media (min-width: 1100px) & (max-width: 1600px) {
     ul {
-        max-width: 500px;
+      max-width: 500px;
     }
-}
-@media (min-width: 1600px) {
+  }
+  @media (min-width: 1600px) {
     ul {
-        max-width: 800px;
+      max-width: 800px;
     }
-}
-li {
+  }
+  li {
     overflow: hidden;
     width: calc(100%);
     white-space: nowrap;
@@ -25,17 +25,18 @@ li {
     -webkit-box-orient: vertical;
     // -webkit-line-clamp: 1;
     // -webkit-column-break-inside: avoid;
-}
-`
+  }
+`;
 
-export default function Right({children, background}) {
-    return (
-        <Aside className="flex flex-1 justify-start special-locations-bg" {...{background}}>
-            <div className="container mx-auto flex-grow-1 justify-center w-full text-center text-white py-20 laptop:bg-opacity-0 laptop:flex-grow-0 laptop:w-512-5 laptop:mx-0 laptop:py-24 laptop:flex laptop:items-center desktop:w-720-5 retina:w-800">
-                <div className="max-w-full">
-                    {children}
-                </div>
-            </div>
-        </Aside>
-    );
+export default function Right({ children, background }) {
+  return (
+    <Aside
+      className="flex flex-1 justify-start special-locations-bg"
+      {...{ background }}
+    >
+      <div className="container mx-auto flex-grow-1 justify-center w-full text-center text-white py-20 laptop:bg-opacity-0 laptop:flex-grow-0 laptop:w-512-5 laptop:mx-0 laptop:py-24 laptop:flex laptop:items-center desktop:w-720-5 retina:w-800">
+        <div className="max-w-full">{children}</div>
+      </div>
+    </Aside>
+  );
 }

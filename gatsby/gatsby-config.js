@@ -1,5 +1,5 @@
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV || "development"}`
+  path: `.env.${process.env.NODE_ENV || "development"}`,
 });
 const clientConfig = require("./client-config");
 const isProd = process.env.NODE_ENV === "production";
@@ -7,7 +7,7 @@ const isProd = process.env.NODE_ENV === "production";
 module.exports = {
   siteMetadata: {
     title: "beta",
-    siteUrl: `http://localhost`
+    siteUrl: `http://localhost`,
   },
   plugins: [
     {
@@ -16,7 +16,7 @@ module.exports = {
         ...clientConfig.sanity,
         watchMode: !isProd,
         token: process.env.SANITY_TOKEN,
-        graphqlTag: 'default',  //default but can be used to customize the name of the deployed sanity api
+        graphqlTag: "default", //default but can be used to customize the name of the deployed sanity api
       },
     },
     "gatsby-plugin-styled-components",
@@ -25,8 +25,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-anchor-links",
       options: {
-        offset: -300
-      }
+        offset: -300,
+      },
     },
     "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
@@ -45,8 +45,18 @@ module.exports = {
         fonts: {
           google: [
             {
-              family: 'Poppins',
-              variants: ['100','200','300','400','500','600','700','800','900'],
+              family: "Poppins",
+              variants: [
+                "100",
+                "200",
+                "300",
+                "400",
+                "500",
+                "600",
+                "700",
+                "800",
+                "900",
+              ],
               //subsets: ['latin']
               //text: 'Hello'
               //fontDisplay: 'swap',

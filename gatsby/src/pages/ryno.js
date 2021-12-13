@@ -1,73 +1,75 @@
-import * as React from 'react'
-//import { Link } from 'gatsby'
-import { graphql } from 'gatsby'
-
+import * as React from "react";
+import { graphql } from "gatsby";
 
 // styles
 const pageStyles = {
   color: "#232129",
   padding: "96px",
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const listStyles= {
+};
+const listStyles = {
   margin: "initial",
   padding: "revert",
   marginBottom: "15px",
-}
+};
 
 export const query = graphql`
   query AllPages {
     allSanityPage {
-        edges {
-            node {
-                slug {
-                    current
-                }
-                label
-                category {
-                    label
-                    layout
-                }
-            }
+      edges {
+        node {
+          slug {
+            current
+          }
+          label
+          category {
+            label
+            layout
+          }
         }
+      }
     }
   }
 `;
-// markup
-const Index = ({data}) => {
-  data.allSanityPage.edges.sort(function(pageA, pageB){
+const Index = ({ data }) => {
+  data.allSanityPage.edges.sort(function (pageA, pageB) {
     let catA = pageA.node.category.label;
     let catB = pageB.node.category.label;
     return catA.localeCompare(catB);
   });
   let categories = {};
-  data.allSanityPage.edges.forEach( (page) => {
-      let slug = page.node.slug.current;
-      let category = page.node.category.label;
-      if(!categories.hasOwnProperty(category)){
-        categories[category] = [];
-      }
-      categories[category].push(slug);
+  data.allSanityPage.edges.forEach((page) => {
+    let slug = page.node.slug.current;
+    let category = page.node.category.label;
+    if (!categories.hasOwnProperty(category)) {
+      categories[category] = [];
+    }
+    categories[category].push(slug);
   });
-  //const pages = data.allSitePage.edges.map(({ node }) => node.path);
+
   return (
     <main style={pageStyles}>
-        {Object.entries(categories).map(function([categoryName, pageList], catI){
-          return (
-            <div>
-              <strong>{categoryName}:</strong>
-              <ul style={listStyles}>
-              {pageList.map(function(slug){
+      {Object.entries(categories).map(function (
+        [categoryName, pageList],
+        catI
+      ) {
+        return (
+          <div>
+            <strong>{categoryName}:</strong>
+            <ul style={listStyles}>
+              {pageList.map(function (slug) {
                 return (
-                  <li><a href={`/${slug}`}>/{slug}</a></li>
-                )
+                  <li>
+                    <a href={`/${slug}`}>/{slug}</a>
+                  </li>
+                );
               })}
-              </ul>
-            </div>
-          )
-        })}
+            </ul>
+          </div>
+        );
+      })}
     </main>
-  )
-}
+  );
+};
 
 export default Index;
