@@ -1,28 +1,28 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import { createGlobalStyle } from "styled-components";
-import Badges from "./badges";
-import CalloutBar from "./calloutBar";
-import Contact from "./contact";
-import Header from "./header";
-import Hero from "./hero";
-import Interlude from "./interlude";
-import Intro from "./intro";
-import Services from "./services";
-import Tagline from "./tagline";
-import Testimonials from "./testimonials";
-import Footer from "./footer";
-import lightenDarkenColor from "../utils/lightenDarkenColor";
-import getContrastingColor from "../utils/getContrastingColor";
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { createGlobalStyle } from 'styled-components';
+import Badges from './badges';
+import CalloutBar from './calloutBar';
+import Contact from './contact';
+import Header from './header';
+import Hero from './hero';
+import Interlude from './interlude';
+import Intro from './intro';
+import Services from './services';
+import Tagline from './tagline';
+import Testimonials from './testimonials';
+import Footer from './footer';
+import lightenDarkenColor from '../utils/lightenDarkenColor';
+import getContrastingColor from '../utils/getContrastingColor';
 
 //temp
-import Split from "./layout/split";
-import Left from "./layout/left";
-import Right from "./layout/right";
-import FullwidthForm from "./forms/fullwidth-form";
-import Locations from "./locations";
-import Specials from "./specials";
-import { LocationMarkerIcon } from "@heroicons/react/solid";
+import Split from './layout/split';
+import Left from './layout/left';
+import Right from './layout/right';
+import FullwidthForm from './forms/fullwidth-form';
+import Locations from './locations';
+import Specials from './specials';
+import { LocationMarkerIcon } from '@heroicons/react/solid';
 //end temp
 
 const GlobalStyle = createGlobalStyle`
@@ -90,12 +90,12 @@ const GlobalStyle = createGlobalStyle`
 
 function pluckOverride(pageData, categoryData) {
   if (Array.isArray(pageData)) {
-    console.log("is array");
+    console.log('is array');
     if (!pageData.length) {
-      console.log("cat");
+      console.log('cat');
       return categoryData;
     } else {
-      console.log("page");
+      console.log('page');
       return pageData;
     }
   }

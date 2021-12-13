@@ -1,5 +1,5 @@
-import React from "react";
-import FullwidthForm from "./forms/fullwidth-form";
+import React from 'react';
+import FullwidthForm from './forms/fullwidth-form';
 
 export default function Contact({ email }) {
   return (

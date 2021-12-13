@@ -1,8 +1,8 @@
-import React from "react";
-import SubmitButton from "../utils/submitButton";
-import TextInput from "./text-input";
-import ValidationBox from "./validation-box";
-import FeedbackBox from "./feedback-box";
+import React from 'react';
+import SubmitButton from '../utils/submitButton';
+import TextInput from './text-input';
+import ValidationBox from './validation-box';
+import FeedbackBox from './feedback-box';
 import {
   handleSubmit,
   updateField,
@@ -12,7 +12,7 @@ import {
   handleFetchErrors,
   toggleValidationBox,
   resetForm,
-} from "./form-utils";
+} from './form-utils';
 
 export default class SidebarForm extends React.Component {
   constructor(props) {
@@ -25,23 +25,23 @@ export default class SidebarForm extends React.Component {
       hasErrors: false,
       fields: {
         name: {
-          value: "",
+          value: '',
           valid: false,
         },
         phone: {
-          value: "",
+          value: '',
           valid: false,
         },
         email: {
-          value: "",
+          value: '',
           valid: false,
         },
         newCustomer: {
-          value: "",
+          value: '',
           valid: true,
         },
         message: {
-          value: "",
+          value: '',
           valid: true,
         },
       },
@@ -72,7 +72,7 @@ export default class SidebarForm extends React.Component {
         <input type="hidden" name="recipient" value={recipient} />
         <div className="relative">
           <ValidationBox
-            className={this.toggleValidationBox("name")}
+            className={this.toggleValidationBox('name')}
             message="Name is required"
           />
           <TextInput
@@ -84,7 +84,7 @@ export default class SidebarForm extends React.Component {
         </div>
         <div className="relative">
           <ValidationBox
-            className={this.toggleValidationBox("phone")}
+            className={this.toggleValidationBox('phone')}
             message="Phone is invalid"
           />
           <TextInput
@@ -96,7 +96,7 @@ export default class SidebarForm extends React.Component {
         </div>
         <div className="relative">
           <ValidationBox
-            className={this.toggleValidationBox("email")}
+            className={this.toggleValidationBox('email')}
             message="Email is invalid"
           />
           <TextInput
@@ -121,13 +121,13 @@ export default class SidebarForm extends React.Component {
           placeholder="Message"
         ></textarea>
         <SubmitButton
-          text={"Submit"}
-          className={"button--primary inline-block mx-auto mb-[-70px]"}
+          text={'Submit'}
+          className={'button--primary inline-block mx-auto mb-[-70px]'}
         />
         <FeedbackBox
           className={`bottom-10 ${
-            this.state.showFeedback ? "inline-block" : "hidden"
-          } ${this.state.hasErrors ? "border-red-600" : "border-green-600"}`}
+            this.state.showFeedback ? 'inline-block' : 'hidden'
+          } ${this.state.hasErrors ? 'border-red-600' : 'border-green-600'}`}
           feedbackList={this.state.feedback}
           hideFeedback={this.hideFeedback}
         />

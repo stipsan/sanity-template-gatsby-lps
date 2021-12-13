@@ -1,5 +1,5 @@
-import React from "react";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
+import React from 'react';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 export default function Interlude({ interludeText, interludeImageSrc }) {
   return (

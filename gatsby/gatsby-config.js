@@ -1,43 +1,43 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV || "development"}`,
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV || 'development'}`,
 });
-const clientConfig = require("./client-config");
-const isProd = process.env.NODE_ENV === "production";
+const clientConfig = require('./client-config');
+const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
   siteMetadata: {
-    title: "beta",
+    title: 'beta',
     siteUrl: `http://localhost`,
   },
   plugins: [
     {
-      resolve: "gatsby-source-sanity",
+      resolve: 'gatsby-source-sanity',
       options: {
         ...clientConfig.sanity,
         watchMode: !isProd,
         token: process.env.SANITY_TOKEN,
-        graphqlTag: "default", //default but can be used to customize the name of the deployed sanity api
+        graphqlTag: 'default', //default but can be used to customize the name of the deployed sanity api
       },
     },
-    "gatsby-plugin-styled-components",
-    "gatsby-plugin-image",
-    "gatsby-plugin-react-helmet",
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-image',
+    'gatsby-plugin-react-helmet',
     {
-      resolve: "gatsby-plugin-anchor-links",
+      resolve: 'gatsby-plugin-anchor-links',
       options: {
         offset: -300,
       },
     },
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "images",
-        path: "./src/images/",
+        name: 'images',
+        path: './src/images/',
       },
-      __key: "images",
+      __key: 'images',
     },
     {
       resolve: `gatsby-plugin-webfonts`,
@@ -45,17 +45,17 @@ module.exports = {
         fonts: {
           google: [
             {
-              family: "Poppins",
+              family: 'Poppins',
               variants: [
-                "100",
-                "200",
-                "300",
-                "400",
-                "500",
-                "600",
-                "700",
-                "800",
-                "900",
+                '100',
+                '200',
+                '300',
+                '400',
+                '500',
+                '600',
+                '700',
+                '800',
+                '900',
               ],
               //subsets: ['latin']
               //text: 'Hello'
@@ -88,7 +88,7 @@ module.exports = {
     //   },
     // },
     {
-      resolve: "gatsby-plugin-postcss",
+      resolve: 'gatsby-plugin-postcss',
       options: {
         cssLoaderOptions: {
           camelCase: false,

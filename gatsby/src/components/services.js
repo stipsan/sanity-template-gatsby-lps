@@ -1,6 +1,6 @@
-import React from "react";
-import Ornament from "./utils/ornament";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
+import React from 'react';
+import Ornament from './utils/ornament';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 export default function Services({ services, lineColor, iconSrc }) {
   return (
@@ -9,7 +9,7 @@ export default function Services({ services, lineColor, iconSrc }) {
       className="bg-gray-custom text-gray-alt py-12 tablet:pt-24 tablet:pb-36"
     >
       <div className="container mx-auto text-center">
-        <Ornament {...{ lineColor, iconSrc }} alt={"Company Icon"} />
+        <Ornament {...{ lineColor, iconSrc }} alt={'Company Icon'} />
         <h2 className="text--secondary text-magic font-extrabold mb-6 phablet:mb-8 phablet:text-4xl laptop:text-5xl">
           We Can Assist You With:
         </h2>

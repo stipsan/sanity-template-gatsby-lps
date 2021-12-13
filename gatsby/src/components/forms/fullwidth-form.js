@@ -1,9 +1,9 @@
-import classNames from "classnames";
-import React from "react";
-import SubmitButton from "../utils/submitButton";
-import TextInput from "./text-input";
-import ValidationBox from "./validation-box";
-import FeedbackBox from "./feedback-box";
+import classNames from 'classnames';
+import React from 'react';
+import SubmitButton from '../utils/submitButton';
+import TextInput from './text-input';
+import ValidationBox from './validation-box';
+import FeedbackBox from './feedback-box';
 import {
   handleSubmit,
   updateField,
@@ -13,7 +13,7 @@ import {
   handleFetchErrors,
   toggleValidationBox,
   resetForm,
-} from "./form-utils";
+} from './form-utils';
 
 export default class FullwidthForm extends React.Component {
   constructor(props) {
@@ -26,27 +26,27 @@ export default class FullwidthForm extends React.Component {
       hasErrors: false,
       fields: {
         name: {
-          value: "",
+          value: '',
           valid: false,
         },
         phone: {
-          value: "",
+          value: '',
           valid: false,
         },
         email: {
-          value: "",
+          value: '',
           valid: false,
         },
         newCustomer: {
-          value: "",
+          value: '',
           valid: true,
         },
         message: {
-          value: "",
+          value: '',
           valid: true,
         },
         referral: {
-          value: "",
+          value: '',
           valid: true,
         },
       },
@@ -77,13 +77,13 @@ export default class FullwidthForm extends React.Component {
         <input type="hidden" name="recipient" value={recipient} />
         <div
           className={classNames(`justify-center`, {
-            "laptop:flex laptop:gap-3": isSplit,
+            'laptop:flex laptop:gap-3': isSplit,
           })}
         >
           <div className={`text-center flex flex-col flex-1`}>
             <div className="relative">
               <ValidationBox
-                className={this.toggleValidationBox("name")}
+                className={this.toggleValidationBox('name')}
                 message="Name is required"
               />
               <TextInput
@@ -95,7 +95,7 @@ export default class FullwidthForm extends React.Component {
             </div>
             <div className="relative">
               <ValidationBox
-                className={this.toggleValidationBox("phone")}
+                className={this.toggleValidationBox('phone')}
                 message="Phone is invalid"
               />
               <TextInput
@@ -107,7 +107,7 @@ export default class FullwidthForm extends React.Component {
             </div>
             <div className="relative">
               <ValidationBox
-                className={this.toggleValidationBox("email")}
+                className={this.toggleValidationBox('email')}
                 message="Email is invalid"
               />
               <TextInput
@@ -140,13 +140,13 @@ export default class FullwidthForm extends React.Component {
           </div>
         </div>
         <SubmitButton
-          text={"Submit"}
-          className={"button--primary block mx-auto mt-3 text-[22px]"}
+          text={'Submit'}
+          className={'button--primary block mx-auto mt-3 text-[22px]'}
         />
         <FeedbackBox
           className={`bottom-14 ${
-            this.state.showFeedback ? "inline-block" : "hidden"
-          } ${this.state.hasErrors ? "border-red-600" : "border-green-600"}`}
+            this.state.showFeedback ? 'inline-block' : 'hidden'
+          } ${this.state.hasErrors ? 'border-red-600' : 'border-green-600'}`}
           feedbackList={this.state.feedback}
           hideFeedback={this.hideFeedback}
         />

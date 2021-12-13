@@ -1,16 +1,16 @@
-import * as React from "react";
-import { graphql } from "gatsby";
+import * as React from 'react';
+import { graphql } from 'gatsby';
 
 // styles
 const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
+  color: '#232129',
+  padding: '96px',
+  fontFamily: '-apple-system, Roboto, sans-serif, serif',
 };
 const listStyles = {
-  margin: "initial",
-  padding: "revert",
-  marginBottom: "15px",
+  margin: 'initial',
+  padding: 'revert',
+  marginBottom: '15px',
 };
 
 export const query = graphql`

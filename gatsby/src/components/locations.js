@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { LocationMarkerIcon } from "@heroicons/react/solid";
+import React from 'react';
+import styled from 'styled-components';
+import { LocationMarkerIcon } from '@heroicons/react/solid';
 
 export default function Locations({
   locations,

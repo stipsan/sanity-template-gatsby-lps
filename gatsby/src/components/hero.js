@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import SidebarForm from "./forms/sidebar-form";
+import React from 'react';
+import styled from 'styled-components';
+import SidebarForm from './forms/sidebar-form';
 
 const Hero = styled.div`
   background-image: url(${(props) => props.heroBackground});

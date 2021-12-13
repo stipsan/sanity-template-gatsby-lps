@@ -1,5 +1,5 @@
-import React from "react";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
+import React from 'react';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 //import scrollTo from 'gatsby-plugin-smoothscroll';
 

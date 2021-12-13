@@ -1,11 +1,11 @@
-import * as React from "react";
+import * as React from 'react';
 
 // styles
 const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-  display: "none",
+  color: '#232129',
+  padding: '96px',
+  fontFamily: '-apple-system, Roboto, sans-serif, serif',
+  display: 'none',
 };
 
 // markup

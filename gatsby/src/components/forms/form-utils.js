@@ -1,18 +1,18 @@
-import validator from "validator";
+import validator from 'validator';
 
 export function updateField(event) {
   const field = event.target.name;
   const value = event.target.value;
   const updatedFields = this.state.fields;
 
-  if (field === "name") {
+  if (field === 'name') {
     updatedFields[field].valid = !validator.isEmpty(value);
   }
-  if (field === "email") {
+  if (field === 'email') {
     updatedFields.email.valid =
       validator.isEmail(value) && !validator.isEmpty(value);
   }
-  if (field === "phone") {
+  if (field === 'phone') {
     updatedFields.phone.valid =
       validator.isMobilePhone(value) && !validator.isEmpty(value);
   }
@@ -60,9 +60,9 @@ export function handleSubmit(event) {
 
   if (validForm) {
     let formData = new FormData(event.target);
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(formData).toString(),
     })
       .then(this.handleFetchErrors) //extra step due to error handling with Fetch
@@ -72,8 +72,8 @@ export function handleSubmit(event) {
             hasErrors: false,
           },
           () => {
-            this.triggerEvent("formSubmission", "RYNO LP Conversion", "footer");
-            this.flashFeedback("Form Submitted Successfully!");
+            this.triggerEvent('formSubmission', 'RYNO LP Conversion', 'footer');
+            this.flashFeedback('Form Submitted Successfully!');
             this.resetForm();
           }
         );
@@ -84,7 +84,7 @@ export function handleSubmit(event) {
             hasErrors: true,
           },
           () => {
-            this.flashFeedback("Form Submission Error!");
+            this.flashFeedback('Form Submission Error!');
           }
         );
       });
@@ -94,7 +94,7 @@ export function handleSubmit(event) {
 export function resetForm() {
   let resetFields = this.state.fields;
   Object.keys(this.state.fields).forEach((field) => {
-    resetFields[field].value = "";
+    resetFields[field].value = '';
     resetFields[field].valid = false;
   });
   this.setState(
@@ -111,15 +111,15 @@ export function resetForm() {
 
 export function toggleValidationBox(field) {
   return !this.state.fields[field].valid && this.state.submitted
-    ? "inline-block"
-    : "hidden";
+    ? 'inline-block'
+    : 'hidden';
 }
 
 export function triggerEvent(action, category, label) {
   try {
     if (window.ga !== undefined) {
-      const trackerName = window.ga.getAll()[0].get("name");
-      window.ga(trackerName + ".send", "event", {
+      const trackerName = window.ga.getAll()[0].get('name');
+      window.ga(trackerName + '.send', 'event', {
         eventAction: action,
         eventCategory: category,
         eventLabel: label,
@@ -133,8 +133,8 @@ export function triggerEvent(action, category, label) {
         label: label,
       });
     }
-    console.log("events triggered");
+    console.log('events triggered');
   } catch {
-    console.log("oops");
+    console.log('oops');
   }
 }

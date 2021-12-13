@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const CustomHR = styled.div`
   &:after,
@@ -7,7 +7,7 @@ const CustomHR = styled.div`
     align-self: center;
     border-style: solid;
     border-width: 2px;
-    content: "";
+    content: '';
   }
 `;
 

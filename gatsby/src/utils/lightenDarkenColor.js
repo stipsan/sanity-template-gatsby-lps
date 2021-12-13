@@ -5,7 +5,7 @@ export default function lightenDarkenColor(hex, amt) {
     return;
   }
 
-  if (hex[0] === "#") {
+  if (hex[0] === '#') {
     hex = hex.slice(1);
     usePound = true;
   }
@@ -27,5 +27,5 @@ export default function lightenDarkenColor(hex, amt) {
   if (g > 255) g = 255;
   else if (g < 0) g = 0;
 
-  return (usePound ? "#" : "") + (g | (b << 8) | (r << 16)).toString(16);
+  return (usePound ? '#' : '') + (g | (b << 8) | (r << 16)).toString(16);
 }

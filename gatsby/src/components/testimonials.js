@@ -1,16 +1,16 @@
-import React from "react";
-import Ornament from "./utils/ornament";
-import iconSrc from "../images/review-icon.png";
-import styled from "styled-components";
+import React from 'react';
+import Ornament from './utils/ornament';
+import iconSrc from '../images/review-icon.png';
+import styled from 'styled-components';
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-import Slider from "react-slick";
+import Slider from 'react-slick';
 
 const Bubble = styled.div`
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 99%;
     left: 40px;
@@ -98,7 +98,7 @@ export default function Testimonials({
       className="bg--reviews bg-no-repeat bg-center bg-top py-14 text-white laptop:pb-36 laptop:py-24 retina:bg-cover"
     >
       <div className="container mx-auto">
-        <Ornament {...{ iconSrc, lineColor }} alt={"Review Icon"} />
+        <Ornament {...{ iconSrc, lineColor }} alt={'Review Icon'} />
         <h2 className="text-center text-magic font-extrabold mb-9 tablet:text-4xl laptop:text-5xl laptop:mb-12">
           Heating Repair Reviews
         </h2>
