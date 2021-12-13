@@ -12,7 +12,8 @@
     "start": "netlify dev",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "lint": "eslint --ignore-path ../.gitignore ."
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.12.0",
@@ -46,6 +47,8 @@
     "eslint": "^7.23.0",
     "gatsby-plugin-anchor-links": "^1.2.1",
     "gatsby-source-sanity": "^7.0.2",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.2",
     "tailwind-pseudo-elements": "^0.4.0",
     "tailwindcss": "^2.1.1",
     "tailwindcss-multi-column": "^1.0.2"
