@@ -22,7 +22,6 @@ import Right from './layout/right';
 import FullwidthForm from './forms/fullwidth-form';
 import Locations from './locations';
 import Specials from './specials';
-import { LocationMarkerIcon } from '@heroicons/react/solid';
 //end temp
 
 const GlobalStyle = createGlobalStyle`
