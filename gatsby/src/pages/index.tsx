@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { PageProps } from 'gatsby';
 
 // styles
 const pageStyles = {
-  color: '#232129',
+  color: '#383838',
   padding: '96px',
   fontFamily: '-apple-system, Roboto, sans-serif, serif',
   display: 'none',

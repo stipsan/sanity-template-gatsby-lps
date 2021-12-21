@@ -31,7 +31,7 @@ export const query = graphql`
     }
   }
 `;
-const Index = ({ data }) => {
+const RYNO = ({ data }) => {
   data.allSanityPage.edges.sort(function (pageA, pageB) {
     let catA = pageA.node.category.label;
     let catB = pageB.node.category.label;
@@ -72,4 +72,4 @@ const Index = ({ data }) => {
   );
 };
 
-export default Index;
+export default RYNO;
