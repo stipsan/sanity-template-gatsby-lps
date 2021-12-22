@@ -14,7 +14,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "eslint --ignore-path ../.gitignore .",
-    "check-types": "tsc",
+    "check-types": "tsc --noEmit",
     "prettier": "prettier --ignore-path ../.gitignore \"**/*.+(js|json|ts|tsx)\"",
     "format": "npm run prettier -- --write",
     "check-format": "npm run prettier -- --list-different",

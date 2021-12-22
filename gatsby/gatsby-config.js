@@ -39,6 +39,7 @@ module.exports = {
       },
       __key: 'images',
     },
+    'gatsby-plugin-typescript',
     {
       resolve: `gatsby-plugin-webfonts`,
       options: {

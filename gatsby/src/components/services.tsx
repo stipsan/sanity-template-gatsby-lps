@@ -2,7 +2,22 @@ import React from 'react';
 import Ornament from './utils/ornament';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
-export default function Services({ services, lineColor, iconSrc }) {
+interface Service {
+  icon?: {
+    asset: {
+      url: string
+    }
+  }
+  label: string
+}
+
+interface Props {
+  services?: Array<Service>
+  lineColor: string
+  iconSrc: string
+}
+
+export default function Services({ services, lineColor, iconSrc }: Props) {
   return (
     <section
       id="service-ctas"
@@ -15,17 +30,21 @@ export default function Services({ services, lineColor, iconSrc }) {
         </h2>
         <div className="flex flex-wrap justify-center mx-auto">
           {services.map((service, index) => {
+            let serviceIcon:string|JSX.Element = '';
+            if(service?.icon?.asset?.url){
+              serviceIcon = <img
+                className="mb-4"
+                src={service.icon.asset.url}
+                alt={`${service.label} Icon`}
+              />
+            }
             return (
               <div
                 className="flex-grow-0 flex-shrink-0 flex justify-center items-center flex-col capitalize py-3 px-4 m-3 phablet:m-4 bg-white rounded-md phablet:px-11 phablet:py-4 retina:py-8 retina:px:12"
                 key={index}
               >
                 <div>
-                  <img
-                    className="mb-4"
-                    src={service.icon.asset.url}
-                    alt={`${service.label} Icon`}
-                  />
+                {serviceIcon}
                 </div>
                 <div className="w-24 leading-7 tracking-tighter font-semibold text-[22px] tablet:w-36 retina:w-52">
                   {service.label}
