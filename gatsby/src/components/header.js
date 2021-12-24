@@ -26,7 +26,7 @@ export default function Header({ logoSrc, phone }) {
         <div className="flex-1 flex items-center laptop:flex-initial laptop:justify-end">
           <a
             href={`tel:${phone}`}
-            className="button--primary flex justify-center flex-col items-center w-full text-gray-alt font-semibold text-[22px] px-8 py-3 laptop:px-12 laptop:inline-block laptop:ml-7 laptop:rounded-lg laptop:w-auto"
+            className="button--primary flex justify-center flex-col items-center w-full font-semibold text-[22px] px-8 py-3 laptop:px-12 laptop:inline-block laptop:ml-7 laptop:rounded-lg laptop:w-auto"
           >
             Call Now! <br className="visible laptop:hidden" />
             <span className="font-bold">{phone}</span>
