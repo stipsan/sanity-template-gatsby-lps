@@ -2,7 +2,7 @@ export default function lightenDarkenColor(hex:string, amt:number): string {
   let usePound:boolean = false;
 
   if (hex === undefined) {
-    return;
+    return '#000000';
   }
 
   if (hex[0] === '#') {
