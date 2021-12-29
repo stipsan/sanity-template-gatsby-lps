@@ -11,7 +11,12 @@ const CustomHR = styled.div`
   }
 `;
 
-export default function Ornament({ iconSrc, alt }) {
+interface Props {
+  iconSrc: string
+  alt: string
+}
+
+export default function Ornament({ iconSrc, alt }: Props) {
   //const logo = getGatsbyImageData(logo);
   return (
     <CustomHR className="border-highlight grid gap-4 grid-cols-layout max-w-xs mx-auto mb-4">
