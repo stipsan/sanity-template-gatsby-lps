@@ -13,7 +13,7 @@ const CustomHR = styled.div`
 
 interface Props {
   iconSrc: string
-  alt: string
+  alt?: string
 }
 
 export default function Ornament({ iconSrc, alt }: Props) {

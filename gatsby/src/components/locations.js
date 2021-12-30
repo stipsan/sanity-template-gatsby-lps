@@ -18,7 +18,7 @@ export default function Locations({
       <h4 className="border-highlight text-xl mb-14 border-b-2 inline-block mx-auto">
         Residents in the areas surrounding
       </h4>
-      <ul className="col-count-2 text-left text-lg tablet:col-count-3 laptop:col-count-2 laptop:ml-12">
+      <ul className="col-count-2 text-left text-lg tablet:col-count-3 laptop:col-count-2 xlaptop:ml-12">
         {sortedLocations.map((location, index) => (
           <li className="mb-3 xlaptop:ml-8" key={index} title={location.city}>
             <LocationMarkerIcon className="inline-block h-5 w-6 mr-1 text-[18px]" />

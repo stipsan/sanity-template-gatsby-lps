@@ -11,11 +11,11 @@ export default function Specials({ specials }) {
               className={`flex flex-col items-center justify-between w-3/4 my-6 bg-white text-gray-alt rounded-md border-2 border-dashed border-black-alt shadow-custom p-3 laptop:w-full laptop:my-7 ${couponMb}`}
               key={index}
             >
-              <div className="text-xl font-extrabold uppercase text-blue-primary phablet:text-2xl tablet:text-4xl desktop:text-[40px]">
+              <div className="text-center text-xl font-extrabold uppercase text-blue-primary phablet:text-2xl tablet:text-4xl desktop:text-[40px]">
                 {special.title}
               </div>
               <div className="capitalize font-medium text-black-custom text-[18px]">
-                {special.disclaimer}
+                {special.details}
               </div>
             </div>
           );

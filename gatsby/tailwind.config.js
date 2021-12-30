@@ -4,7 +4,7 @@ var fontFun = '30';
 
 module.exports = {
   mode: 'jit',
-  purge: ['./src/**/*.html', './src/**/*.js'],
+  purge: ['./src/**/*.html', './src/**/*.{js,jsx,ts,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {

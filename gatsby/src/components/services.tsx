@@ -40,13 +40,13 @@ export default function Services({ services, lineColor, iconSrc }: Props) {
             }
             return (
               <div
-                className="flex-grow-0 flex-shrink-0 flex justify-center items-center flex-col capitalize py-3 px-4 m-3 phablet:m-4 bg-white rounded-md phablet:px-11 phablet:py-4 retina:py-8 retina:px:12"
+                className="flex-grow-0 w-2/3 flex-shrink-0 flex justify-center items-center flex-col capitalize py-3 px-4 m-3 bg-white rounded-md phablet:m-4 phablet:px-11 phablet:py-4 tablet:w-auto retina:py-8 retina:px:12"
                 key={index}
               >
                 <div>
-                {serviceIcon}
+                  {serviceIcon}
                 </div>
-                <div className="w-24 leading-7 tracking-tighter font-semibold text-[22px] tablet:w-36 retina:w-52">
+                <div className="leading-7 tracking-tighter font-semibold text-[22px] xphablet:w-24 tablet:w-36 retina:w-52">
                   {service.label}
                 </div>
               </div>
