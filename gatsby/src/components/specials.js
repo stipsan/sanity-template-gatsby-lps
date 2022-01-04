@@ -8,10 +8,10 @@ export default function Specials({ specials }) {
           let couponMb = index === specials.length - 1 ? 'mb-0' : ''; //excludes margin bottom from last coupon
           return (
             <div
-              className={`flex flex-col items-center justify-between w-3/4 my-6 bg-white text-gray-alt rounded-md border-2 border-dashed border-black-alt shadow-custom p-3 laptop:w-full laptop:my-7 ${couponMb}`}
+              className={`flex flex-col items-center justify-between w-3/4 my-6 bg-white text-gray-alt rounded-md border-2 border-dashed border-gray-500 shadow-custom p-3 laptop:w-full laptop:my-7 ${couponMb}`}
               key={index}
             >
-              <div className="text-center text-xl font-extrabold uppercase text-blue-primary phablet:text-2xl tablet:text-4xl desktop:text-[40px]">
+              <div className="text-center text-xl font-extrabold uppercase xtext-blue-primary phablet:text-2xl tablet:text-4xl desktop:text-[40px]">
                 {special.title}
               </div>
               <div className="capitalize font-medium text-black-custom text-[18px]">
