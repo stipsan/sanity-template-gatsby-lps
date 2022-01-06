@@ -117,15 +117,15 @@ export function toggleValidationBox(field) {
 
 export function triggerEvent(action, category, label) {
   try {
-    if (window.ga !== undefined) {
-      const trackerName = window.ga.getAll()[0].get('name');
-      window.ga(trackerName + '.send', 'event', {
-        eventAction: action,
-        eventCategory: category,
-        eventLabel: label,
-      });
-      console.log(action, category, label);
-    }
+    // if (window.ga !== undefined) {
+    //   const trackerName = window.ga.getAll()[0].get('name');
+    //   window.ga(trackerName + '.send', 'event', {
+    //     eventAction: action,
+    //     eventCategory: category,
+    //     eventLabel: label,
+    //   });
+    //   console.log(action, category, label);
+    // }
     if (window.dataLayer !== undefined) {
       window.dataLayer.push({
         event: action,
@@ -135,6 +135,6 @@ export function triggerEvent(action, category, label) {
     }
     console.log('events triggered');
   } catch {
-    console.log('oops');
+    console.log('Error');
   }
 }
