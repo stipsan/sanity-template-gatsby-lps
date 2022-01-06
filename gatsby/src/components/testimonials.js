@@ -49,7 +49,7 @@ export default function Testimonials({
     testimonials.map((testimonial, index) => (
       <blockquote className="px-3" key={index}>
         <Bubble className="bg--reviews-bubble rounded-2xl p-8 text-lg font-medium relative mb-10">
-          <div className="custom-scroller overflow-y-auto h-36">
+          <div className="custom-scroller overflow-y-auto h-32">
             "{testimonial.excerpt}"
           </div>
         </Bubble>
