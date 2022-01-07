@@ -16,18 +16,18 @@ const GlobalStyle = createGlobalStyle`
         color: ${({ formBgColor }) => getContrastingColor(formBgColor)};
     }
     .bg--callout {
-        color: ${({ calloutBarBgColor }) =>
-          getContrastingColor(calloutBarBgColor)};
+        color: ${({ gradientEndColor }) =>
+          getContrastingColor(gradientEndColor)};
     }
     .bg--callout-linear {
-        background: linear-gradient(to right, ${({ secondaryColor }) => secondaryColor},${({ primaryColor }) => primaryColor});
+        background: linear-gradient(to right, ${({ gradientStartColor }) => gradientStartColor},${({ gradientEndColor }) => gradientEndColor});
     }
     .bg--callout-radial {
         background: radial-gradient(circle at center,${({
-            calloutBarBgColor,
-          }) => lightenDarkenColor(calloutBarBgColor, 60)}, ${({
-    calloutBarBgColor,
-  }) => calloutBarBgColor});
+            gradientEndColor,
+          }) => gradientEndColor}, ${({
+            gradientStartColor,
+  }) => gradientStartColor});
     }
     .bg--reviews {
         background-color: ${({ reviewBgColor }) => reviewBgColor};

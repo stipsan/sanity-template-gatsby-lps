@@ -64,6 +64,7 @@ export const query = graphql`
           }
         }
         calloutMessage
+        calloutGradient
         chatConversionLabel
         conversionId
         formConversionLabel
@@ -85,7 +86,10 @@ export const query = graphql`
           formBgColor {
             hex
           }
-          calloutBarBgColor {
+          gradientStartColor {
+            hex
+          }
+          gradientEndColor {
             hex
           }
           reviewBgColor {

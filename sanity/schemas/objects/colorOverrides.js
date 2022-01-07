@@ -38,8 +38,14 @@ export default {
             fieldset: 'colorOverrides'
         },
         {
-            name: 'calloutBarBgColor',
-            title: 'Callout Bar Section Background Color Override',
+            name: 'gradientStartColor',
+            title: 'Gradient Color Start Override',
+            type: 'color',
+            fieldset: 'colorOverrides'
+        },
+        {
+            name: 'gradientEndColor',
+            title: 'Gradient Color End Override',
             type: 'color',
             fieldset: 'colorOverrides'
         },

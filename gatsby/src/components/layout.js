@@ -1,6 +1,5 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { createGlobalStyle } from 'styled-components';
 import Badges from './badges';
 import CalloutBar from './calloutBar';
 import Contact from './contact';
@@ -12,8 +11,6 @@ import Services from './services';
 import Tagline from './tagline';
 import Testimonials from './testimonials';
 import Footer from './footer';
-import lightenDarkenColor from '../utils/lightenDarkenColor';
-import getContrastingColor from '../utils/getContrastingColor';
 
 //temp
 import Split from './layout/split';
@@ -24,68 +21,7 @@ import Locations from './locations';
 import Specials from './specials';
 //end temp
 
-const GlobalStyle = createGlobalStyle`
-    .bg--primary {
-        background-color: ${({ primaryColor }) => primaryColor};
-        color: ${({ primaryColor }) => getContrastingColor(primaryColor)};
-    }
-    .bg--secondary {
-        background-color: ${({ secondaryColor }) => secondaryColor}; 
-        color: ${({ secondaryColor }) => getContrastingColor(secondaryColor)};
-    }
-    .bg--form {
-        background-color: ${({ formBgColor }) => formBgColor};
-        color: ${({ formBgColor }) => getContrastingColor(formBgColor)};
-    }
-    .bg--callout {
-        background: radial-gradient(circle at center,${({
-          calloutBarBgColor,
-        }) => lightenDarkenColor(calloutBarBgColor, 60)}, ${({
-  calloutBarBgColor,
-}) => calloutBarBgColor});
-        color: ${({ calloutBarBgColor }) =>
-          getContrastingColor(calloutBarBgColor)};
-    }
-    .bg--reviews {
-        background-color: ${({ reviewBgColor }) => reviewBgColor};
-        color: ${({ reviewBgColor }) => getContrastingColor(reviewBgColor)};
-        &-bubble {
-            background-color: ${({ reviewBubbleColor }) => reviewBubbleColor};
-            color: ${({ reviewBubbleColor }) =>
-              getContrastingColor(reviewBubbleColor)};
-            &:after {
-                border-top: 30px solid ${({ reviewBubbleColor }) =>
-                  reviewBubbleColor};
-            }
-        }
-    }
-    .bg--specials {
-        background-color: ${({ specialsBgColor }) => specialsBgColor}; 
-    }
-    .button--primary {
-        background-color: ${({ primaryBtnColor }) => primaryBtnColor};
-        color: ${({ primaryBtnColor }) => getContrastingColor(primaryBtnColor)};
-        &:hover {
-            background-color: ${({ primaryBtnColor }) =>
-              lightenDarkenColor(primaryBtnColor, 20)}; 
-        }
-    }
-    .button--secondary {
-        background-color: ${({ secondaryBtnColor }) => secondaryBtnColor}; 
-        color: ${({ secondaryBtnColor }) =>
-          getContrastingColor(secondaryBtnColor)};
-        &:hover {
-            background-color: ${({ secondaryBtnColor }) =>
-              lightenDarkenColor(secondaryBtnColor, 20)}; 
-        }
-    }
-    .border-highlight, .border-highlight:after, .border-highlight:before {
-        border-color: ${({ lineColor }) => lineColor};
-    }
-    .text--secondary {
-        color: ${({ headingTextColor }) => headingTextColor};
-    }
-`;
+import GlobalStyle from '../styles/globalStyles';
 
 function pluckOverride(pageData, categoryData) {
   if (Array.isArray(pageData)) {
@@ -148,6 +84,7 @@ export default function Layout({ sanityData, children }) {
   const heroContent = sanityData?.hero_content;
   const calloutMessage = sanityData?.category?.calloutMessage;
   const calloutBadge = sanityData?.category?.calloutBadge?.asset?.url;
+  const calloutGradient = sanityData?.category?.calloutGradient;
   const introText = sanityData?._rawIntro;
   const services = sanityData?.category?.services;
   const testimonialBackground =
@@ -169,8 +106,11 @@ export default function Layout({ sanityData, children }) {
     sanityData?.category?.colorOverrides?.formBgColor?.hex || secondaryColor;
   const lineColor =
     sanityData?.category?.colorOverrides?.lineColor?.hex || primaryColor;
-  const calloutBarBgColor =
-    sanityData?.category?.colorOverrides?.calloutBarBgColor?.hex ||
+  const gradientStartColor =
+    sanityData?.category?.colorOverrides?.gradientStartColor?.hex ||
+    primaryColor;
+  const gradientEndColor =
+    sanityData?.category?.colorOverrides?.gradientEndColor?.hex ||
     secondaryColor;
   const reviewBgColor =
     sanityData?.category?.colorOverrides?.reviewBgColor?.hex || secondaryColor;
@@ -202,7 +142,8 @@ export default function Layout({ sanityData, children }) {
           primaryColor,
           secondaryColor,
           formBgColor,
-          calloutBarBgColor,
+          gradientStartColor,
+          gradientEndColor,
           reviewBgColor,
           reviewBubbleColor,
           specialsBgColor,
@@ -242,7 +183,7 @@ export default function Layout({ sanityData, children }) {
         }}
       />
       <Intro {...{ introText }} />
-      <CalloutBar {...{ calloutMessage, calloutBadge }} />
+      <CalloutBar {...{ calloutMessage, calloutBadge, calloutGradient }} />
       <Services {...{ lineColor, services, iconSrc }} />
       <Testimonials
         {...{

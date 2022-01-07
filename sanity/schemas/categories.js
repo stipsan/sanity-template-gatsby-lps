@@ -111,6 +111,7 @@ export default {
         { //dont love the placement or naming of this section?
             name: 'calloutMessage',
             title: 'Callout Message',
+            description: 'desc',
             type: 'string',
             fieldset: 'callout',
         },
@@ -119,6 +120,14 @@ export default {
             title: 'Callout Badge',
             type: 'image',
             fieldset: 'callout',
+        },
+        { //dont love the placement or naming of this section?
+            name: 'calloutGradient',
+            title: 'Use radial Gradient?',
+            description: 'Enable to override linear background gradient with radial (circular).',
+            type: 'boolean',
+            fieldset: 'callout',
+            initialValue: false
         },
         {
             title: 'Services & Highlights',

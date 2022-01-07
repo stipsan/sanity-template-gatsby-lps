@@ -1,9 +1,11 @@
 import React from 'react';
 
-export default function CalloutBar({ calloutMessage, calloutBadge }) {
+export default function CalloutBar({ calloutMessage, calloutBadge, calloutGradient }) {
   //const logo = getGatsbyImageData(logo);
+  console.log('grad:',calloutGradient);
+  const gradientType = calloutGradient ? 'radial' : 'linear' ;
   return (
-    <section id="call-out-bar" className="bg--callout clear-both">
+    <section id="call-out-bar" className={`bg--callout bg--callout-${gradientType} clear-both`}>
       <div className="container mx-auto flex flex-col py-8 items-center laptop:flex-row">
         <div className="flex-none">
           <img className="mb-8 laptop:mb-0" src={calloutBadge} alt="" />
