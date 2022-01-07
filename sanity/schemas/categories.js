@@ -99,7 +99,8 @@ export default {
         {
             name: 'layout',  //needs review 
             title: 'Layout',
-            type: 'string', 
+            type: 'string',
+            hidden: true,
             fieldset: 'styles',
             options: {
                 list: [

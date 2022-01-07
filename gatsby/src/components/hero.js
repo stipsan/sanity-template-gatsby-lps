@@ -20,7 +20,7 @@ export default function HeroSection({
       {...{ heroBackground }}
     >
       <div className="container mx-auto flex justify-start tablet:justify-between">
-        <div className="text-white flex flex-col justify-center laptop:w-1/2 xlaptop:pr-44 laptop:py-16 xdesktop:pr-60">
+        <div className="text-white flex flex-col justify-center laptop:basis-4/5 xlaptop:w-1/2 xlaptop:pr-44 laptop:py-16 xdesktop:pr-60">
           <div className="uppercase">
             <div className="text-magic font-extrabold phablet:text-4xl tablet:text-6xl desktop:text-[80px]">
               {heroTitle}
@@ -33,7 +33,7 @@ export default function HeroSection({
             {heroContent}
           </p>
         </div>
-        <div className="hidden laptop:block laptop:pt-1 max-w-sm">
+        <div className="hidden laptop:flex laptop:align-bottom laptop:pt-1 max-w-sm">
           <div className="bg--form py-6 pb-12 px-9 rounded-md relative tablet:-mb-8 tablet:mt-16 desktop:mt-34 desktop:-mb-16">
             <div className="uppercase text-center text-3xl font-extrabold mb-5">
               Schedule Now
