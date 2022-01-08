@@ -127,7 +127,7 @@ export default class SidebarForm extends React.Component {
         <FeedbackBox
           className={`bottom-10 ${
             this.state.showFeedback ? 'inline-block' : 'hidden'
-          } ${this.state.hasErrors ? 'border-red-600' : 'border-green-600'}`}
+          } ${this.state.hasErrors ? 'border-red-600' : 'border-emerald-600'}`}
           feedbackList={this.state.feedback}
           hideFeedback={this.hideFeedback}
         />

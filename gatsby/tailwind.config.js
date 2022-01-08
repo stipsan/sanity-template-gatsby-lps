@@ -3,9 +3,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 var fontFun = '30';
 
 module.exports = {
-  mode: 'jit',
-  purge: ['./src/**/*.html', './src/**/*.{js,jsx,ts,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  content: ['./src/**/*.html', './src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     screens: {
       phablet: '576px', // => @media (min-width: 576px) { ... }
@@ -55,16 +53,10 @@ module.exports = {
       },
     },
   },
-  variants: {
-    // Defaults are ['responsive', 'hover', 'focus']
-    //backgroundColor: ({ after }) => after(['before', 'after']),
-    // Output: ['responsive', 'hover', 'focus', 'before', 'after']
-    extend: {},
-  },
   plugins: [
     require('@tailwindcss/forms'),
-    require('tailwind-pseudo-elements'),
-    require('tailwindcss-multi-column')(),
+    //require('tailwind-pseudo-elements'),
+    //require('tailwindcss-multi-column')(),
   ],
   corePlugins: {
     textOpacity: false,

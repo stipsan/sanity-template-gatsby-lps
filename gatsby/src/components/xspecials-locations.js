@@ -32,7 +32,7 @@ const Aside = styled.section`
 function Specials({ specials }) {
   return (
     <aside className="bg--specials flex py-12 flex-1 justify-end laptop:py-24">
-      <div className="flex flex-col justify-evenly items-center flex-grow-1 mb-7 w-full phablet:mb-0 laptop:pr-20 laptop:flex-grow-0 laptop:w-512-5 desktop:pr-24 desktop:w-720-5 retina:w-800">
+      <div className="flex flex-col justify-evenly items-center grow-1 mb-7 w-full phablet:mb-0 laptop:pr-20 laptop:grow-0 laptop:w-512-5 desktop:pr-24 desktop:w-720-5 retina:w-800">
         {specials.map((special, index, specials) => {
           let couponMb = index === specials.length - 1 ? 'mb-0' : ''; //excludes margin bottom from last coupon
           return (
@@ -64,7 +64,7 @@ function Locations({ locations, lineColor, serviceAreaBackground }) {
       className="flex flex-1 justify-start special-locations-bg"
       {...{ serviceAreaBackground }}
     >
-      <div className="container mx-auto flex-grow-1 justify-center w-full text-center text-white py-20 laptop:bg-opacity-0 laptop:flex-grow-0 laptop:w-512-5 laptop:mx-0 laptop:py-24 laptop:flex laptop:items-center desktop:w-720-5 retina:w-800">
+      <div className="container mx-auto grow-1 justify-center w-full text-center text-white py-20 laptop:bg-opacity-0 laptop:grow-0 laptop:w-512-5 laptop:mx-0 laptop:py-24 laptop:flex laptop:items-center desktop:w-720-5 retina:w-800">
         <div className="max-w-full">
           <h2 className="text-5xl font-extrabold mb-1">Proudly Serving</h2>
           <h4 className="border-highlight text-xl mb-14 border-b-2 inline-block mx-auto">

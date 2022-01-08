@@ -40,7 +40,7 @@ export default function Services({ services, lineColor, iconSrc }: Props) {
             }
             return (
               <div
-                className="flex-grow-0 w-2/3 flex-shrink-0 flex justify-center items-center flex-col capitalize py-3 px-4 m-3 bg-white rounded-md phablet:m-4 phablet:px-11 phablet:py-4 tablet:w-auto retina:py-8 retina:px:12"
+                className="grow-0 w-2/3 shrink-0 flex justify-center items-center flex-col capitalize py-3 px-4 m-3 bg-white rounded-md phablet:m-4 phablet:px-11 phablet:py-4 tablet:w-auto retina:py-8 retina:px:12"
                 key={index}
               >
                 <div>
