@@ -71,6 +71,14 @@ export default {
             fieldset: 'hero'
         },
         {
+            name: 'hero_hide_form',
+            title: 'Enable to hide hero form.',
+            description: '',
+            type: 'boolean',
+            initialValue: false,
+            fieldset: 'hero'
+        },
+        {
             name: 'intro',
             title: 'Intro',
             type: 'portableText',

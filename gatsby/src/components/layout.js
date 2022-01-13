@@ -82,6 +82,7 @@ export default function Layout({ sanityData, children }) {
   const heroTitle = sanityData?.hero_title;
   const heroSubTitle = sanityData?.hero_sub_title;
   const heroContent = sanityData?.hero_content;
+  const heroHideForm = sanityData?.hero_hide_form;
   const calloutMessage = sanityData?.category?.calloutMessage;
   const calloutBadge = sanityData?.category?.calloutBadge?.asset?.url;
   const calloutGradient = sanityData?.category?.calloutGradient;
@@ -180,6 +181,7 @@ export default function Layout({ sanityData, children }) {
           heroSubTitle,
           emailRecipient,
           heroContent,
+          heroHideForm
         }}
       />
       <Intro {...{ introText }} />

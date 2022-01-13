@@ -19,6 +19,7 @@ export const query = graphql`
       hero_content
       hero_title
       hero_sub_title
+      hero_hide_form
       _rawIntro
       intro {
         children {
