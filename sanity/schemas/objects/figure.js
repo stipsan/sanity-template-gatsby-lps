@@ -9,6 +9,7 @@ export default {
         type: 'image',
         title: 'Image',
         options: { metadata: ['lqip'] },
+        validation: Rule => Rule.required()
       },
       {
         name: 'alt',
@@ -16,21 +17,18 @@ export default {
         title: 'Alternative Text',
       },
       {
-        name: 'caption',
+        name: 'alignment',
+        title: 'Alignment',
         type: 'string',
-        title: 'Caption',
+        options: {
+          list: [
+            {title: 'Float Right', value: 'right'},
+            {title: 'Float Left', value: 'left'},
+            {title: 'No Float', value: 'none'},
+          ], // <-- predefined values
+          layout: 'radio' // <-- defaults to 'dropdown'
+        },
+        initialValue: 'right',
       },
-      {
-        name: 'captionUrl',
-        type: 'string',
-        title: 'Caption URL',
-      },
-      // {
-      //   name: 'position',
-      //   type:'boolean',
-      //   title: 'Position',
-      //   description: 'desc',
-      //   initialValue: 'false'
-      // }
     ],
   };
