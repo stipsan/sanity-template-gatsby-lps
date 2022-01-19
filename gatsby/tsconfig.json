@@ -4,8 +4,6 @@
     "baseUrl": "./src",
     "jsx": "preserve",
     "noImplicitAny": true,
-    "esModuleInterop": true,
-    //"strict": true,
-    //"strictNullChecks": true
+    "esModuleInterop": true
   }
 }

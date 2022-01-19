@@ -1,11 +1,11 @@
 {
   "root": true,
   "project": {
-    "name": "tmp-beta"
+    "name": "<#< sanity.projectTitle >#>"
   },
   "api": {
-    "projectId": "xjpwmgyc",
-    "dataset": "production"
+    "projectId": "<#< sanity.projectId >#>",
+    "dataset": "<#< sanity.dataset >#>"
   },
   "plugins": [
     "@sanity/base",

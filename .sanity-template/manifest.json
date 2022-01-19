@@ -1,0 +1,63 @@
+{
+    "version": 2,
+    "title": "Sanity.io project starter with Gatsby on Netlify",
+    "description": "Landing page project quickstarter",
+    "previewMedia": {
+      "type": "image",
+      "src": "assets/starter-preview.png",
+      "alt": "RYNOSS"
+    },
+    "technologies": [
+      {
+        "id": "netlify",
+        "name": "Netlify",
+        "url": "https://www.netlify.com/"
+      },
+      {
+        "id": "gatsby",
+        "name": "Gatsby",
+        "url": "https://www.gatsbyjs.com/"
+      }
+    ],
+    "deployment": {
+        "provider": "netlify",
+        "sites": [
+          {
+            "id": "studio",
+            "type": "studio",
+            "title": "Sanity Studio",
+            "description": "Sanity Studio is where you edit and structure content.",
+            "dir": "../sanity",
+            "previewMedia": {
+              "type": "image",
+              "src": "assets/studio-thumb.jpg",
+              "alt": "Studio preview"
+            },
+            "buildSettings": {
+              "base": "sanity",
+              "dir": "dist",
+              "cmd": "npm run build && cp netlify.toml dist"
+            },
+            "requirements": ["build-hook"]
+          },
+          {
+            "id": "web",
+            "type": "web",
+            "title": "Landing Pages",
+            "description": "Landing pages fetched from Sanity.io.",
+            "dir": "../gatsby",
+            "previewMedia": {
+              "type": "image",
+              "src": "assets/gatsby-thumb.png",
+              "alt": "Frontend Preview"
+            },
+            "buildSettings": {
+              "base": "gatsby",
+              "dir": "public",
+              "cmd": "npm run build"
+            },
+            "requirements": ["build-hook"]
+          }
+        ]
+    }
+}
