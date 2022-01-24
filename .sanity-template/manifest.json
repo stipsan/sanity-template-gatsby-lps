@@ -27,14 +27,14 @@
             "type": "studio",
             "title": "Sanity Studio",
             "description": "Sanity Studio is where you edit and structure content.",
-            "dir": "../sanity",
+            "dir": "../studio",
             "previewMedia": {
               "type": "image",
               "src": "assets/studio-thumb.jpg",
               "alt": "Studio preview"
             },
             "buildSettings": {
-              "base": "sanity",
+              "base": "studio",
               "dir": "dist",
               "cmd": "npm run build && cp netlify.toml dist"
             },
@@ -45,14 +45,14 @@
             "type": "web",
             "title": "Landing Pages",
             "description": "Landing pages fetched from Sanity.io.",
-            "dir": "../gatsby",
+            "dir": "../web",
             "previewMedia": {
               "type": "image",
               "src": "assets/gatsby-thumb.png",
               "alt": "Frontend Preview"
             },
             "buildSettings": {
-              "base": "gatsby",
+              "base": "web",
               "dir": "public",
               "cmd": "npm run build"
             },
