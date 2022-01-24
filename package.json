@@ -1,0 +1,21 @@
+{
+  "name": "lp-factory",
+  "version": "00.01.00",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryno-cmueller/lp-factory.git"
+  },
+  "keywords": [],
+  "author": "RYNO Strategic Solutions - Chad Mueller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryno-cmueller/lp-factory/issues"
+  },
+  "homepage": "https://github.com/ryno-cmueller/lp-factory#readme",
+  "devDependencies": {
+    "sanity-template": "^2.4.3"
+  }
+}
