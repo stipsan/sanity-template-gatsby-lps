@@ -5,5 +5,3 @@ This is a barebones example of how to create a starter template for <a href="htt
 It contains a `.sanity-template` folder with all the information to treat this repository as a new Sanity Starter (assets, data, and manifest), as well as a `studio` directory with a barebones Studio, and a `web` directory with a simple script to display data from the new Sanity project.
 
 Go to our[ documentation for starter templates](https://www.sanity.io/docs/starter-templates).
-
-[Join our Slack community to ask any questions on creating a new Starter](https://slack.sanity.io).
