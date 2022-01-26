@@ -3,7 +3,9 @@
   "version": "00.01.00",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "lint-web": "lint-staged"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ryno-cmueller/lp-factory.git"
