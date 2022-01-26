@@ -9,7 +9,7 @@ const pageStyles = {
 };
 
 // markup
-const Index = () => {
+const Index = (): JSX.Element => {
   return <main style={pageStyles}>Intentionally Blank</main>;
 };
 

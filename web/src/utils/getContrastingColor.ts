@@ -1,9 +1,9 @@
 import hexToRgb from './hexToRgb';
 
-export default function getConstrastingColor(hex: string):string {
+export default function getConstrastingColor(hex: string): string {
   const rgbArr: number[] = hexToRgb(hex);
-  const lightText: string = '#fff';
-  const darkText: string = '#231f20';
+  const lightText = '#fff';
+  const darkText = '#231f20';
   const colorBrightness: number = Math.round(
     (rgbArr[0] * 299 + rgbArr[1] * 587 + rgbArr[2] * 114) / 1000
   ); //http://www.w3.org/TR/AERT#color-contrast

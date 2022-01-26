@@ -5,19 +5,23 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links';
 interface Service {
   icon?: {
     asset: {
-      url: string
-    }
-  }
-  label: string
+      url: string;
+    };
+  };
+  label: string;
 }
 
 interface Props {
-  services?: Array<Service>
-  lineColor: string
-  iconSrc: string
+  services?: Array<Service>;
+  lineColor: string;
+  iconSrc: string;
 }
 
-export default function Services({ services, lineColor, iconSrc }: Props) {
+export default function Services({
+  services,
+  lineColor,
+  iconSrc,
+}: Props): JSX.Element {
   return (
     <section
       id="service-ctas"
@@ -30,22 +34,22 @@ export default function Services({ services, lineColor, iconSrc }: Props) {
         </h2>
         <div className="flex flex-wrap justify-center mx-auto">
           {services.map((service, index) => {
-            let serviceIcon:string|JSX.Element = '';
-            if(service?.icon?.asset?.url){
-              serviceIcon = <img
-                className="mb-4"
-                src={service.icon.asset.url}
-                alt={`${service.label} Icon`}
-              />
+            let serviceIcon: string | JSX.Element = '';
+            if (service?.icon?.asset?.url) {
+              serviceIcon = (
+                <img
+                  className="mb-4"
+                  src={service.icon.asset.url}
+                  alt={`${service.label} Icon`}
+                />
+              );
             }
             return (
               <div
                 className="grow-0 w-2/3 shrink-0 flex justify-center items-center flex-col capitalize py-3 px-4 m-3 bg-white rounded-md phablet:m-4 phablet:px-11 phablet:py-4 tablet:w-auto retina:py-8 retina:px:12"
                 key={index}
               >
-                <div>
-                  {serviceIcon}
-                </div>
+                <div>{serviceIcon}</div>
                 <div className="leading-7 tracking-tighter font-semibold text-[22px] xphablet:w-24 tablet:w-36 retina:w-52">
                   {service.label}
                 </div>

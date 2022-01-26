@@ -181,7 +181,7 @@ export default function Layout({ sanityData, children }) {
           heroSubTitle,
           emailRecipient,
           heroContent,
-          heroHideForm
+          heroHideForm,
         }}
       />
       <Intro {...{ introText }} />

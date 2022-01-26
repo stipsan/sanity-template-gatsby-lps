@@ -17,10 +17,14 @@ import clientConfig from '../../client-config';
 // }
 const listRenderer = ({ type, children }) => {
   if (type === 'bullet') {
-    return <ul className="list-disc list-inside text-[18px] mb-5">{children}</ul>;
+    return (
+      <ul className="list-disc list-inside text-[18px] mb-5">{children}</ul>
+    );
   }
   if (type === 'number') {
-    return <ol className="list-decimal list-inside text-[18px] mb-5">{children}</ol>;
+    return (
+      <ol className="list-decimal list-inside text-[18px] mb-5">{children}</ol>
+    );
   }
   return null;
 };
@@ -102,9 +106,9 @@ const FigureRenderer = ({ node }) => {
   const floats = {
     left: 'tablet:float-left',
     right: 'tablet:float-right',
-    none: 'tablet:float-none'
-  }
-  
+    none: 'tablet:float-none',
+  };
+
   return (
     <GatsbyImage
       image={imageData}
@@ -129,7 +133,9 @@ export default function Intro({ introText }) {
                 figure: FigureRenderer,
               },
               list: listRenderer,
-              listItem: ({ children }) => <li className="leading-relaxed">{children}</li>,
+              listItem: ({ children }) => (
+                <li className="leading-relaxed">{children}</li>
+              ),
             }}
           />
           <div className="text-center laptop:text-left">

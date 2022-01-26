@@ -20,14 +20,12 @@ const GlobalStyle = createGlobalStyle`
           getContrastingColor(gradientEndColor)};
     }
     .bg--callout-linear {
-        background: linear-gradient(to right, ${({ gradientStartColor }) => gradientStartColor},${({ gradientEndColor }) => gradientEndColor});
+        background: linear-gradient(to right, ${({ gradientStartColor }) =>
+          gradientStartColor},${({ gradientEndColor }) => gradientEndColor});
     }
     .bg--callout-radial {
-        background: radial-gradient(circle at center,${({
-            gradientEndColor,
-          }) => gradientEndColor}, ${({
-            gradientStartColor,
-  }) => gradientStartColor});
+        background: radial-gradient(circle at center,${({ gradientEndColor }) =>
+          gradientEndColor}, ${({ gradientStartColor }) => gradientStartColor});
     }
     .bg--reviews {
         background-color: ${({ reviewBgColor }) => reviewBgColor};
