@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint-web": "lint-staged"
+    "lint-web": "lint-staged",
+    "sanity-template:build": "sanity-template build --template-values ./.sanity-template/template-values-development.json" 
   },
   "repository": {
     "type": "git",
