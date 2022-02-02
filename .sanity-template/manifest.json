@@ -36,7 +36,7 @@
             "buildSettings": {
               "base": "studio",
               "dir": "dist",
-              "cmd": "npm run build && cp netlify.toml dist"
+              "cmd": "npm run build && sanity graphql deploy && cp netlify.toml dist"
             },
             "requirements": ["build-hook"]
           },
