@@ -54,7 +54,7 @@
             "buildSettings": {
               "base": "web",
               "dir": "public",
-              "cmd": "(cd ../studio && SANITY_AUTH_TOKEN=$SANITY_DEPLOY_STUDIO_TOKEN npm run graphql-deploy) && (cd ../web && npm run build)"
+              "cmd": "(cd ../studio && npm install && SANITY_AUTH_TOKEN=$SANITY_DEPLOY_STUDIO_TOKEN npm run graphql-deploy) && (cd ../web && npm run build)"
             },
             "requiredTokens": [
               {
