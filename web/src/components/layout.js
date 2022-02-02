@@ -124,14 +124,6 @@ export default function Layout({ sanityData, children }) {
     sanityData?.category?.colorOverrides?.headingTextColor?.hex ||
     secondaryColor;
 
-  //tmp
-  let testLocations = locations.map(({ location }) => location);
-
-  let sortedLocations = testLocations.sort(function (locationA, locationB) {
-    return locationA.city.localeCompare(locationB.city);
-  });
-  //end tmp
-
   return (
     <>
       <GlobalStyle
