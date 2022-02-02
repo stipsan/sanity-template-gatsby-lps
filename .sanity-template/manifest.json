@@ -38,6 +38,12 @@
               "dir": "dist",
               "cmd": "npm run build && cp netlify.toml dist"
             },
+            "requiredTokens": [
+              {
+                "role": "deploy-studio",
+                "label": "GraphQL API Deployer"
+              }
+            ],
             "requirements": ["build-hook"]
           },
           {
