@@ -4,9 +4,8 @@ import sanityClient from '@sanity/client'
 import slugify from 'slugify';
 
 const sanityClientConfig = {
-  projectId: process.env.SANITY_STUDIO_API_PROJECT_ID,
-  dataset: process.env.SANITY_STUDIO_API_DATASET,
-  token: process.env.SANITY_STUDIO_API_TOKEN,
+  projectId: process.env.SANITY_STUDIO_API_PROJECT_ID || 'xjpwmgyc',
+  dataset: process.env.SANITY_STUDIO_API_DATASET || 'production',
   useCdn: true,
 }
 
