@@ -4,9 +4,9 @@ import sanityClient from '@sanity/client'
 import slugify from 'slugify';
 
 const sanityClientConfig = {
-  projectId: process.env.SANITY_STUDIO_API_PROJECT_ID || 'xjpwmgyc',
-  dataset: process.env.SANITY_STUDIO_API_DATASET || 'production',
-  useCdn: true,
+  projectId: process.env.SANITY_STUDIO_API_PROJECT_ID || '<#< sanity.projectId >#>',
+  dataset: process.env.SANITY_STUDIO_API_DATASET || '<#< sanity.dataset >#>',
+  useCdn: false,
 }
 
 export default function SetSlugAndPublishAction(props) {
