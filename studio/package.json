@@ -1,8 +1,8 @@
 {
-  "name": "tmpbeta",
+  "name": "lp-factory-studio",
   "private": true,
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend Sanity.io headless CMS",
   "main": "package.json",
   "author": "ryno-cmueller <cmueller@rynoss.com>",
   "license": "UNLICENSED",

@@ -1,8 +1,8 @@
 {
-  "name": "beta",
+  "name": "lp-factory-web",
   "version": "1.0.0",
   "private": true,
-  "description": "beta",
+  "description": "Front end Gatsby SSG",
   "author": "Chad Mueller",
   "keywords": [
     "gatsby"
@@ -54,6 +54,7 @@
     "eslint-config-prettier": "^8.3.0",
     "gatsby-plugin-anchor-links": "^1.2.1",
     "gatsby-source-sanity": "^7.0.2",
+    "netlify-cli": "^9.1.1",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",
     "tailwindcss": "^3.0.12",
