@@ -50,26 +50,34 @@ export default {
             fieldset: 'hero'
         },
         {
-            name: 'hero_title',
-            title: 'Title',
+            name: 'hero_special',
+            title: 'Special',
             description: '',
-            type: 'string',
+            type: 'reference',
+            to: [{type: 'special'}],
             fieldset: 'hero'
         },
-        {
-            name: 'hero_sub_title',
-            title: 'Sub Title',
-            description: '',
-            type: 'string',
-            fieldset: 'hero'
-        },
-        {
-            name: 'hero_content',
-            title: 'Content',
-            description: 'Optional content for hero section.',
-            type: 'string',
-            fieldset: 'hero'
-        },
+        // {
+        //     name: 'hero_title',
+        //     title: 'Title',
+        //     description: '',
+        //     type: 'string',
+        //     fieldset: 'hero'
+        // },
+        // {
+        //     name: 'hero_sub_title',
+        //     title: 'Sub Title',
+        //     description: '',
+        //     type: 'string',
+        //     fieldset: 'hero'
+        // },
+        // {
+        //     name: 'hero_content',
+        //     title: 'Content',
+        //     description: 'Optional content for hero section.',
+        //     type: 'string',
+        //     fieldset: 'hero'
+        // },
         {
             name: 'hero_hide_form',
             title: 'Enable to hide hero form.',

@@ -16,9 +16,11 @@ export const query = graphql`
           url
         }
       }
-      hero_content
-      hero_title
-      hero_sub_title
+      hero_special {
+        title
+        details
+        disclaimer
+      }
       hero_hide_form
       _rawIntro
       intro {

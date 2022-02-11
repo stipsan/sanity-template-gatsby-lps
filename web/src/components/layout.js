@@ -79,9 +79,9 @@ export default function Layout({ sanityData, children }) {
   const formConversionLabel = sanityData?.category?.formConversionLabel;
   const chatConversionLabel = sanityData?.category?.chatConversionLabel;
   const heroBackground = sanityData?.hero_banner?.asset?.url;
-  const heroTitle = sanityData?.hero_title;
-  const heroSubTitle = sanityData?.hero_sub_title;
-  const heroContent = sanityData?.hero_content;
+  const heroTitle = sanityData?.hero_special?.title;
+  const heroSubTitle = sanityData?.hero_special?.details;
+  const heroContent = sanityData?.hero_special?.disclaimer;
   const heroHideForm = sanityData?.hero_hide_form;
   const calloutMessage = sanityData?.category?.calloutMessage;
   const calloutBadge = sanityData?.category?.calloutBadge?.asset?.url;
