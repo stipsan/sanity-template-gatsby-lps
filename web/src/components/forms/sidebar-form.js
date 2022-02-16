@@ -122,7 +122,7 @@ export default class SidebarForm extends React.Component {
         ></textarea>
         <SubmitButton
           text={'Submit'}
-          className={'button--primary inline-block mx-auto mb-[-70px]'}
+          className={'w-full button--primary inline-block mx-auto mb-[-70px]'}
         />
         <FeedbackBox
           className={`bottom-10 ${
