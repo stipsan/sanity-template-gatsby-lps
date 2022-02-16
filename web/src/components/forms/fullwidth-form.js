@@ -62,7 +62,7 @@ export default class FullwidthForm extends React.Component {
   }
 
   render() {
-    const { recipient, isSplit } = this.props;
+    const { recipients, isSplit } = this.props;
     return (
       <form
         name="Fullwidth Form"
@@ -74,7 +74,7 @@ export default class FullwidthForm extends React.Component {
         onSubmit={(event) => this.handleSubmit(event)}
       >
         <input type="hidden" name="form-name" value="Fullwidth Form" />
-        <input type="hidden" name="recipient" value={recipient} />
+        <input type="hidden" name="recipients" value={recipients} />
         <div
           className={classNames(`justify-center`, {
             'laptop:flex laptop:gap-3': isSplit,

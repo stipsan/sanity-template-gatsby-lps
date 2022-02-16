@@ -57,7 +57,7 @@ export default class SidebarForm extends React.Component {
   }
 
   render() {
-    const { recipient } = this.props;
+    const { recipients } = this.props;
     return (
       <form
         name="Sidebar Form"
@@ -69,7 +69,7 @@ export default class SidebarForm extends React.Component {
         onSubmit={(event) => this.handleSubmit(event)}
       >
         <input type="hidden" name="form-name" value="Sidebar Form" />
-        <input type="hidden" name="recipient" value={recipient} />
+        <input type="hidden" name="recipients" value={recipients} />
         <div className="relative">
           <ValidationBox
             className={this.toggleValidationBox('name')}

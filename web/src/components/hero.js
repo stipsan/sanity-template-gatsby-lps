@@ -11,7 +11,7 @@ export default function HeroSection({
   heroTitle,
   heroSubTitle,
   heroContent,
-  emailRecipient,
+  emailRecipients,
   heroHideForm,
 }) {
   return (
@@ -37,13 +37,13 @@ export default function HeroSection({
         <div
           className={`hidden ${
             heroHideForm ? '' : 'laptop:flex'
-          } laptop:align-bottom laptop:pt-1 max-w-sm`}
+          } max-w-sm self-end laptop:align-bottom laptop:pt-1`}
         >
           <div className="bg--form py-6 pb-12 px-9 rounded-md relative tablet:-mb-8 tablet:mt-16 desktop:mt-34 desktop:-mb-16">
             <div className="uppercase text-center text-3xl font-extrabold mb-5">
               Schedule Now
             </div>
-            <SidebarForm recipient={emailRecipient} />
+            <SidebarForm recipients={emailRecipients} />
           </div>
         </div>
       </div>

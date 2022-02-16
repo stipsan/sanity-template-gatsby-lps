@@ -37,7 +37,7 @@ export default {
             name: 'slug',
             title: 'Slug',
             type: 'slug',
-            //hidden: 'false',
+            hidden: 'true',
             // options: {
             //     source: doc => `${doc.label}`,
             // }
