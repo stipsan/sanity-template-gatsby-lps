@@ -200,5 +200,5 @@ export const query = graphql`
 `;
 
 export default function LandingPageTemplate({ data }) {
-  return <Layout sanityData={data.sanityPage}>cheese</Layout>;
+  return <Layout sanityData={data.sanityPage}></Layout>;
 }
