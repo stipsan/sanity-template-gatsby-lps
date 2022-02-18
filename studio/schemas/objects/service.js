@@ -1,3 +1,4 @@
+import Icon from '../icon';
 export default {
     title: 'Service',
     name: 'service',
@@ -13,10 +14,17 @@ export default {
     //     },
     // ],
     fields: [
+        // {
+        //     name: 'icon',
+        //     title: 'Icon',
+        //     type: 'image',
+        //     description: '',
+        // },
         {
             name: 'icon',
             title: 'Icon',
-            type: 'image',
+            type: 'string',
+            inputComponent: Icons,
             description: '',
         },
         {
