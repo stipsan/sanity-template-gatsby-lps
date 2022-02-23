@@ -72,7 +72,7 @@ export function handleSubmit(event) {
             hasErrors: false,
           },
           () => {
-            this.triggerEvent('formSubmission', 'RYNO LP Conversion', 'footer');
+            this.triggerEvent('formSubmitted', 'RYNO LP Conversion', 'footer');
             this.flashFeedback('Form Submitted Successfully!');
             this.resetForm();
           }
@@ -117,15 +117,6 @@ export function toggleValidationBox(field) {
 
 export function triggerEvent(action, category, label) {
   try {
-    // if (window.ga !== undefined) {
-    //   const trackerName = window.ga.getAll()[0].get('name');
-    //   window.ga(trackerName + '.send', 'event', {
-    //     eventAction: action,
-    //     eventCategory: category,
-    //     eventLabel: label,
-    //   });
-    //   console.log(action, category, label);
-    // }
     if (window.dataLayer !== undefined) {
       window.dataLayer.push({
         event: action,

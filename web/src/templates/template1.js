@@ -57,6 +57,7 @@ export const query = graphql`
           company
           phone
           email
+          hasClr
           address
           tagline
         }

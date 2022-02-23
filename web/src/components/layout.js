@@ -95,6 +95,7 @@ export default function Layout({ sanityData, children }) {
   const serviceAreaBackground =
     sanityData?.category?.serviceAreaBackground?.asset?.url;
   const badgeObjs = sanityData?.category?.badges;
+  const hasClr = sanityData?.category?.companyInfo?.hasClr;
   //colors
   const primaryColor = sanityData?.category?.primaryColor?.hex;
   const secondaryColor = sanityData?.category?.secondaryColor?.hex;
@@ -173,6 +174,7 @@ export default function Layout({ sanityData, children }) {
           heroSubTitle,
           emailRecipients,
           heroContent,
+          hasClr,
           heroHideForm,
         }}
       />
@@ -199,7 +201,7 @@ export default function Layout({ sanityData, children }) {
               <h2 className="font-semibold text-center mb-7 leading-9 text-2xl phablet:text-3xl tablet:text-4xl laptop:text-5xl desktop:text-6xl">
                 Contact Our <span className="font-bold">Specialists Today</span>
               </h2>
-              <FullwidthForm recipients={emailRecipients} isSplit={false} />
+              <FullwidthForm recipients={emailRecipients} isSplit={false} hasCLR={hasClr} />
             </div>
           )}
         </Left>
@@ -215,11 +217,12 @@ export default function Layout({ sanityData, children }) {
                     <Locations locations={locations} />
                 </Right>
             </Split> */}
-      <Contact email={emailRecipients} />
+      <Contact email={emailRecipients}>
+        <FullwidthForm recipients={email} isSplit="true" hasCLR={hasClr} />
+      </Contact>
       <Tagline {...{ tagline, lineColor, iconSrc }} />
       <Badges badges={badgeObjs} />
       <Footer {...{ company, address, phone }} />
-      {children}
     </>
   );
 }

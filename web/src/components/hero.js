@@ -11,7 +11,7 @@ export default function HeroSection({
   heroTitle,
   heroSubTitle,
   heroContent,
-  emailRecipients,
+  children,
   heroHideForm,
 }) {
   return (
@@ -43,7 +43,7 @@ export default function HeroSection({
             <div className="uppercase text-center text-3xl font-extrabold mb-5">
               Schedule Now
             </div>
-            <SidebarForm recipients={emailRecipients} />
+            {children}
           </div>
         </div>
       </div>

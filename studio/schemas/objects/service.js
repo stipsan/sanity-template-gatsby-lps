@@ -24,7 +24,7 @@ export default {
             name: 'icon',
             title: 'Icon',
             type: 'string',
-            inputComponent: Icons,
+            inputComponent: Icon,
             description: '',
         },
         {

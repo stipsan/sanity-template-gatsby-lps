@@ -50,6 +50,15 @@ export default {
             validation: Rule => Rule.required(),
         },
         {
+            name: 'hasClr',
+            title: 'BCC ContactForm@rynoss.com?',
+            type: 'boolean',
+            layout: 'checkbox',
+            description: '',
+            initialValue: true,
+            fieldset: 'companyInfo',
+        },
+        {
             name: 'address',
             title: 'Address',
             type: 'string',

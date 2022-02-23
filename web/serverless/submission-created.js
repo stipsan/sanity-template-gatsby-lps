@@ -2,7 +2,7 @@ const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.LP_SENDGRID_API_KEY);
 
 exports.handler = async function (event, context, callback) {
-  const { recipients, name, phone, email, newCustomer, message, referral } =
+  const { recipients, hasClr, name, phone, email, newCustomer, message, referral } =
     JSON.parse(event.body).payload.data;
   const referralField = referral
     ? `<strong>Referral:</strong> ${referral}`
@@ -10,9 +10,10 @@ exports.handler = async function (event, context, callback) {
   const recipientsArr = recipients.split(",").map(function(email) {
     return email.trim();
   });
+  const bccRecipients = hasClr ? ['contactform@rynoss.com'] : [];
   const msg = {
     to: recipientsArr,
-    bcc: ['contactform@rynoss.com'],
+    bcc: bccRecipients,
     from: email, // Use the email address or domain you verified above
     subject: `PPC Form Submission - ${name}`,
     //text: 'and easy to do anywhere, even with Node.js',
