@@ -217,8 +217,8 @@ export default function Layout({ sanityData, children }) {
                     <Locations locations={locations} />
                 </Right>
             </Split> */}
-      <Contact email={emailRecipients}>
-        <FullwidthForm recipients={email} isSplit="true" hasCLR={hasClr} />
+      <Contact>
+        <FullwidthForm recipients={emailRecipients} isSplit="true" hasCLR={hasClr} />
       </Contact>
       <Tagline {...{ tagline, lineColor, iconSrc }} />
       <Badges badges={badgeObjs} />

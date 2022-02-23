@@ -50,7 +50,7 @@ export default function SetSlugAndPublishAction(props) {
           })
 
           // For the "page" type document, set the slug to [category.label]-[type]-[number]
-          slug = `${slugify(referenceLabel)}/${slugify(props.draft.label)}`
+          slug = `lp/${slugify(referenceLabel)}/${slugify(props.draft.label)}`
           // Set name field for the "page" type document to be the same value as the slug
           patch.execute([{set: { slug: slug.toLowerCase() }}])
           
