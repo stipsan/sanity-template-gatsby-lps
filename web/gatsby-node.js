@@ -41,7 +41,7 @@ async function turnDataIntoPages({ graphql, actions }) {
     }
 
     actions.createPage({
-      path: `${slug}`,
+      path: `lp/${slug}`,
       component: landingPageTemplate,
       context: {
         slug: slug,

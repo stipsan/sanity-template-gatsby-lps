@@ -60,7 +60,7 @@ const RYNO = ({ data }) => {
               {pageList.map(function (slug) {
                 return (
                   <li>
-                    <a href={`/${slug}`}>/{slug}</a>
+                    <a href={`/lp/${slug}`}>/lp/{slug}</a>
                   </li>
                 );
               })}
