@@ -11,6 +11,7 @@ import Services from './services';
 import Tagline from './tagline';
 import Testimonials from './testimonials';
 import Footer from './footer';
+import SidebarForm from './forms/sidebar-form';
 
 //temp
 import Split from './layout/split';
@@ -176,8 +177,10 @@ export default function Layout({ sanityData, children }) {
           heroContent,
           hasClr,
           heroHideForm,
-        }}
-      />
+        }}  
+      >
+        <SidebarForm recipients={emailRecipients} hasCLR={hasClr} />
+      </Hero>
       <Intro {...{ introText }} />
       <CalloutBar {...{ calloutMessage, calloutBadge, calloutGradient }} />
       <Services {...{ lineColor, services, iconSrc }} />
