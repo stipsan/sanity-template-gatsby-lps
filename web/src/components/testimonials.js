@@ -41,7 +41,6 @@ const Section = styled.section`
 
 export default function Testimonials({
   testimonials,
-  reviewBubbleColor,
   testimonialBackground,
   lineColor,
 }) {
@@ -95,7 +94,7 @@ export default function Testimonials({
     <Section
       bg={testimonialBackground}
       id="testimonials"
-      className="bg--reviews bg-no-repeat bg-center bg-top py-14 text-white laptop:pb-36 laptop:py-24 retina:bg-cover"
+      className="bg--reviews bg-no-repeat bg-top py-14 text-white laptop:pb-36 laptop:py-24 desktop:bg-cover"
     >
       <div className="container mx-auto">
         <Ornament {...{ iconSrc, lineColor }} alt={'Review Icon'} />

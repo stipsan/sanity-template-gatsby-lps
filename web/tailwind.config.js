@@ -10,7 +10,7 @@ module.exports = {
       tablet: '768px', // => @media (min-width: 768px) { ... }
       laptop: '1100px', // => @media (min-width: 1100px) { ... }
       desktop: '1441px', // => @media (min-width: 1441px) { ... }
-      retina: '1600px', // => @media (min-width: 1600px) { ... }
+      //retina: '1600px', // => @media (min-width: 1600px) { ... }
     },
     extend: {
       colors: {

@@ -29,16 +29,16 @@ export default function Services({
     >
       <div className="container mx-auto text-center">
         <Ornament {...{ lineColor, iconSrc }} alt={'Company Icon'} />
-        <h2 className="text--secondary text-magic font-extrabold mb-6 phablet:mb-8 phablet:text-4xl laptop:text-5xl">
+        <h2 className="text--secondary text-magic font-extrabold mb-8 phablet:text-4xl tablet:mb-14 tablet:text-5xl">
           We Can Assist You With:
         </h2>
-        <div className="flex flex-wrap justify-center mx-auto">
+        <div className="flex flex-wrap gap-7 justify-center mx-auto">
           {services.map((service, index) => {
             let serviceIcon: string | JSX.Element = '';
             if (service?.icon?.asset?.url) {
               serviceIcon = (
                 <img
-                  className="mb-4"
+                  className=""
                   src={service.icon.asset.url}
                   alt={`${service.label} Icon`}
                 />
@@ -46,11 +46,11 @@ export default function Services({
             }
             return (
               <div
-                className="grow-0 w-2/3 shrink-0 flex justify-center items-center flex-col capitalize py-3 px-4 m-3 bg-white rounded-md phablet:m-4 phablet:px-11 phablet:py-4 tablet:w-auto retina:py-8 retina:px:12"
+                className="grow-0 basis-56 shrink-0 flex justify-center items-center flex-col gap-4 capitalize px-4 py-6 xm-3 bg-white rounded-lg phablet:basis-2/5 tablet:px-0 laptop:basis-1/4 desktop:basis-72"
                 key={index}
               >
-                <div>{serviceIcon}</div>
-                <div className="leading-7 tracking-tighter font-semibold text-[22px] xphablet:w-24 tablet:w-36 retina:w-52">
+                {serviceIcon ? <div>{serviceIcon}</div> : null}
+                <div className="leading-7 tracking-tighter font-semibold text-[22px] xphablet:w-24 tablet:w-40 desktop:w-44">
                   {service.label}
                 </div>
               </div>
@@ -58,7 +58,7 @@ export default function Services({
           })}
         </div>
         <AnchorLink
-          className="button--primary uppercase rounded-xl px-10 mt-7 py-3 text-normal font-black mx-auto inline-block phablet:text-2xl"
+          className="button--primary uppercase rounded-2xl px-11 mt-8 py-5 text-normal font-black mx-auto inline-block phablet:text-2xl laptop:mt-12"
           to="#contact"
           title="Contact Us"
         >

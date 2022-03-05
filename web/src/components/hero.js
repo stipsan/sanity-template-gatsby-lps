@@ -17,22 +17,22 @@ export default function HeroSection({
   return (
     <Hero
       id="hero"
-      className="bg-hero bg-no-repeat bg-top px-4 flex items-center min-h-400 retina:bg-cover"
+      className="bg-hero bg-no-repeat bg-top py-14 px-4 flex items-center tablet:py-0 tablet:min-h-400 desktop:bg-cover"
       {...{ heroBackground }}
     >
       <div className="container mx-auto flex gap-48 justify-start tablet:justify-between">
-        <div className="text-white flex flex-col justify-center laptop:basis-full xlaptop:w-1/2 xlaptop:pr-44 laptop:py-16 xdesktop:pr-60">
-          <div className="text-magic uppercase">
-            <div className="font-extrabold phablet:text-4xl tablet:text-6xl desktop:text-[80px]">
+        <div className="text-white flex flex-col justify-center laptop:basis-full laptop:py-16">
+          <div className="text-magic uppercase flex flex-col">
+            <div className="font-extrabold leading-none phablet:leading-snug phablet:text-4xl tablet:leading-snug tablet:text-6xl desktop:text-[80px] desktop:leading-tight">
               {heroTitle}
             </div>
-            <div className="font-semibold phablet:text-6xl tablet:inline-block desktop:text-7xl">
+            <div className="font-semibold mb-4 phablet:mb-8 phablet:text-4xl tablet:inline-block desktop:text-7xl">
               {heroSubTitle}
             </div>
+            <div className="font-semibold text-base leading-none tablet:font-normal tablet:text-xl">
+              {heroContent}
+            </div>
           </div>
-          <p className="font-semibold mt-3 text-base tablet:font-normal tablet:text-xl">
-            {heroContent}
-          </p>
         </div>
         <div
           className={`hidden ${

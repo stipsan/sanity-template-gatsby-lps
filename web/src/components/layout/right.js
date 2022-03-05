@@ -32,10 +32,10 @@ const Aside = styled.section`
 export default function Right({ children, background }) {
   return (
     <Aside
-      className="flex flex-1 justify-start special-locations-bg"
+      className="flex flex-1 justify-start special-locations-bg py-20 laptop:py-24 laptop:pl-28"
       {...{ background }}
     >
-      <div className="container mx-auto grow-1 justify-center w-full text-center text-white py-20 laptop:justify-start laptop:text-left laptop:pl-28 laptop:bg-opacity-0 laptop:grow-0 laptop:w-512-5 laptop:mx-0 laptop:py-24 laptop:flex laptop:items-center desktop:w-720-5 retina:w-800">
+      <div className="container mx-auto grow-1 justify-center w-full text-center text-white laptop:justify-start laptop:text-left laptop:bg-opacity-0 laptop:grow-0 laptop:w-512-5 laptop:mx-0 laptop:flex laptop:items-center desktop:w-608-5">
         <div className="w-full">{children}</div>
       </div>
     </Aside>
