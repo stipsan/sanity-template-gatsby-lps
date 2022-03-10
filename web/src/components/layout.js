@@ -200,12 +200,12 @@ export default function Layout({ sanityData, children }) {
           {specials.length > 0 ? (
             <Specials specials={specials} />
           ) : (
-            <div>
+            <>
               <h2 className="font-semibold text-center mb-7 leading-9 text-2xl phablet:text-3xl tablet:text-4xl laptop:text-5xl desktop:text-6xl">
                 Contact Our <span className="font-bold">Specialists Today</span>
               </h2>
               <FullwidthForm recipients={emailRecipients} isSplit={false} hasClr={hasClr} />
-            </div>
+            </>
           )}
         </Left>
         <Right background={serviceAreaBackground}>

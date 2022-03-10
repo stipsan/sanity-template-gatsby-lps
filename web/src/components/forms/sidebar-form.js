@@ -81,6 +81,7 @@ export default class SidebarForm extends React.Component {
             placeholder="Full Name*"
             value={this.state.fields.name.value}
             updateField={this.updateField}
+            classNames="rounded-md"
           />
         </div>
         <div className="relative">
@@ -93,6 +94,7 @@ export default class SidebarForm extends React.Component {
             placeholder="Phone*"
             value={this.state.fields.phone.value}
             updateField={this.updateField}
+            classNames="rounded-md"
           />
         </div>
         <div className="relative">
@@ -105,6 +107,7 @@ export default class SidebarForm extends React.Component {
             placeholder="Email*"
             value={this.state.fields.email.value}
             updateField={this.updateField}
+            classNames="rounded-md"
           />
         </div>
         <TextInput
@@ -112,9 +115,10 @@ export default class SidebarForm extends React.Component {
           placeholder="Are You A New Customer?"
           value={this.state.fields.newCustomer.value}
           updateField={this.updateField}
+          classNames="rounded-md"
         />
         <textarea
-          className="rounded-md mb-4"
+          className="rounded-md mb-4 border-none resize-none"
           name="message"
           ref="message"
           rows="3"

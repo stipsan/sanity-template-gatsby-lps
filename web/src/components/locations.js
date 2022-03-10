@@ -4,8 +4,6 @@ import { LocationMarkerIcon } from '@heroicons/react/solid';
 
 export default function Locations({
   locations,
-  lineColor,
-  serviceAreaBackground,
 }) {
   locations = locations.map(({ location }) => location);
 

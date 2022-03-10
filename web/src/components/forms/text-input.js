@@ -12,7 +12,7 @@ export default function TextInput({
       name={name}
       value={value}
       type="text"
-      className={`mb-4 rounded-sm w-full ${classNames}`}
+      className={`mb-4 w-full border-none ${classNames}`}
       placeholder={placeholder}
       onChange={(event) => updateField(event)}
     />
