@@ -1,0 +1,7 @@
+:root {
+    /* Brand colors */
+    --brand-primary: #EE8129;
+    --brand-primary--inverted: #ffffff;
+    --brand-secondary: #000;
+    --brand-secondary--inverted: #ffffff;
+}
