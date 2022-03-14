@@ -1,43 +1,43 @@
-import { string } from "prop-types";
+import { string } from 'prop-types';
 
 export default {
-  name: "serviceArea",
-  title: "Service Area",
-  type: "document",
-  fieldsets: [{ name: "serviceAreaGroup", title: "Service Area Grouping" }],
+  name: 'serviceArea',
+  title: 'Service Area',
+  type: 'document',
+  fieldsets: [{ name: 'serviceAreaGroup', title: 'Service Area Grouping' }],
   fields: [
     {
-      name: "serviceAreaLabel",
-      title: "Title",
-      type: "string",
-      fieldset: "serviceAreaGroup",
+      name: 'serviceAreaLabel',
+      title: 'Title',
+      type: 'string',
+      fieldset: 'serviceAreaGroup',
     },
     {
-      name: "description",
-      title: "Description",
-      type: "string",
-      fieldset: "serviceAreaGroup",
+      name: 'description',
+      title: 'Description',
+      type: 'string',
+      fieldset: 'serviceAreaGroup',
     },
     {
-      name: "locations",
-      title: "Locations",
-      type: "array",
+      name: 'locations',
+      title: 'Locations',
+      type: 'array',
       of: [
         {
-          type: "reference",
+          type: 'reference',
           to: {
-            type: "locations",
+            type: 'locations',
           },
         },
       ],
-      fieldset: "serviceAreaGroup",
+      fieldset: 'serviceAreaGroup',
     },
   ],
   orderings: [
     {
-      title: "Label, Asc",
-      name: "labelAsc",
-      by: [{ field: "serviceAreaLabel", direction: "asc" }],
+      title: 'Label, Asc',
+      name: 'labelAsc',
+      by: [{ field: 'serviceAreaLabel', direction: 'asc' }],
     },
   ],
 };

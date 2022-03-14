@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-import { FormField } from "@sanity/base/components";
-import { TextInput } from "@sanity/ui";
-import PatchEvent, { set, unset } from "@sanity/form-builder/PatchEvent";
+import { FormField } from '@sanity/base/components';
+import { TextInput } from '@sanity/ui';
+import PatchEvent, { set, unset } from '@sanity/form-builder/PatchEvent';
 // be sure to npm install @reach/auto-id
-import { useId } from "@reach/auto-id"; // hook to generate unique IDs
+import { useId } from '@reach/auto-id'; // hook to generate unique IDs
 
 const Icon = React.forwardRef((props, ref) => {
   const {
@@ -34,7 +34,7 @@ const Icon = React.forwardRef((props, ref) => {
     [onChange]
   );
 
-  return "Hello World";
+  return 'Hello World';
 });
 
 // Create the default export to import into our schema

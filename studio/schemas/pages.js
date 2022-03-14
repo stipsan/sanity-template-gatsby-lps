@@ -1,17 +1,17 @@
-import { string } from "prop-types";
-import { FiFileText } from "react-icons/fi";
+import { string } from 'prop-types';
+import { FiFileText } from 'react-icons/fi';
 
 export default {
-  name: "page",
-  title: "Pages",
-  type: "document",
+  name: 'page',
+  title: 'Pages',
+  type: 'document',
   icon: FiFileText,
   fieldsets: [
-    { name: "hero", title: "Hero" },
-    { name: "interlude", title: "Interlude" },
+    { name: 'hero', title: 'Hero' },
+    { name: 'interlude', title: 'Interlude' },
     {
-      name: "category_overrides",
-      title: "Category Overrides",
+      name: 'category_overrides',
+      title: 'Category Overrides',
       options: {
         collapsible: true, // Makes the whole fieldset collapsible
         collapsed: true, // Defines if the fieldset should be collapsed by default or not
@@ -21,41 +21,41 @@ export default {
   ],
   fields: [
     {
-      name: "category",
-      title: "Category",
-      type: "reference",
-      to: { type: "category" },
+      name: 'category',
+      title: 'Category',
+      type: 'reference',
+      to: { type: 'category' },
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "label",
-      title: "Page Label",
-      discription: "",
-      type: "string",
+      name: 'label',
+      title: 'Page Label',
+      discription: '',
+      type: 'string',
     },
     {
-      name: "slug",
-      title: "Slug",
-      type: "slug",
-      hidden: "true",
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      hidden: 'true',
       // options: {
       //     source: doc => `${doc.label}`,
       // }
     },
     {
-      name: "hero_banner",
-      title: "Banner",
-      type: "image",
-      description: "Background image for hero section.",
-      fieldset: "hero",
+      name: 'hero_banner',
+      title: 'Banner',
+      type: 'image',
+      description: 'Background image for hero section.',
+      fieldset: 'hero',
     },
     {
-      name: "hero_special",
-      title: "Special",
-      description: "",
-      type: "reference",
-      to: [{ type: "special" }],
-      fieldset: "hero",
+      name: 'hero_special',
+      title: 'Special',
+      description: '',
+      type: 'reference',
+      to: [{ type: 'special' }],
+      fieldset: 'hero',
     },
     // {
     //     name: 'hero_title',
@@ -79,75 +79,75 @@ export default {
     //     fieldset: 'hero'
     // },
     {
-      name: "hero_hide_form",
-      title: "Enable to hide hero form.",
-      description: "",
-      type: "boolean",
+      name: 'hero_hide_form',
+      title: 'Enable to hide hero form.',
+      description: '',
+      type: 'boolean',
       initialValue: false,
-      fieldset: "hero",
+      fieldset: 'hero',
     },
     {
-      name: "intro",
-      title: "Intro",
-      type: "portableText",
+      name: 'intro',
+      title: 'Intro',
+      type: 'portableText',
     },
     {
-      name: "interlude_text",
-      title: "Text",
-      type: "array",
-      of: [{ type: "text" }],
-      fieldset: "interlude",
+      name: 'interlude_text',
+      title: 'Text',
+      type: 'array',
+      of: [{ type: 'text' }],
+      fieldset: 'interlude',
     },
     {
-      name: "interlude_image",
-      title: "Image",
-      type: "image",
-      fieldset: "interlude",
+      name: 'interlude_image',
+      title: 'Image',
+      type: 'image',
+      fieldset: 'interlude',
     },
     {
-      name: "company_overrides",
-      title: "Company Overrides",
-      type: "companyInfo",
-      description: "",
-      fieldset: "category_overrides",
+      name: 'company_overrides',
+      title: 'Company Overrides',
+      type: 'companyInfo',
+      description: '',
+      fieldset: 'category_overrides',
     },
     {
-      name: "testimonials_override",
-      title: "Testimonial Overrides",
-      type: "array",
+      name: 'testimonials_override',
+      title: 'Testimonial Overrides',
+      type: 'array',
       of: [
         {
-          type: "reference",
-          to: [{ type: "testimonial" }],
+          type: 'reference',
+          to: [{ type: 'testimonial' }],
         },
       ],
-      fieldset: "category_overrides",
+      fieldset: 'category_overrides',
     },
     {
-      title: "Specials",
-      name: "specials_override",
-      type: "array",
+      title: 'Specials',
+      name: 'specials_override',
+      type: 'array',
       of: [
         {
-          type: "reference",
-          to: [{ type: "special" }],
+          type: 'reference',
+          to: [{ type: 'special' }],
         },
       ],
-      fieldset: "category_overrides",
+      fieldset: 'category_overrides',
     },
     {
-      name: "service_area_override",
-      title: "Service Area Override",
-      type: "reference",
-      to: [{ type: "serviceArea" }],
-      fieldset: "category_overrides",
+      name: 'service_area_override',
+      title: 'Service Area Override',
+      type: 'reference',
+      to: [{ type: 'serviceArea' }],
+      fieldset: 'category_overrides',
     },
   ],
   preview: {
     select: {
-      category: "category.label",
-      label: "label",
-      slug: "slug",
+      category: 'category.label',
+      label: 'label',
+      slug: 'slug',
     },
     prepare: (fields) => {
       return {
@@ -158,9 +158,9 @@ export default {
   },
   orderings: [
     {
-      title: "Label, Asc",
-      name: "labelAsc",
-      by: [{ field: "label", direction: "asc" }],
+      title: 'Label, Asc',
+      name: 'labelAsc',
+      by: [{ field: 'label', direction: 'asc' }],
     },
   ],
 };

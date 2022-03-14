@@ -1,8 +1,8 @@
 //import Icon from '../icon';
 export default {
-  title: "Service",
-  name: "service",
-  type: "object",
+  title: 'Service',
+  name: 'service',
+  type: 'object',
   // fieldsets: [
   //     {
   //         name: 'headerOverides', title: 'Header Overides',
@@ -15,10 +15,10 @@ export default {
   // ],
   fields: [
     {
-      name: "icon",
-      title: "Icon",
-      type: "image",
-      description: "",
+      name: 'icon',
+      title: 'Icon',
+      type: 'image',
+      description: '',
     },
     // {
     //     name: 'icon',
@@ -28,10 +28,10 @@ export default {
     //     description: '',
     // },
     {
-      name: "label",
-      title: "Label",
-      type: "string",
-      description: "",
+      name: 'label',
+      title: 'Label',
+      type: 'string',
+      description: '',
     },
   ],
 };

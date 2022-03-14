@@ -1,7 +1,7 @@
 export default {
-  title: "Location",
-  name: "location",
-  type: "object",
+  title: 'Location',
+  name: 'location',
+  type: 'object',
   // fieldsets: [
   //     {
   //         name: 'headerOverides', title: 'Header Overides',
@@ -14,21 +14,21 @@ export default {
   // ],
   fields: [
     {
-      name: "city",
-      title: "City",
-      type: "string",
-      description: "",
+      name: 'city',
+      title: 'City',
+      type: 'string',
+      description: '',
     },
     {
-      name: "county",
-      title: "County (optional)",
-      type: "string",
-      description: "",
+      name: 'county',
+      title: 'County (optional)',
+      type: 'string',
+      description: '',
     },
     {
-      name: "state",
-      title: "State (optional)",
-      type: "string",
+      name: 'state',
+      title: 'State (optional)',
+      type: 'string',
     },
   ],
 };

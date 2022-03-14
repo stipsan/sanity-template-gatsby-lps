@@ -1,9 +1,9 @@
 export default {
   widgets: [
     {
-      name: "netlify",
+      name: 'netlify',
       options: {
-        title: "Netlify deploys",
+        title: 'Netlify deploys',
         sites: [
           // {
           //   title: 'Sanity Studio',
@@ -12,10 +12,10 @@ export default {
           //   name: '<#<deployments.studio.providerInfo.siteName>#>',
           // },
           {
-            title: "Web Frontend",
-            apiId: "<#<deployments.web.providerInfo.siteId>#>",
-            buildHookId: "<#<deployments.web.providerInfo.buildHookId>#>",
-            name: "<#<deployments.web.providerInfo.siteName>#>",
+            title: 'Web Frontend',
+            apiId: '<#<deployments.web.providerInfo.siteId>#>',
+            buildHookId: '<#<deployments.web.providerInfo.buildHookId>#>',
+            name: '<#<deployments.web.providerInfo.siteName>#>',
           },
         ],
       },

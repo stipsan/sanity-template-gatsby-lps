@@ -1,29 +1,29 @@
-import { string } from "prop-types";
-import { FiFeather } from "react-icons/fi";
+import { string } from 'prop-types';
+import { FiFeather } from 'react-icons/fi';
 
 export default {
-  name: "testimonial",
-  title: "Testimonials",
-  type: "document",
+  name: 'testimonial',
+  title: 'Testimonials',
+  type: 'document',
   icon: FiFeather,
   fields: [
     {
-      name: "excerpt",
-      title: "Quote Excerpt",
-      type: "text",
-      description: "",
+      name: 'excerpt',
+      title: 'Quote Excerpt',
+      type: 'text',
+      description: '',
     },
     {
-      name: "author",
-      title: "Author",
-      type: "string",
-      description: "",
+      name: 'author',
+      title: 'Author',
+      type: 'string',
+      description: '',
     },
   ],
   preview: {
     select: {
-      excerpt: "excerpt",
-      author: "author",
+      excerpt: 'excerpt',
+      author: 'author',
     },
     prepare: (fields) => {
       const { excerpt, author } = fields;
@@ -35,14 +35,14 @@ export default {
   },
   orderings: [
     {
-      title: "Excerpt, ASC",
-      name: "titleAsc",
-      by: [{ field: "excerpt", direction: "asc" }],
+      title: 'Excerpt, ASC',
+      name: 'titleAsc',
+      by: [{ field: 'excerpt', direction: 'asc' }],
     },
     {
-      title: "Author, ASC",
-      name: "authorAsc",
-      by: [{ field: "author", direction: "asc" }],
+      title: 'Author, ASC',
+      name: 'authorAsc',
+      by: [{ field: 'author', direction: 'asc' }],
     },
   ],
 };

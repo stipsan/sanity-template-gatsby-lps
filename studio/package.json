@@ -10,7 +10,10 @@
     "start": "sanity start",
     "build": "sanity build",
     "graphql-deploy": "sanity graphql deploy --playground",
-    "login": "sanity login"
+    "login": "sanity login",
+    "prettier": "prettier --ignore-path ./.gitignore \"**/*.+(js|json|ts|tsx)\"",
+    "format": "npm run prettier -- --write",
+    "check-format": "npm run prettier -- --list-different"
   },
   "keywords": [
     "sanity"
@@ -34,6 +37,7 @@
   },
   "devDependencies": {
     "@sanity/cli": "^2.26.0",
+    "prettier": "^2.5.1",
     "react-icons": "^4.2.0"
   }
 }

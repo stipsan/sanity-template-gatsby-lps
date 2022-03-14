@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
-import { useDocumentOperation } from "@sanity/react-hooks";
-import sanityClient from "@sanity/client";
-import slugify from "slugify";
+import { useState, useEffect } from 'react';
+import { useDocumentOperation } from '@sanity/react-hooks';
+import sanityClient from '@sanity/client';
+import slugify from 'slugify';
 
 const sanityClientConfig = {
   projectId:
-    process.env.SANITY_STUDIO_API_PROJECT_ID || "<#< sanity.projectId >#>",
-  dataset: process.env.SANITY_STUDIO_API_DATASET || "<#< sanity.dataset >#>",
+    process.env.SANITY_STUDIO_API_PROJECT_ID || '<#< sanity.projectId >#>',
+  dataset: process.env.SANITY_STUDIO_API_DATASET || '<#< sanity.dataset >#>',
   useCdn: false,
 };
 
@@ -24,7 +24,7 @@ export default function SetSlugAndPublishAction(props) {
 
   return {
     disabled: publish.disabled,
-    label: isPublishing ? "Publishing…" : "Publish",
+    label: isPublishing ? 'Publishing…' : 'Publish',
     onHandle: async () => {
       // This will update the button text
       setIsPublishing(true);
@@ -37,9 +37,9 @@ export default function SetSlugAndPublishAction(props) {
 
       /// Set the slug based on the document type
       switch (props.type) {
-        case "page":
+        case 'page':
           /// The type of the reference field to get the value from
-          const referenceNameType = "category";
+          const referenceNameType = 'category';
           /// Query for the referenced "category" and return the "name" field of that referenced document
           const query = `*[_type == "${referenceNameType}" && _id == $nameRef][0] {label}`;
           /// Start with the "category: reference id in the draft
@@ -59,7 +59,7 @@ export default function SetSlugAndPublishAction(props) {
 
           // Set the slug field of this document
           patch.execute([
-            { set: { slug: { _type: "slug", current: slug.toLowerCase() } } },
+            { set: { slug: { _type: 'slug', current: slug.toLowerCase() } } },
           ]);
 
           break;
