@@ -177,7 +177,7 @@ export default function Layout({ sanityData, children }) {
           heroContent,
           hasClr,
           heroHideForm,
-        }}  
+        }}
       >
         <SidebarForm recipients={emailRecipients} hasClr={hasClr} />
       </Hero>
@@ -204,7 +204,11 @@ export default function Layout({ sanityData, children }) {
               <h2 className="font-semibold text-center mb-7 leading-9 text-2xl phablet:text-3xl tablet:text-4xl laptop:text-5xl desktop:text-6xl">
                 Contact Our <span className="font-bold">Specialists Today</span>
               </h2>
-              <FullwidthForm recipients={emailRecipients} isSplit={false} hasClr={hasClr} />
+              <FullwidthForm
+                recipients={emailRecipients}
+                isSplit={false}
+                hasClr={hasClr}
+              />
             </>
           )}
         </Left>
@@ -221,7 +225,11 @@ export default function Layout({ sanityData, children }) {
                 </Right>
             </Split> */}
       <Contact>
-        <FullwidthForm recipients={emailRecipients} isSplit="true" hasClr={hasClr} />
+        <FullwidthForm
+          recipients={emailRecipients}
+          isSplit="true"
+          hasClr={hasClr}
+        />
       </Contact>
       <Tagline {...{ tagline, lineColor, iconSrc }} />
       <Badges badges={badgeObjs} />

@@ -2,9 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { LocationMarkerIcon } from '@heroicons/react/solid';
 
-export default function Locations({
-  locations,
-}) {
+export default function Locations({ locations }) {
   locations = locations.map(({ location }) => location);
 
   let sortedLocations = locations.sort(function (locationA, locationB) {

@@ -13,7 +13,11 @@ export default function Specials({ specials }) {
               <div className="text-3xl font-extrabold uppercase tablet:text-4xl desktop:text-[40px]">
                 {special.title}
               </div>
-                {special.details ? <div className="capitalize font-medium text-[18px]">{special.details}</div> : null}
+              {special.details ? (
+                <div className="capitalize font-medium text-[18px]">
+                  {special.details}
+                </div>
+              ) : null}
             </div>
           );
         })}

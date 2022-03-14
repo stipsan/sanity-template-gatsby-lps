@@ -1,69 +1,69 @@
 {
-    "version": 2,
-    "title": "Sanity.io project starter with Gatsby on Netlify",
-    "description": "Landing page project quickstarter",
-    "previewMedia": {
-      "type": "image",
-      "src": ".sanity-template/assets/starter-preview.png",
-      "alt": "RYNOSS"
+  "version": 2,
+  "title": "Sanity.io project starter with Gatsby on Netlify",
+  "description": "Landing page project quickstarter",
+  "previewMedia": {
+    "type": "image",
+    "src": ".sanity-template/assets/starter-preview.png",
+    "alt": "RYNOSS"
+  },
+  "technologies": [
+    {
+      "id": "netlify",
+      "name": "Netlify",
+      "url": "https://www.netlify.com/"
     },
-    "technologies": [
+    {
+      "id": "gatsby",
+      "name": "Gatsby",
+      "url": "https://www.gatsbyjs.com/"
+    }
+  ],
+  "deployment": {
+    "provider": "netlify",
+    "sites": [
       {
-        "id": "netlify",
-        "name": "Netlify",
-        "url": "https://www.netlify.com/"
+        "id": "studio",
+        "type": "studio",
+        "title": "Sanity Studio",
+        "description": "Sanity Studio is where you edit and structure content.",
+        "dir": "../studio",
+        "previewMedia": {
+          "type": "image",
+          "src": ".sanity-template/assets/studio-thumb.png",
+          "alt": "Studio preview"
+        },
+        "buildSettings": {
+          "base": "studio",
+          "dir": "dist",
+          "cmd": "npm run build && cp netlify.toml dist"
+        },
+        "requirements": ["build-hook"]
       },
       {
-        "id": "gatsby",
-        "name": "Gatsby",
-        "url": "https://www.gatsbyjs.com/"
-      }
-    ],
-    "deployment": {
-        "provider": "netlify",
-        "sites": [
+        "id": "web",
+        "type": "web",
+        "title": "Landing Pages",
+        "description": "Landing pages fetched from Sanity.io.",
+        "dir": "../web",
+        "previewMedia": {
+          "type": "image",
+          "src": ".sanity-template/assets/gatsby-thumb.png",
+          "alt": "Frontend Preview"
+        },
+        "buildSettings": {
+          "base": "web",
+          "dir": "public",
+          "cmd": "(cd ../studio && npm install && SANITY_AUTH_TOKEN=$SANITY_DEPLOY_STUDIO_TOKEN npm run graphql-deploy) && (cd ../web && npm run build)"
+        },
+        "requiredTokens": [
           {
-            "id": "studio",
-            "type": "studio",
-            "title": "Sanity Studio",
-            "description": "Sanity Studio is where you edit and structure content.",
-            "dir": "../studio",
-            "previewMedia": {
-              "type": "image",
-              "src": ".sanity-template/assets/studio-thumb.png",
-              "alt": "Studio preview"
-            },
-            "buildSettings": {
-              "base": "studio",
-              "dir": "dist",
-              "cmd": "npm run build && cp netlify.toml dist"
-            },
-            "requirements": ["build-hook"]
-          },
-          {
-            "id": "web",
-            "type": "web",
-            "title": "Landing Pages",
-            "description": "Landing pages fetched from Sanity.io.",
-            "dir": "../web",
-            "previewMedia": {
-              "type": "image",
-              "src": ".sanity-template/assets/gatsby-thumb.png",
-              "alt": "Frontend Preview"
-            },
-            "buildSettings": {
-              "base": "web",
-              "dir": "public",
-              "cmd": "(cd ../studio && npm install && SANITY_AUTH_TOKEN=$SANITY_DEPLOY_STUDIO_TOKEN npm run graphql-deploy) && (cd ../web && npm run build)"
-            },
-            "requiredTokens": [
-              {
-                "role": "deploy-studio",
-                "label": "GraphQL API Deployer"
-              }
-            ],
-            "requirements": ["build-hook"]
+            "role": "deploy-studio",
+            "label": "GraphQL API Deployer"
           }
-        ]
-    }
+        ],
+        "requirements": ["build-hook"]
+      }
+    ]
+  }
 }

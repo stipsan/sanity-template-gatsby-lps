@@ -2,12 +2,20 @@ const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.LP_SENDGRID_API_KEY);
 
 exports.handler = async function (event, context, callback) {
-  const { recipients, hasClr, name, phone, email, newCustomer, message, referral } =
-    JSON.parse(event.body).payload.data;
+  const {
+    recipients,
+    hasClr,
+    name,
+    phone,
+    email,
+    newCustomer,
+    message,
+    referral,
+  } = JSON.parse(event.body).payload.data;
   const referralField = referral
     ? `<strong>Referral:</strong> ${referral}`
     : '';
-  const recipientsArr = recipients.split(",").map(function(email) {
+  const recipientsArr = recipients.split(',').map(function (email) {
     return email.trim();
   });
   const bccRecipients = hasClr ? ['contactform@rynoss.com'] : [];

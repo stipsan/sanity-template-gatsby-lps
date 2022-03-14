@@ -1,7 +1,7 @@
 {
-    "sanity": {
-      "dataset": "production",
-      "projectId": "xjpwmgyc",
-      "projectTitle": "LP Factory Playground"
-    }
+  "sanity": {
+    "dataset": "production",
+    "projectId": "xjpwmgyc",
+    "projectTitle": "LP Factory Playground"
+  }
 }
