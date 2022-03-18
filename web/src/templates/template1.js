@@ -113,11 +113,7 @@ export const query = graphql`
           }
         }
         services {
-          icon {
-            asset {
-              url
-            }
-          }
+          icon
           label
         }
         testimonials {

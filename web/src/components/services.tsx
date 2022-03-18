@@ -3,11 +3,7 @@ import Ornament from './utils/ornament';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 interface Service {
-  icon?: {
-    asset: {
-      url: string;
-    };
-  };
+  icon?: string;
   label: string;
 }
 
@@ -34,22 +30,12 @@ export default function Services({
         </h2>
         <div className="flex flex-wrap gap-7 justify-center mx-auto">
           {services.map((service, index) => {
-            let serviceIcon: string | JSX.Element = '';
-            if (service?.icon?.asset?.url) {
-              serviceIcon = (
-                <img
-                  className=""
-                  src={service.icon.asset.url}
-                  alt={`${service.label} Icon`}
-                />
-              );
-            }
             return (
               <div
                 className="grow-0 basis-56 shrink-0 flex justify-center items-center flex-col gap-4 capitalize px-4 py-6 xm-3 bg-white rounded-lg phablet:basis-2/5 tablet:px-0 laptop:basis-1/4 desktop:basis-72"
                 key={index}
               >
-                {serviceIcon ? <div>{serviceIcon}</div> : null}
+                {serviceIcon ? <div><i className={`icon-${service?.icon} text-7xl`}></i></div> : null}
                 <div className="leading-7 tracking-tighter font-semibold text-[22px] xphablet:w-24 tablet:w-40 desktop:w-44">
                   {service.label}
                 </div>
