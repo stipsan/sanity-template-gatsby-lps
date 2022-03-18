@@ -6,10 +6,10 @@ module.exports = {
   content: ['./src/**/*.html', './src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     screens: {
-      phablet: '576px', // => @media (min-width: 576px) { ... }
-      tablet: '768px', // => @media (min-width: 768px) { ... }
-      laptop: '1100px', // => @media (min-width: 1100px) { ... }
-      desktop: '1441px', // => @media (min-width: 1441px) { ... }
+      phablet: '540px', // => @media (min-width: 576px) { ... }
+      tablet: '720px', // => @media (min-width: 768px) { ... }
+      laptop: '960px', // => @media (min-width: 1100px) { ... }
+      desktop: '1140px', // => @media (min-width: 1441px) { ... }
       //retina: '1600px', // => @media (min-width: 1600px) { ... }
     },
     extend: {
@@ -41,6 +41,8 @@ module.exports = {
         layout: '1fr auto 1fr',
       },
       width: {
+        '486': '486px',
+        '608.5': '608.5px',
         '512-5': '512.5px',
         '720-5': '720.5px',
         800: '800px',
@@ -55,8 +57,6 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/forms'),
-    //require('tailwind-pseudo-elements'),
-    //require('tailwindcss-multi-column')(),
   ],
   corePlugins: {
     textOpacity: false,
