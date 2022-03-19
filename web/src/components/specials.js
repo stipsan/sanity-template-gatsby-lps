@@ -7,7 +7,7 @@ export default function Specials({ specials }) {
         {specials.map((special, index, specials) => {
           return (
             <div
-              className={`flex flex-col text-center items-center justify-center gap-3 m-3 bg-white text-gray-alt rounded-2xl border-2 border-dashed border-gray-alt shadow-custom p-3 xdesktop:gap-5 laptop:p-6`}
+              className={`flex flex-col text-center items-center justify-center gap-3 m-3 bg-white text-gray-alt rounded-2xl border-2 border-dashed border-gray-alt shadow-custom p-3 xdesktop:gap-5 xlaptop:p-6`}
               key={index}
             >
               <div className="text-3xl font-extrabold uppercase tablet:text-3xl xdesktop:text-[40px]">
