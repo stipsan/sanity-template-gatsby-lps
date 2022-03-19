@@ -36,7 +36,7 @@ export default function Services({
                 key={index}
               >
                 {service.icon ? <div><i className={`icon-${service?.icon} text-7xl text-[#ef4a36]`}></i></div> : null}
-                <div className="leading-7 tracking-tighter font-semibold text-[22px] xphablet:w-24 tablet:w-40 desktop:w-44">
+                <div className="leading-7 tracking-tighter font-semibold text-[22px] xphablet:w-24 tablet:w-44">
                   {service.label}
                 </div>
               </div>

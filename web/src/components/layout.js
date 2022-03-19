@@ -197,7 +197,7 @@ export default function Layout({ sanityData, children }) {
       <Interlude {...{ interludeText, interludeImageSrc }} />
       {/* <SpecialsLocations {...{locations, specials, serviceAreaBackground, specialsBgColor, lineColor, emailRecipients}} /> */}
       <Split>
-        <Left>
+        <Left id="specials">
           {specials.length > 0 ? (
             <Specials specials={specials} />
           ) : (

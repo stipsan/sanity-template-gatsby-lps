@@ -21,7 +21,7 @@ export default {
     },
     {
       name: 'disclaimer',
-      title: 'Disclaimer',
+      title: 'Disclaimer (optional)',
       type: 'string',
       description: '',
     },
