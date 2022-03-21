@@ -24,7 +24,10 @@ export default function HeroSection({
       <div className="container mx-auto flex gap-4 justify-start tablet:justify-between">
         <div className="text-white flex flex-col justify-center xlaptop:basis-full xlaptop:py-16">
           <div className="xtext-magic uppercase flex flex-col gap-7">
-            <AnchorLink to="#specials" className="border-highlight border-2 border-dashed rounded-2xl p-5 xmb-4 xphablet:mb-8 self-start">
+            <AnchorLink
+              to="#specials"
+              className="border-highlight border-2 border-dashed rounded-2xl p-5 xmb-4 xphablet:mb-8 self-start"
+            >
               <div className="font-extrabold leading-none phablet:leading-snug phablet:text-4xl tablet:leading-snug tablet:text-6xl xdesktop:text-[80px] desktop:leading-tight">
                 {heroTitle}
               </div>

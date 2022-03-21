@@ -35,7 +35,13 @@ export default function Services({
                 className="grow-0 basis-56 shrink-0 flex justify-center items-center flex-col gap-4 capitalize px-4 py-6 xm-3 bg-white rounded-lg phablet:basis-2/5 tablet:px-0 laptop:basis-1/4 desktop:basis-64"
                 key={index}
               >
-                {service.icon ? <div><i className={`icon-${service?.icon} text-7xl text-[#ef4a36]`}></i></div> : null}
+                {service.icon ? (
+                  <div>
+                    <i
+                      className={`icon-${service?.icon} text-7xl text-[#ef4a36]`}
+                    ></i>
+                  </div>
+                ) : null}
                 <div className="leading-7 tracking-tighter font-semibold text-[22px] xphablet:w-24 tablet:w-44">
                   {service.label}
                 </div>

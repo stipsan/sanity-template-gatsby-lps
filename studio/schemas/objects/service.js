@@ -21,11 +21,11 @@ export default {
     //   description: '',
     // },
     {
-        name: 'icon',
-        title: 'Icon',
-        type: 'string',
-        inputComponent: Icon,
-        description: '',
+      name: 'icon',
+      title: 'Icon',
+      type: 'string',
+      inputComponent: Icon,
+      description: '',
     },
     {
       name: 'label',

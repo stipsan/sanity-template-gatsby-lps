@@ -106,14 +106,14 @@ export default {
     },
     {
       name: 'company_overrides',
-      title: 'Company Overrides',
+      title: 'Company Override',
       type: 'companyInfo',
       description: '',
       fieldset: 'category_overrides',
     },
     {
       name: 'testimonials_override',
-      title: 'Testimonial Overrides',
+      title: 'Testimonials Override',
       type: 'array',
       of: [
         {
@@ -124,7 +124,7 @@ export default {
       fieldset: 'category_overrides',
     },
     {
-      title: 'Specials',
+      title: 'Specials Override',
       name: 'specials_override',
       type: 'array',
       of: [

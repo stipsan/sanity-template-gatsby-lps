@@ -41,8 +41,8 @@ module.exports = {
         layout: '1fr auto 1fr',
       },
       width: {
-        '416': '416px',
-        '608.5': '608.5px',
+        416: '416px',
+        608.5: '608.5px',
         '512-5': '512.5px',
         '720-5': '720.5px',
         800: '800px',
@@ -55,9 +55,7 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-  ],
+  plugins: [require('@tailwindcss/forms')],
   corePlugins: {
     textOpacity: false,
   },
