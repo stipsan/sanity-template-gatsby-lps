@@ -1,4 +1,9 @@
 import Icon from '../../components/icon';
+import loadStyle from '../../utils/loadStyle';
+const icomoonPath = 'https://d1azc1qln24ryf.cloudfront.net/198172/ryno-lp-factory';
+
+//promise loads icomoon stylesheet for select option preview
+loadStyle(`${icomoonPath}/style-cf.css`, 'icomoon')
 export default {
   title: 'Service',
   name: 'service',
@@ -26,6 +31,7 @@ export default {
       type: 'string',
       inputComponent: Icon,
       description: '',
+      icomoonPath: icomoonPath,
     },
     {
       name: 'label',
