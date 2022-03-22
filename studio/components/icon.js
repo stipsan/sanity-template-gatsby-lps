@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import bust from '../utils/bust';
 import { FiSearch } from 'react-icons/fi';
 import { FormField } from '@sanity/base/components';
 import {
@@ -15,20 +16,6 @@ import {
 } from '@sanity/ui';
 import PatchEvent, { set, unset } from '@sanity/form-builder/PatchEvent'; // utils send data back to sanity dataset
 import { useId } from '@reach/auto-id'; // hook to generate unique IDs
-
-//import 'https://d1azc1qln24ryf.cloudfront.net/198172/ryno-lp-factory/style-cf.css';
-function loadStyle(src) {
-  return new Promise(function (resolve, reject) {
-    let link = document.createElement('link');
-    link.href = src;
-    link.rel = 'stylesheet';
-
-    link.onload = () => resolve(link);
-    link.onerror = () => reject(new Error(`Style load error for ${src}`));
-
-    document.head.append(link);
-  });
-}
 
 const Icon = React.forwardRef((props, ref) => {
   //creates react component
@@ -52,30 +39,26 @@ const Icon = React.forwardRef((props, ref) => {
 
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
-    loadStyle(
-      'https://d1azc1qln24ryf.cloudfront.net/198172/ryno-lp-factory/style-cf.css'
-    )
-      .then(() => loadStyle('css/style.css'))
-      .then(() => loadStyle('css/icomoon.css'))
-      .then(() => {
-        alert('All styles are loaded!');
-      })
-      .catch((err) => alert(err));
+    console.log('cheese');
     getIcons();
   }, []);
 
   async function getIcons() {
+    
     const iconPackSelection = await (
       await fetch(
-        'https://d1azc1qln24ryf.cloudfront.net/198172/ryno-lp-factory/selection.json'
+        bust(`${type.icomoonPath}/selection.json`)
       )
     ).json();
+    console.log(iconPackSelection);
     const icons = iconPackSelection.icons.map(function (icon) {
       const iconName = icon.properties.name;
+      
       return {
         value: iconName,
         payload: icon,
       };
+      
     });
     setIcons(icons);
   }
