@@ -47,7 +47,7 @@ export default {
       type: 'string',
       description: '',
       fieldset: 'companyInfo',
-      validation: (Rule) => Rule.required(),
+      //validation: (Rule) => Rule.required(),
     },
     {
       name: 'hasClr',
