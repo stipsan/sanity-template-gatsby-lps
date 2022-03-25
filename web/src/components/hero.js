@@ -21,14 +21,14 @@ export default function HeroSection({
       className="bg-hero bg-no-repeat bg-top py-14 px-4 flex items-center phablet:px-0 tablet:py-0 tablet:min-h-400 desktop:bg-cover"
       {...{ heroBackground }}
     >
-      <div className="container mx-auto flex gap-4 justify-start tablet:justify-between">
-        <div className="text-white flex flex-col justify-center xlaptop:basis-full xlaptop:py-16">
-          <div className="xtext-magic uppercase flex flex-col gap-7">
+      <div className="container mx-auto flex gap-4 justify-center laptop:justify-between">
+        <div className="text-white flex flex-col justify-center basis-full laptop:basis-auto xlaptop:py-16">
+          <div className="uppercase flex flex-col gap-7">
             <AnchorLink
               to="#specials"
-              className="border-highlight border-2 border-dashed rounded-2xl p-5 xmb-4 xphablet:mb-8 self-start"
+              className="border-highlight border-2 border-dashed rounded-2xl p-5 xmb-4 xphablet:mb-8 xself-start bg-black/50 text-center"
             >
-              <div className="font-extrabold leading-none phablet:leading-snug phablet:text-4xl tablet:leading-snug tablet:text-6xl xdesktop:text-[80px] desktop:leading-tight">
+              <div className="font-extrabold leading-none text-2xl phablet:leading-snug phablet:text-4xl tablet:leading-snug laptop:text-6xl xdesktop:text-[80px] desktop:leading-tight">
                 {heroTitle}
               </div>
               <div className="font-semibold phablet:text-4xl tablet:inline-block desktop:text-5xl">
