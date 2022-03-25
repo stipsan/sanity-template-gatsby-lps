@@ -4,6 +4,12 @@ import { FiFolder } from 'react-icons/fi';
 export default {
   name: 'category',
   title: 'Categories',
+  // validation: Rule => Rule.custom(fields => {
+  //   console.log(fields.companyInfo);
+  //   let email = fields.companyInfo.email;
+  //   if ( email?.length < 1 || Object.keys(email)?.length < 1) return "Email required for form recipient."
+  //   return "Email required for form recipient."
+  // }),
   fieldsets: [
     {
       name: 'meta',
@@ -16,16 +22,16 @@ export default {
       name: 'serviceArea',
       title: 'Service Area',
       options: {
-        collapsible: true, // Makes the whole fieldset collapsible
+        collapsible: false, // Makes the whole fieldset collapsible
         collapsed: false, // Defines if the fieldset should be collapsed by default or not
-        columns: 2, // Defines a grid for the fields and how many columns it should have
+        columns: 1, // Defines a grid for the fields and how many columns it should have
       },
     },
     {
       name: 'testimonials',
       title: 'Testimonials',
       options: {
-        collapsible: true, // Makes the whole fieldset collapsible
+        collapsible: false, // Makes the whole fieldset collapsible
         collapsed: false, // Defines if the fieldset should be collapsed by default or not
         columns: 1, // Defines a grid for the fields and how many columns it should have
       },
@@ -45,7 +51,7 @@ export default {
       name: 'companyInfo',
       title: 'Company Info',
       type: 'companyInfo',
-      description: 'Category level company information.',
+      description: 'Category level company information.'
     },
     {
       name: 'gtm',
@@ -119,7 +125,7 @@ export default {
       //dont love the placement or naming of this section?
       name: 'calloutMessage',
       title: 'Callout Message',
-      description: 'desc',
+      description: '',
       type: 'string',
       fieldset: 'callout',
     },
