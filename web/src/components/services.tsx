@@ -38,11 +38,11 @@ export default function Services({
                 {service.icon ? (
                   <div>
                     <i
-                      className={`icon-${service?.icon} text-7xl text-[#ef4a36]`}
+                      className={`icon-${service?.icon} text-7xl text--secondary`}
                     ></i>
                   </div>
                 ) : null}
-                <div className="leading-7 tracking-tighter font-semibold text-[22px] xphablet:w-24 tablet:w-44">
+                <div className="leading-7 tracking-tighter font-semibold text-[22px] tablet:w-44">
                   {service.label}
                 </div>
               </div>
