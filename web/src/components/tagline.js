@@ -1,7 +1,7 @@
 import React from 'react';
 import Ornament from './utils/ornament';
 
-export default function Tagline({ tagline, lineColor, textColor, iconSrc }) {
+export default function Tagline({ tagline, lineColor, iconSrc }) {
   return (
     <section id="tagline">
       <div className="container mx-auto text-center pt-7 pb-6 laptop:pt-14 tablet:pb-10">

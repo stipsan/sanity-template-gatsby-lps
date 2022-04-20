@@ -124,8 +124,7 @@ export function triggerEvent(action, category, label) {
         label: label,
       });
     }
-    console.log('events triggered');
-  } catch {
-    console.log('Error');
+  } catch (error) {
+    console.error(error);
   }
 }

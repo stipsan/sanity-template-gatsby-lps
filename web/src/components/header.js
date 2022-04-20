@@ -1,13 +1,7 @@
 import React from 'react';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
-//import scrollTo from 'gatsby-plugin-smoothscroll';
-
-//import { graphql } from 'gatsby';
-//import { getGatsbyImageData } from 'gatsby-source-sanity'
-
 export default function Header({ logoSrc, phone }) {
-  //const logo = getGatsbyImageData(logo);
   return (
     <header className="bg-white sticky top-0 z-10 laptop:static laptop:top-auto">
       <div className="mx-auto flex flex-wrap laptop:items-center laptop:container">

@@ -5,16 +5,6 @@ import { getGatsbyImageData } from 'gatsby-source-sanity';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import clientConfig from '../../client-config';
 
-// const serializers = {
-//     h1: props => <h1 className="text--secondary text-magic font-extrabold mb-3 phablet:text-3xl tablet:mb-14 laptop:text-5xl" {...props} />,
-//     h2: props => <h2 className="text--secondary text-magic font-extrabold mb-3 phablet:text-3xl tablet:mb-12 laptop:text-4xl" {...props} />,
-//     h3: props => <h3 className="text--secondary text-magic font-extrabold mb-3 phablet:text-3xl tablet:mb-10 laptop:text-4xl" {...props} />,
-//     h4: props => <h4 className="text--secondary text-magic font-extrabold mb-3 phablet:text-3xl tablet:mb-8 laptop:text-3xl" {...props} />,
-//     h5: props => <h5 className="text--secondary text-magic font-extrabold mb-3 phablet:text-3xl tablet:mb-6 laptop:text-2xl" {...props} />,
-//     h6: props => <h6 className="text--secondary text-magic font-extrabold mb-3 phablet:text-3xl tablet:mb-4 laptop:text-xl" {...props} />,
-//     ul: ({children}) => <ul className="list-disc pl-4 laptop:mr-16">{children}</ul>,
-//     li: ({ children }) => <li className="mb-5">{children}</li>,
-// }
 const listRenderer = ({ type, children }) => {
   if (type === 'bullet') {
     return (
@@ -30,11 +20,6 @@ const listRenderer = ({ type, children }) => {
 };
 const BlockRenderer = (props) => {
   const { style = 'normal' } = props.node;
-
-  // if (/^h\d/.test(style)) {
-  //     const level = style.replace(/[^\d]/g, '')
-  //     return React.createElement(style, {className: `heading-${level}`}, props.children)
-  // }
 
   if (style === 'normal') {
     return <p className="text-[18px] mb-5 leading-relaxed">{props.children}</p>;
@@ -88,12 +73,7 @@ const BlockRenderer = (props) => {
     );
   }
 
-  // if (style === 'figure') {
-  //     return <div></div>;
-  // }
-
-  // Fall back to default handling
-  return BlockContent.defaultSerializers.types.block(props);
+  return BlockContent.defaultSerializers.types.block(props); // Fall back to default handling
 };
 const FigureRenderer = ({ node }) => {
   const imageAssetId = node?.image?.asset?._ref;
@@ -148,9 +128,6 @@ export default function Intro({ introText }) {
             </AnchorLink>
           </div>
         </div>
-        {/* <div className="flex-none">
-                    <img className="hidden laptop:inline-block" src="img/pengion-tools.png" alt="" />
-                </div> */}
       </div>
     </section>
   );

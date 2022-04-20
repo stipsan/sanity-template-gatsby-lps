@@ -199,7 +199,6 @@ export default function Layout({ sanityData, children }) {
         }}
       />
       <Interlude {...{ interludeText, interludeImageSrc }} />
-      {/* <SpecialsLocations {...{locations, specials, serviceAreaBackground, specialsBgColor, lineColor, emailRecipients}} /> */}
       <Split>
         <Left id="specials">
           {specials.length > 0 ? (
@@ -221,14 +220,6 @@ export default function Layout({ sanityData, children }) {
           <Locations locations={locations} />
         </Right>
       </Split>
-      {/* <Split>
-                <Left>
-
-                </Left>
-                <Right background={serviceAreaBackground}>
-                    <Locations locations={locations} />
-                </Right>
-            </Split> */}
       <Contact>
         <FullwidthForm
           recipients={emailRecipients}
@@ -242,7 +233,3 @@ export default function Layout({ sanityData, children }) {
     </>
   );
 }
-
-// Layout.propTypes = {
-//   children: PropTypes.node.isRequired,
-// }

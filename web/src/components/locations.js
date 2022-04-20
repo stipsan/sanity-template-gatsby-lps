@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import { LocationMarkerIcon } from '@heroicons/react/solid';
 
 export default function Locations({ locations }) {
@@ -14,7 +13,7 @@ export default function Locations({ locations }) {
       <h4 className="border-highlight text-xl mb-14 border-b-2 inline-block mx-auto">
         Residents in the areas surrounding
       </h4>
-      <ul className="columns-2 text-left text-lg tablet:columns-3 laptop:columns-2 xlaptop:ml-12">
+      <ul className="columns-2 text-left text-lg tablet:columns-3 laptop:columns-2">
         {sortedLocations.map((location, index) => (
           <li className="mb-3 xlaptop:ml-8" key={index} title={location.city}>
             <LocationMarkerIcon className="inline-block h-5 w-6 mr-1 text-[18px]" />

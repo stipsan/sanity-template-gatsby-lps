@@ -5,8 +5,6 @@ export default function CalloutBar({
   calloutBadge,
   calloutGradient,
 }) {
-  //const logo = getGatsbyImageData(logo);
-  console.log('grad:', calloutGradient);
   const gradientType = calloutGradient ? 'radial' : 'linear';
   return (
     <section
