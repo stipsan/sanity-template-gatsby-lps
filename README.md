@@ -17,6 +17,7 @@ This project is kicked off at sanity.io/create.
 3. **Netlify Account: Sign in with Github account - ppc@**
 * Sign in with Github account - **ppc@**
 4. Press **"Create Project"** to submit
+* The project will take a few minutes to initiate
 
 ## Development
 
