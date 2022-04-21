@@ -16,7 +16,6 @@ This project is kicked off at sanity.io/create.
 * Check the box next to **"create private repository"**
 3. **Netlify Account: Sign in with Github account - ppc@**
 * Sign in with Github account - **ppc@**
-* test
 4. Press **"Create Project"** to submit
 
 ## Development
