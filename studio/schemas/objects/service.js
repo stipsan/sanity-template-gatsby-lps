@@ -1,3 +1,4 @@
+import React from 'react';
 import Icon from '../../components/icon';
 import bust from '../../utils/bust';
 import loadStyle from '../../utils/loadStyle';
@@ -21,12 +22,6 @@ export default {
   //     },
   // ],
   fields: [
-    // {
-    //   name: 'icon',
-    //   title: 'Icon',
-    //   type: 'image',
-    //   description: '',
-    // },
     {
       name: 'icon',
       title: 'Icon',
@@ -42,4 +37,16 @@ export default {
       description: '',
     },
   ],
+  preview: {
+    select: {
+      label: 'label',
+      icon: 'icon'
+    },
+    prepare({ icon, label }) {
+      return {
+        title: label,
+        media: <i className={`icon-${icon}`}></i>
+      }
+    }
+  }
 };
