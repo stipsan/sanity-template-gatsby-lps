@@ -202,7 +202,7 @@ export default function Layout({ sanityData, children }) {
       <Split>
         <Left id="specials">
           {specials.length > 0 ? (
-            <Specials specials={specials} />
+            <Specials {...{ specials, lineColor, iconSrc }} />
           ) : (
             <>
               <h2 className="font-semibold text-center mb-7 leading-9 text-2xl phablet:text-3xl tablet:text-4xl laptop:text-5xl desktop:text-6xl">
