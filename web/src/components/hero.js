@@ -33,10 +33,10 @@ export default function HeroSection({
               <div className="font-semibold phablet:text-4xl tablet:inline-block desktop:text-5xl">
                 {heroSubTitle}
               </div>
+              <div className="font-semibold text-base leading-none text-center tablet:font-normal tablet:text-xl">
+                {heroContent}
+              </div>
             </AnchorLink>
-            <div className="font-semibold text-base leading-none text-center tablet:font-normal tablet:text-xl">
-              {heroContent}
-            </div>
           </div>
         </div>
         <div
