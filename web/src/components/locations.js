@@ -10,7 +10,7 @@ export default function Locations({ locations }) {
   return (
     <>
       <h2 className="text-5xl font-extrabold mb-1">Proudly Serving</h2>
-      <h4 className="border-highlight text-xl mb-14 border-b-2 inline-block mx-auto">
+      <h4 className="border-highlight text-xl mb-14 border-b-2 inline-block mx-auto capitalize">
         Residents in the areas surrounding
       </h4>
       <ul className="columns-2 text-left text-lg tablet:columns-3 laptop:columns-2">
