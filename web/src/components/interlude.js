@@ -3,9 +3,9 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 export default function Interlude({ interludeText, interludeImageSrc }) {
   return (
-    <section id="interlude">
-      <div className="container flex flex-col-reverse mx-auto text-center py-16 text-gray-alt tablet:py-24 laptop:py-36 laptop:flex-row">
-        <div className="flex-1 text-center laptop:pr-7">
+    <section id="interlude" className="px-4 phablet:px-0">
+      <div className="container flex flex-col-reverse mx-auto py-16 text-gray-alt tablet:py-24 laptop:py-36 laptop:flex-row">
+        <div className="flex-1 laptop:pr-7">
           {interludeText.map((paragraph, index) => (
             <p
               className="text-xl tablet:text-2xl tablet:leading-9 mb-8"
