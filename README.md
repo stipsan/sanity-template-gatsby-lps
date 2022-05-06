@@ -1,7 +1,36 @@
-# sanity.io/create starter template starter for Netlify
+# LP Factory
 
-This is a barebones example of how to create a starter template for <a href="https://www.sanity.io/create?template=sanity-io/sanity-template-netlify-poc">sanity.io/create</a>.
+This is a [starter template](https://www.sanity.io/docs/starter-templates) for creating a Sanity project with a Gatsby frontend, hosted on [Netlify](https://www.netlify.com).
 
-It contains a `.sanity-template` folder with all the information to treat this repository as a new Sanity Starter (assets, data, and manifest), as well as a `studio` directory with a barebones Studio, and a `web` directory with a simple script to display data from the new Sanity project.
+## Usage
 
-Go to our[ documentation for starter templates](https://www.sanity.io/docs/starter-templates).
+This project is kicked off at sanity.io/create. 
+
+1. **Sign in to Sanity:**
+* Sign in with Github account - **ppc@**
+* Project title: ***service.example.com*** (The project name is used to identify the project within Sanity)
+
+2. **Connect to Github:**
+* Sign in with Github account - **ppc@**
+* Repository name: **service.example.com**
+* Check the box next to **"create private repository"**
+3. **Netlify Account: Sign in with Github account - ppc@**
+* Sign in with Github account - **ppc@**
+4. Press **"Create Project"** to submit
+* The project will take a few minutes to initiate
+
+## Development
+
+### Install
+
+Use the [npm](https://www.npmjs.com) package manager to install dependancies.
+
+```bash
+npm install
+```
+
+### Sanity Template Build
+
+```bash
+npm run build
+```
