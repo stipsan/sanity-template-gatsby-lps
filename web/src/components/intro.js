@@ -118,9 +118,9 @@ export default function Intro({ introText }) {
               ),
             }}
           />
-          <div className="text-center laptop:text-left">
+          <div className="">
             <AnchorLink
-              className="button--primary block text-center mt-5 rounded-xl text-xl font-black px-8 py-3 uppercase phablet:text-2xl phablet:inline-block"
+              className="button--primary inline-block text-center mt-5 rounded-xl text-xl font-black px-8 py-3 uppercase phablet:text-2xl phablet:inline-block"
               to="#contact"
               title="Contact Us"
             >
