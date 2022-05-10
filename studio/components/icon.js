@@ -39,7 +39,6 @@ const Icon = React.forwardRef((props, ref) => {
 
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
-    console.log('cheese');
     getIcons();
   }, []);
 
@@ -50,7 +49,6 @@ const Icon = React.forwardRef((props, ref) => {
         bust(`${type.icomoonPath}/selection.json`)
       )
     ).json();
-    console.log(iconPackSelection);
     const icons = iconPackSelection.icons.map(function (icon) {
       const iconName = icon.properties.name;
       
