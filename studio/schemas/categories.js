@@ -204,8 +204,7 @@ export default {
       type: 'array',
       of: [
         {
-          type: 'reference',
-          to: [{ type: 'badge' }],
+          type: 'cloudinary.asset'
         },
       ],
     },

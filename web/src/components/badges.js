@@ -9,7 +9,7 @@ export default function Badges({ badges }) {
             className="flex justify-center py-3 w-full phablet:w-1/2 phablet:py-5 laptop:w-64 desktop:shrink-0 desktop:grow-0"
             key={index}
           >
-            <img className="" src={badge.image.asset.url} alt="" />
+            <img className="" src={badge?.secure_url} alt="" />
           </div>
         ))}
       </div>

@@ -145,11 +145,7 @@ export const query = graphql`
           details
         }
         badges {
-          image {
-            asset {
-              url
-            }
-          }
+          secure_url
         }
         gtm
         conversionId
