@@ -34,6 +34,9 @@ export const query = graphql`
         list
         style
       }
+      intro_image {
+        secure_url
+      }
       interlude_text
       interlude_image {
         secure_url

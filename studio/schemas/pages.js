@@ -9,6 +9,7 @@ export default {
   fieldsets: [
     { name: 'hero', title: 'Hero' },
     { name: 'interlude', title: 'Interlude' },
+    { name: 'intro', title: 'Intro' },
     {
       name: 'category_overrides',
       title: 'Category Overrides',
@@ -90,6 +91,13 @@ export default {
       name: 'intro',
       title: 'Intro',
       type: 'portableText',
+      fieldset: 'intro',
+    },
+    {
+      name: 'intro_image',
+      title: 'Image',
+      type: 'cloudinary.asset',
+      fieldset: 'intro',
     },
     {
       name: 'interlude_text',

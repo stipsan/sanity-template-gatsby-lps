@@ -88,6 +88,7 @@ export default function Layout({ sanityData, children }) {
   const calloutBadge = sanityData?.category?.calloutBadge?.secure_url;
   const calloutGradient = sanityData?.category?.calloutGradient;
   const introText = sanityData?._rawIntro;
+  const introImage = sanityData?.intro_image?.secure_url;
   const services = sanityData?.category?.services;
   const testimonialBackground =
   sanityData?.category?.testimonialBackground?.secure_url;
@@ -186,7 +187,7 @@ export default function Layout({ sanityData, children }) {
       >
         <SidebarForm recipients={emailRecipients} hasClr={hasClr} />
       </Hero>
-      <Intro {...{ introText }} />
+      <Intro {...{ introText, introImage }} />
       <CalloutBar {...{ calloutMessage, calloutBadge, calloutGradient }} />
       <Services {...{ lineColor, services, iconSrc }} />
       <Testimonials

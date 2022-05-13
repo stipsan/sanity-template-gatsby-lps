@@ -27,7 +27,7 @@ const BlockRenderer = (props) => {
 
   if (style === 'h1') {
     return (
-      <h1 className="text--secondary text-magic leading-tight font-extrabold mb-8 phablet:text-3xl laptop:text-5xl">
+      <h1 className="text--secondary text-magic leading-tight font-extrabold mb-8 text-center phablet:text-3xl laptop:text-5xl laptop:text-left">
         {props.children}
       </h1>
     );
@@ -35,7 +35,7 @@ const BlockRenderer = (props) => {
 
   if (style === 'h2') {
     return (
-      <h2 className="text--secondary text-magic leading-tight font-extrabold mb-8 phablet:text-3xl laptop:text-4xl">
+      <h2 className="text--secondary text-magic leading-tight font-extrabold mb-8 text-center phablet:text-3xl laptop:text-4xl laptop:text-left">
         {props.children}
       </h2>
     );
@@ -43,7 +43,7 @@ const BlockRenderer = (props) => {
 
   if (style === 'h3') {
     return (
-      <h3 className="text--secondary text-magic leading-tight font-extrabold mb-8 phablet:text-3xl laptop:text-3xl">
+      <h3 className="text--secondary text-magic leading-tight font-extrabold mb-8 text-center phablet:text-3xl laptop:text-3xl laptop:text-left">
         {props.children}
       </h3>
     );
@@ -51,7 +51,7 @@ const BlockRenderer = (props) => {
 
   if (style === 'h4') {
     return (
-      <h4 className="text--secondary text-magic leading-tight font-extrabold mb-8 phablet:text-3xl laptop:text-2xl">
+      <h4 className="text--secondary text-magic leading-tight font-extrabold mb-8 text-center phablet:text-3xl laptop:text-2xl laptop:text-left">
         {props.children}
       </h4>
     );
@@ -59,7 +59,7 @@ const BlockRenderer = (props) => {
 
   if (style === 'h5') {
     return (
-      <h5 className="text--secondary text-magic leading-tight font-extrabold mb-8 phablet:text-3xl laptop:text-xl">
+      <h5 className="text--secondary text-magic leading-tight font-extrabold mb-8 text-center phablet:text-3xl laptop:text-xl laptop:text-left">
         {props.children}
       </h5>
     );
@@ -97,20 +97,20 @@ const FigureRenderer = ({ node }) => {
     />
   );
 };
-export default function Intro({ introText }) {
+export default function Intro({ introText, introImage }) {
   return (
     <section
       id="intro"
       className="py-10 px-4 text-gray-alt phablet:px-0 tablet:py-20"
     >
-      <div className="container mx-auto flex text-lg">
-        <div className="flex-1">
+      <div className="container mx-auto flex flex-col-reverse text-lg laptop:flex-row tablet:gap-4">
+        <div className="laptop:basis-2/3">
           <BlockContent
             blocks={introText}
             serializers={{
               types: {
                 block: BlockRenderer,
-                figure: FigureRenderer,
+                //figure: FigureRenderer,
               },
               list: listRenderer,
               listItem: ({ children }) => (
@@ -126,6 +126,14 @@ export default function Intro({ introText }) {
             >
               Request Service
             </AnchorLink>
+          </div>
+        </div>
+        <div className="laptop:basis-1/3">
+          <div className="laptop:pt-24 laptop:sticky laptop:top-0">
+            <img
+              className="mx-auto"
+              src={introImage}
+            />
           </div>
         </div>
       </div>
