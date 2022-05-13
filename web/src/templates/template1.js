@@ -12,9 +12,7 @@ export const query = graphql`
       }
       label
       hero_banner {
-        asset {
-          url
-        }
+        secure_url
       }
       hero_special {
         title
@@ -38,21 +36,15 @@ export const query = graphql`
       }
       interlude_text
       interlude_image {
-        asset {
-          url
-        }
+        secure_url
       }
       category {
         companyInfo {
           logo {
-            asset {
-              url
-            }
+            secure_url
           }
           icon {
-            asset {
-              url
-            }
+            secure_url
           }
           company
           phone
@@ -63,9 +55,7 @@ export const query = graphql`
         }
         label
         calloutBadge {
-          asset {
-            url
-          }
+          secure_url
         }
         calloutMessage
         calloutGradient
@@ -121,9 +111,7 @@ export const query = graphql`
           excerpt
         }
         testimonialBackground {
-          asset {
-            url
-          }
+          secure_url
         }
         serviceArea {
           locations {
@@ -135,9 +123,7 @@ export const query = graphql`
           }
         }
         serviceAreaBackground {
-          asset {
-            url
-          }
+          secure_url
         }
         specials {
           title
@@ -160,14 +146,10 @@ export const query = graphql`
         address
         tagline
         logo {
-          asset {
-            url
-          }
+          secure_url
         }
         icon {
-          asset {
-            url
-          }
+          secure_url
         }
       }
       testimonials_override {
