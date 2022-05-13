@@ -90,7 +90,7 @@ export default function Layout({ sanityData, children }) {
   const introText = sanityData?._rawIntro;
   const services = sanityData?.category?.services;
   const testimonialBackground =
-    sanityData?.category?.testimonialBackground?.asset?.url;
+  sanityData?.category?.testimonialBackground?.secure_url;
   const interludeText = sanityData?.interlude_text;
   const interludeImageSrc = sanityData?.interlude_image?.asset?.url;
   const serviceAreaBackground =

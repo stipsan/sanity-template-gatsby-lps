@@ -170,7 +170,7 @@ export default {
     {
       title: 'Testimonial Section Background',
       name: 'testimonialBackground',
-      type: 'image',
+      type: 'cloudinary.asset',
       fieldset: 'testimonials',
     },
     {
