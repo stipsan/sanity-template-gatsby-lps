@@ -16,14 +16,14 @@ export default {
     {
       name: 'logo',
       title: 'Logo',
-      type: 'image',
+      type: 'cloudinary.asset',
       description: '',
       fieldset: 'companyInfo',
     },
     {
       name: 'icon',
       title: 'Icon (favicon and ornament)',
-      type: 'image',
+      type: 'cloudinary.asset',
       description: '',
       fieldset: 'companyInfo',
     },

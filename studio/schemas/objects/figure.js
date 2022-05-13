@@ -6,7 +6,7 @@ export default {
   fields: [
     {
       name: 'image',
-      type: 'image',
+      type: 'cloudinary.asset',
       title: 'Image',
       options: { metadata: ['lqip'] },
       validation: (Rule) => Rule.required(),

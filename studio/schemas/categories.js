@@ -133,7 +133,7 @@ export default {
       //dont love the placement or naming of this section?
       name: 'calloutBadge',
       title: 'Callout Badge',
-      type: 'image',
+      type: 'cloudinary.asset',
       fieldset: 'callout',
     },
     {
@@ -188,7 +188,7 @@ export default {
     {
       title: 'Service Area Background',
       name: 'serviceAreaBackground',
-      type: 'image',
+      type: 'cloudinary.asset',
       fieldset: 'serviceArea',
     },
     {

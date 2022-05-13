@@ -45,7 +45,7 @@ export default {
     {
       name: 'hero_banner',
       title: 'Banner',
-      type: 'image',
+      type: 'cloudinary.asset',
       description: 'Background image for hero section.',
       fieldset: 'hero',
     },
@@ -101,7 +101,7 @@ export default {
     {
       name: 'interlude_image',
       title: 'Image',
-      type: 'image',
+      type: 'cloudinary.asset',
       fieldset: 'interlude',
     },
     {
