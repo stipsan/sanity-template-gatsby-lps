@@ -13,8 +13,6 @@ import serviceArea from './serviceArea';
 import locations from './locations';
 import portableText from './objects/portableText';
 import figure from './objects/figure';
-import header from './objects/header';
-import footer from './objects/footer';
 import location from './objects/location';
 import service from './objects/service';
 import colorOverides from './objects/colorOverrides';
@@ -27,8 +25,6 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     /* Your types here! */
-    header,
-    footer,
     location,
     locations,
     categories,
