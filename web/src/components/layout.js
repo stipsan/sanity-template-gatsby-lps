@@ -54,11 +54,11 @@ export default function Layout({ sanityData, children }) {
     sanityData?.company_overrides?.email ||
     sanityData?.category?.companyInfo?.email;
   const logoSrc =
-    sanityData?.company_overrides?.logo?.asset?.url ||
-    sanityData?.category?.companyInfo?.logo?.asset?.url;
+    sanityData?.company_overrides?.logo?.secure_url ||
+    sanityData?.category?.companyInfo?.logo?.secure_url;
   const iconSrc =
-    sanityData?.company_overrides?.icon?.asset?.url ||
-    sanityData?.category?.companyInfo?.icon?.asset?.url;
+    sanityData?.company_overrides?.icon?.secure_url ||
+    sanityData?.category?.companyInfo?.icon?.secure_url;
   const tagline =
     sanityData?.company_overrides?.tagline ||
     sanityData?.category?.companyInfo?.tagline;
@@ -79,22 +79,22 @@ export default function Layout({ sanityData, children }) {
   const phoneConversionLabel = sanityData?.category?.phoneConversionLabel;
   const formConversionLabel = sanityData?.category?.formConversionLabel;
   const chatConversionLabel = sanityData?.category?.chatConversionLabel;
-  const heroBackground = sanityData?.hero_banner?.asset?.url;
+  const heroBackground = sanityData?.hero_banner?.secure_url;
   const heroTitle = sanityData?.hero_special?.title;
   const heroSubTitle = sanityData?.hero_special?.details;
   const heroContent = sanityData?.hero_special?.disclaimer;
   const heroHideForm = sanityData?.hero_hide_form;
   const calloutMessage = sanityData?.category?.calloutMessage;
-  const calloutBadge = sanityData?.category?.calloutBadge?.asset?.url;
+  const calloutBadge = sanityData?.category?.calloutBadge?.secure_url;
   const calloutGradient = sanityData?.category?.calloutGradient;
   const introText = sanityData?._rawIntro;
   const services = sanityData?.category?.services;
   const testimonialBackground =
   sanityData?.category?.testimonialBackground?.secure_url;
   const interludeText = sanityData?.interlude_text;
-  const interludeImageSrc = sanityData?.interlude_image?.asset?.url;
+  const interludeImageSrc = sanityData?.interlude_image?.secure_url;
   const serviceAreaBackground =
-    sanityData?.category?.serviceAreaBackground?.asset?.url;
+    sanityData?.category?.serviceAreaBackground?.secure_url;
   const badgeObjs = sanityData?.category?.badges;
   const hasClr = sanityData?.category?.companyInfo?.hasClr;
   //colors
