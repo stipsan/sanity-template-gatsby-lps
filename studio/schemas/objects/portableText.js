@@ -21,8 +21,9 @@ export default {
           { title: 'Strong', value: 'strong' },
           { title: 'Emphasis', value: 'em' },
         ],
+        annotations: [] // clears default link annotation
       },
     },
-    { type: 'figure' }, // 👈
+    //{ type: 'figure' }, // 👈
   ],
 };
