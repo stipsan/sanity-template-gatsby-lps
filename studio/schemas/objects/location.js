@@ -9,16 +9,16 @@ export default {
       type: 'string',
       description: '',
     },
-    {
-      name: 'county',
-      title: 'County (optional)',
-      type: 'string',
-      description: '',
-    },
-    {
-      name: 'state',
-      title: 'State (optional)',
-      type: 'string',
-    },
+    // {
+    //   name: 'county',
+    //   title: 'County (optional)',
+    //   type: 'string',
+    //   description: '',
+    // },
+    // {
+    //   name: 'state',
+    //   title: 'State (optional)',
+    //   type: 'string',
+    // },
   ],
 };
