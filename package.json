@@ -1,6 +1,6 @@
 {
   "name": "lp-factory",
-  "version": "00.01.00",
+  "version": "00.02.00",
   "description": "",
   "main": "index.js",
   "scripts": {
