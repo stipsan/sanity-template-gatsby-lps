@@ -12,12 +12,12 @@ export default {
       type: 'string',
       fieldset: 'serviceAreaGroup',
     },
-    {
-      name: 'description',
-      title: 'Description',
-      type: 'string',
-      fieldset: 'serviceAreaGroup',
-    },
+    // {
+    //   name: 'description',
+    //   title: 'Description',
+    //   type: 'string',
+    //   fieldset: 'serviceAreaGroup',
+    // },
     {
       name: 'locations',
       title: 'Locations',
