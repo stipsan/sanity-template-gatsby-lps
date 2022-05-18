@@ -12,6 +12,7 @@ export default {
       title: 'Title',
       type: 'string',
       description: '',
+      validation: Rule => Rule.max(20).warning('Beware of potential line wrap, consider using details.')
     },
     {
       name: 'details',
