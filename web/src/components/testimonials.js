@@ -100,7 +100,7 @@ export default function Testimonials({
       <div className="container mx-auto">
         <Ornament {...{ iconSrc, lineColor }} alt={'Review Icon'} />
         <h2 className="text-center text-magic font-extrabold mb-9 tablet:text-4xl laptop:text-5xl laptop:mb-12">
-          Heating Repair Reviews
+          Our Customer Reviews
         </h2>
         <Slider {...settings}>{renderSlides()}</Slider>
       </div>
