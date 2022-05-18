@@ -120,8 +120,6 @@ export const query = graphql`
           locations {
             location {
               city
-              county
-              state
             }
           }
         }
@@ -168,8 +166,6 @@ export const query = graphql`
         locations {
           location {
             city
-            county
-            state
           }
         }
       }

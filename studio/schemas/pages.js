@@ -38,10 +38,7 @@ export default {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      hidden: 'true',
-      // options: {
-      //     source: doc => `${doc.label}`,
-      // }
+      hidden: true,
     },
     {
       name: 'hero_banner',
