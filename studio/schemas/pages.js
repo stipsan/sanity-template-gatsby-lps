@@ -106,13 +106,13 @@ export default {
     },
     {
       name: 'intro_image_override',
-      title: 'Image',
+      title: 'Intro Image Override',
       type: 'cloudinary.asset',
       fieldset: 'category_overrides',
     },
     {
       name: 'interlude_image_override',
-      title: 'Image',
+      title: 'Interlude Image Override',
       type: 'cloudinary.asset',
       fieldset: 'category_overrides',
     },

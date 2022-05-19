@@ -4,12 +4,6 @@ import { FiFolder } from 'react-icons/fi';
 export default {
   name: 'category',
   title: 'Categories',
-  // validation: Rule => Rule.custom(fields => {
-  //   console.log(fields.companyInfo);
-  //   let email = fields.companyInfo.email;
-  //   if ( email?.length < 1 || Object.keys(email)?.length < 1) return "Email required for form recipient."
-  //   return "Email required for form recipient."
-  // }),
   fieldsets: [
     {
       name: 'meta',
@@ -17,6 +11,7 @@ export default {
       description: 'Category level hidden page information.',
     },
     { name: 'styles', title: 'Styles' },
+    { name: 'imagery', title: 'Imagery' },
     { name: 'callout', title: 'Callout Bar' },
     {
       name: 'serviceArea',
@@ -125,13 +120,13 @@ export default {
       name: 'intro_image',
       title: 'Image',
       type: 'cloudinary.asset',
-      fieldset: 'intro',
+      fieldset: 'imagery',
     },
     {
       name: 'interlude_image',
       title: 'Image',
       type: 'cloudinary.asset',
-      fieldset: 'interlude',
+      fieldset: 'imagery',
     },
     {
       //dont love the placement or naming of this section?

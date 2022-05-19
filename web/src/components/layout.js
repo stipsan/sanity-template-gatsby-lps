@@ -65,9 +65,6 @@ export default function Layout({ sanityData, children }) {
   const interludeImageSrc = 
     sanityData?.interlude_image_override?.secure_url ||
     sanityData?.category?.interlude_image?.secure_url;
-  const introImage =
-    sanityData?.intro_image_override?.secure_url ||
-    sanityData?.category?.intro_image?.secure_url;
   const tagline =
     sanityData?.company_overrides?.tagline ||
     sanityData?.category?.companyInfo?.tagline;
