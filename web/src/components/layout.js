@@ -59,6 +59,15 @@ export default function Layout({ sanityData, children }) {
   const iconSrc =
     sanityData?.company_overrides?.icon?.secure_url ||
     sanityData?.category?.companyInfo?.icon?.secure_url;
+  const introImage =
+    sanityData?.intro_image_override?.secure_url ||
+    sanityData?.category?.intro_image?.secure_url;
+  const interludeImageSrc = 
+    sanityData?.interlude_image_override?.secure_url ||
+    sanityData?.category?.interlude_image?.secure_url;
+  const introImage =
+    sanityData?.intro_image_override?.secure_url ||
+    sanityData?.category?.intro_image?.secure_url;
   const tagline =
     sanityData?.company_overrides?.tagline ||
     sanityData?.category?.companyInfo?.tagline;
@@ -88,12 +97,10 @@ export default function Layout({ sanityData, children }) {
   const calloutBadge = sanityData?.category?.calloutBadge?.secure_url;
   const calloutGradient = sanityData?.category?.calloutGradient;
   const introText = sanityData?._rawIntro;
-  const introImage = sanityData?.intro_image?.secure_url;
   const services = sanityData?.category?.services;
   const testimonialBackground =
   sanityData?.category?.testimonialBackground?.secure_url;
   const interludeText = sanityData?.interlude_text;
-  const interludeImageSrc = sanityData?.interlude_image?.secure_url;
   const serviceAreaBackground =
     sanityData?.category?.serviceAreaBackground?.secure_url;
   const badgeObjs = sanityData?.category?.badges;

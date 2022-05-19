@@ -91,12 +91,6 @@ export default {
       fieldset: 'intro',
     },
     {
-      name: 'intro_image',
-      title: 'Image',
-      type: 'cloudinary.asset',
-      fieldset: 'intro',
-    },
-    {
       name: 'interlude_text',
       title: 'Text',
       type: 'array',
@@ -104,16 +98,22 @@ export default {
       fieldset: 'interlude',
     },
     {
-      name: 'interlude_image',
-      title: 'Image',
-      type: 'cloudinary.asset',
-      fieldset: 'interlude',
-    },
-    {
       name: 'company_overrides',
       title: 'Company Override',
       type: 'companyInfo',
       description: '',
+      fieldset: 'category_overrides',
+    },
+    {
+      name: 'intro_image_override',
+      title: 'Image',
+      type: 'cloudinary.asset',
+      fieldset: 'category_overrides',
+    },
+    {
+      name: 'interlude_image_override',
+      title: 'Image',
+      type: 'cloudinary.asset',
       fieldset: 'category_overrides',
     },
     {

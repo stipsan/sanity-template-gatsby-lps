@@ -122,6 +122,18 @@ export default {
       },
     },
     {
+      name: 'intro_image',
+      title: 'Image',
+      type: 'cloudinary.asset',
+      fieldset: 'intro',
+    },
+    {
+      name: 'interlude_image',
+      title: 'Image',
+      type: 'cloudinary.asset',
+      fieldset: 'interlude',
+    },
+    {
       //dont love the placement or naming of this section?
       name: 'calloutMessage',
       title: 'Callout Message',

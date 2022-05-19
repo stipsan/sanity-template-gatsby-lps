@@ -34,13 +34,7 @@ export const query = graphql`
         list
         style
       }
-      intro_image {
-        secure_url
-      }
       interlude_text
-      interlude_image {
-        secure_url
-      }
       category {
         companyInfo {
           logo {
@@ -58,6 +52,12 @@ export const query = graphql`
         }
         label
         calloutBadge {
+          secure_url
+        }
+        intro_image {
+          secure_url
+        }
+        interlude_image {
           secure_url
         }
         calloutMessage
@@ -152,6 +152,12 @@ export const query = graphql`
         icon {
           secure_url
         }
+      }
+      intro_image_override {
+        secure_url
+      }
+      interlude_image_override {
+        secure_url
       }
       testimonials_override {
         author
