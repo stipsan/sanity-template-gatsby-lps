@@ -1,5 +1,4 @@
 import React from 'react';
-import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 export default function Header({ logoSrc, phone }) {
   return (
@@ -9,13 +8,13 @@ export default function Header({ logoSrc, phone }) {
           <img className="py-6 mx-auto laptop:mx-0" alt="logo" src={logoSrc} />
         </div>
         <div className="flex-none flex w-full phablet:flex-1 phablet:w-auto laptop:justify-end laptop:items-center">
-          <AnchorLink
+          <a
             className={`button--secondary flex justify-center items-center w-full font-bold text-[22px] uppercase px-8 py-3 laptop:px-12 laptop:inline-block laptop:w-auto laptop:rounded-lg`}
-            to="#contact"
+            href="#contact"
             title="Schedule Now"
           >
             Schedule Now
-          </AnchorLink>
+          </a>
         </div>
         <div className="flex-1 flex items-center laptop:flex-initial laptop:justify-end">
           <a

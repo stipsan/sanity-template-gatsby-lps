@@ -2,7 +2,6 @@ import React from 'react';
 import BlockContent from '@sanity/block-content-to-react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { getGatsbyImageData } from 'gatsby-source-sanity';
-import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import clientConfig from '../../client-config';
 
 const listRenderer = ({ type, children }) => {
@@ -119,13 +118,13 @@ export default function Intro({ introText, introImage }) {
             }}
           />
           <div className="">
-            <AnchorLink
+            <a
               className="button--primary inline-block text-center mt-5 rounded-xl text-xl font-black px-8 py-3 uppercase phablet:text-2xl phablet:inline-block"
-              to="#contact"
+              href="#contact"
               title="Contact Us"
             >
               Request Service
-            </AnchorLink>
+            </a>
           </div>
         </div>
         <div className="laptop:basis-1/3">

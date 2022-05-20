@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 const Hero = styled.div`
   background-image: url(${(props) => props.heroBackground});
@@ -23,8 +22,8 @@ export default function HeroSection({
       <div className="container mx-auto flex gap-4 justify-center laptop:justify-between">
         <div className="text-white flex flex-col justify-center basis-full laptop:basis-auto">
           <div className="uppercase flex flex-col gap-7">
-            <AnchorLink
-              to="#specials"
+            <a
+              href="#specials"
               className="border-highlight border-2 border-dashed rounded-2xl p-5 xmb-4 bg-black/50 text-center"
             >
               <div className="font-extrabold leading-none text-2xl phablet:leading-snug phablet:text-4xl tablet:leading-snug laptop:text-6xl desktop:leading-tight">
@@ -36,7 +35,7 @@ export default function HeroSection({
               <div className="font-semibold text-base leading-none text-center tablet:font-normal tablet:text-xl">
                 {heroContent}
               </div>
-            </AnchorLink>
+            </a>
           </div>
         </div>
         <div

@@ -66,6 +66,12 @@ const GlobalStyle = createGlobalStyle`
     .text--secondary {
         color: ${({ headingTextColor }) => headingTextColor};
     }
+    [id]{
+        scroll-margin-top: 250px;
+        @media (min-width: 960px) {
+            scroll-margin-top: initial;
+        }
+    }
 `;
 
 export default GlobalStyle;
