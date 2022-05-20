@@ -3,6 +3,12 @@ import lightenDarkenColor from '../utils/lightenDarkenColor';
 import getContrastingColor from '../utils/getContrastingColor';
 
 const GlobalStyle = createGlobalStyle`
+    [id]{
+        scroll-margin-top: 250px;
+        @media (min-width: 960px) {
+            scroll-margin-top: initial;
+        }
+    }
     .bg--primary {
         background-color: ${({ primaryColor }) => primaryColor};
         color: ${({ primaryColor }) => getContrastingColor(primaryColor)};
@@ -65,12 +71,6 @@ const GlobalStyle = createGlobalStyle`
     }
     .text--secondary {
         color: ${({ headingTextColor }) => headingTextColor};
-    }
-    [id]{
-        scroll-margin-top: 250px;
-        @media (min-width: 960px) {
-            scroll-margin-top: initial;
-        }
     }
 `;
 
