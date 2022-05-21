@@ -3,6 +3,9 @@ import lightenDarkenColor from '../utils/lightenDarkenColor';
 import getContrastingColor from '../utils/getContrastingColor';
 
 const GlobalStyle = createGlobalStyle`
+    html {
+        scroll-behavior: smooth;
+    }
     [id]{
         scroll-margin-top: 250px;
         @media (min-width: 960px) {
@@ -71,6 +74,9 @@ const GlobalStyle = createGlobalStyle`
     }
     .text--secondary {
         color: ${({ headingTextColor }) => headingTextColor};
+    }
+    .icon-color {
+        color: ${({ iconColor }) => iconColor};
     }
 `;
 

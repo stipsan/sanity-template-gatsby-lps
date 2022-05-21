@@ -130,7 +130,9 @@ export default function Layout({ sanityData, children }) {
   const headingTextColor =
     sanityData?.category?.colorOverrides?.headingTextColor?.hex ||
     secondaryColor;
-
+    const iconColor = 
+    sanityData?.category?.colorOverrides?.iconColor?.hex || 
+    secondaryColor;
   return (
     <>
       <GlobalStyle
@@ -147,6 +149,7 @@ export default function Layout({ sanityData, children }) {
           reviewBgColor,
           reviewBubbleColor,
           specialsBgColor,
+          iconColor
         }}
       />
       <Helmet>

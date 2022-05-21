@@ -37,7 +37,7 @@ export default function Services({
                 {service.icon ? (
                   <div>
                     <i
-                      className={`icon-${service?.icon} text-7xl text--secondary`}
+                      className={`icon-${service?.icon} text-7xl icon-color`}
                     ></i>
                   </div>
                 ) : null}
