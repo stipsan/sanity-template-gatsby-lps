@@ -70,7 +70,7 @@ export default class SidebarForm extends React.Component {
       >
         <input type="hidden" name="form-name" value="Sidebar Form" />
         <input type="hidden" name="recipients" value={recipients} />
-        <input type="hidden" name="has-clr" value={hasClr} />
+        <input type="hidden" name="hasClr" value={hasClr} />
         <div className="relative">
           <ValidationBox
             className={this.toggleValidationBox('name')}

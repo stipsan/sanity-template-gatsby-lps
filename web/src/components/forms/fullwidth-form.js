@@ -75,7 +75,7 @@ export default class FullwidthForm extends React.Component {
       >
         <input type="hidden" name="form-name" value="Fullwidth Form" />
         <input type="hidden" name="recipients" value={recipients} />
-        <input type="hidden" name="has-clr" value={hasClr} />
+        <input type="hidden" name="hasClr" value={hasClr} />
         <div
           className={classNames(`justify-center`, {
             'laptop:flex laptop:gap-7': isSplit,
