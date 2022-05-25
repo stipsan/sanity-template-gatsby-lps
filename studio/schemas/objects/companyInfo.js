@@ -57,6 +57,7 @@ export default {
       description: '',
       initialValue: true,
       fieldset: 'companyInfo',
+      hidden: (context) => context?.document?._type === 'category' ? false : true
     },
     {
       name: 'address',
