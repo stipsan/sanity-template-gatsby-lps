@@ -39,6 +39,12 @@ export default {
       fieldset: 'colorOverrides',
     },
     {
+      name: 'iconColor',
+      title: 'Icon Color Override',
+      type: 'color',
+      fieldset: 'colorOverrides'
+    },
+    {
       name: 'gradientStartColor',
       title: 'Gradient Color Start Override',
       type: 'color',
