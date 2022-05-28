@@ -158,6 +158,7 @@ export default function Layout({ sanityData, children }) {
           rel="stylesheet"
           type="text/css"
         />
+        <link rel="icon" href={iconSrc} />
         <script>
           {`
               window.dataLayer = window.dataLayer || [];
