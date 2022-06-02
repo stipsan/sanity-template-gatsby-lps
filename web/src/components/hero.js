@@ -19,7 +19,7 @@ export default function HeroSection({
       className="bg-hero bg-no-repeat bg-top py-14 px-4 flex items-center phablet:px-0 tablet:py-0 tablet:min-h-400 desktop:bg-cover"
       {...{ heroBackground }}
     >
-      <div className="container mx-auto flex gap-4 justify-center laptop:justify-between">
+      <div className="container mx-auto flex gap-4 justify-center tablet:gap-8 laptop:gap-12 laptop:justify-between">
         <div className="text-white flex flex-col justify-center basis-full laptop:basis-auto">
           <div className="uppercase flex flex-col gap-7">
             <a
