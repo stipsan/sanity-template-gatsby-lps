@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
     [id]{
         scroll-margin-top: 250px;
         @media (min-width: 960px) {
-            scroll-margin-top: initial;
+            scroll-margin-top: 200px;
         }
     }
     .bg--primary {

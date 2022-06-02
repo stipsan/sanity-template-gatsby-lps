@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Header({ logoSrc, phone }) {
   return (
-    <header className="bg-white sticky top-0 z-10 laptop:static laptop:top-auto">
+    <header className="bg-white sticky top-0 z-10">
       <div className="mx-auto flex flex-wrap laptop:items-center laptop:container">
         <div className="flex-none rounded-md w-full laptop:w-auto laptop:flex-1">
           <img className="py-6 mx-auto laptop:mx-0" alt="logo" src={logoSrc} />
