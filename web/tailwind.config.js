@@ -35,7 +35,7 @@ module.exports = {
       },
       fontSize: {
         magic: `calc(30px + (${fontFun} - 20) * ((100vw - 300px)/(576 - 300)))`,
-        '5xl': '2.75rem',
+        '5xl': ['2.75rem', '1.2'],
       },
       gridTemplateColumns: {
         layout: '1fr auto 1fr',
