@@ -19,59 +19,61 @@ const listRenderer = ({ type, children }) => {
 };
 const BlockRenderer = (props) => {
   const { style = 'normal' } = props.node;
+  const isEmptyString = (child) => child === '';
 
-  if (style === 'normal') {
-    return <p className="text-[18px] mb-5 leading-relaxed">{props.children}</p>;
+  if(!props.children.every(isEmptyString)) { // ensure the elements content is not empty
+    if (style === 'normal') {
+      return <p className="text-[18px] mb-5 leading-relaxed">{props.children}</p>;
+    }
+
+    if (style === 'h1') {
+      return (
+        <h1 className="text--secondary text-magic leading-tight font-extrabold mb-8 text-center phablet:text-3xl laptop:text-5xl laptop:text-left">
+          {props.children}
+        </h1>
+      );
+    }
+
+    if (style === 'h2') {
+      return (
+        <h2 className="text--secondary text-magic leading-tight font-extrabold mb-8 text-center phablet:text-3xl laptop:text-4xl laptop:text-left">
+          {props.children}
+        </h2>
+      );
+    }
+
+    if (style === 'h3') {
+      return (
+        <h3 className="text--secondary text-magic leading-tight font-extrabold mb-8 text-center phablet:text-3xl laptop:text-3xl laptop:text-left">
+          {props.children}
+        </h3>
+      );
+    }
+
+    if (style === 'h4') {
+      return (
+        <h4 className="text--secondary text-magic leading-tight font-extrabold mb-8 text-center phablet:text-3xl laptop:text-2xl laptop:text-left">
+          {props.children}
+        </h4>
+      );
+    }
+
+    if (style === 'h5') {
+      return (
+        <h5 className="text--secondary text-magic leading-tight font-extrabold mb-8 text-center phablet:text-3xl laptop:text-xl laptop:text-left">
+          {props.children}
+        </h5>
+      );
+    }
+
+    if (style === 'h6') {
+      return (
+        <h6 className="text--secondary text-magic leading-tight font-extrabold mb-8 phablet:text-3xl laptop:text-lg">
+          {props.children}
+        </h6>
+      );
+    }
   }
-
-  if (style === 'h1') {
-    return (
-      <h1 className="text--secondary text-magic leading-tight font-extrabold mb-8 text-center phablet:text-3xl laptop:text-5xl laptop:text-left">
-        {props.children}
-      </h1>
-    );
-  }
-
-  if (style === 'h2') {
-    return (
-      <h2 className="text--secondary text-magic leading-tight font-extrabold mb-8 text-center phablet:text-3xl laptop:text-4xl laptop:text-left">
-        {props.children}
-      </h2>
-    );
-  }
-
-  if (style === 'h3') {
-    return (
-      <h3 className="text--secondary text-magic leading-tight font-extrabold mb-8 text-center phablet:text-3xl laptop:text-3xl laptop:text-left">
-        {props.children}
-      </h3>
-    );
-  }
-
-  if (style === 'h4') {
-    return (
-      <h4 className="text--secondary text-magic leading-tight font-extrabold mb-8 text-center phablet:text-3xl laptop:text-2xl laptop:text-left">
-        {props.children}
-      </h4>
-    );
-  }
-
-  if (style === 'h5') {
-    return (
-      <h5 className="text--secondary text-magic leading-tight font-extrabold mb-8 text-center phablet:text-3xl laptop:text-xl laptop:text-left">
-        {props.children}
-      </h5>
-    );
-  }
-
-  if (style === 'h6') {
-    return (
-      <h6 className="text--secondary text-magic leading-tight font-extrabold mb-8 phablet:text-3xl laptop:text-lg">
-        {props.children}
-      </h6>
-    );
-  }
-
   return BlockContent.defaultSerializers.types.block(props); // Fall back to default handling
 };
 const FigureRenderer = ({ node }) => {
