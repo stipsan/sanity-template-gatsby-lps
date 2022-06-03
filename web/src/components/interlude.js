@@ -8,14 +8,14 @@ export default function Interlude({ interludeText, interludeImageSrc }) {
           <div>
           {interludeText.map((paragraph, index) => (
             <p
-              className="text-xl tablet:text-2xl tablet:leading-9 mb-8"
+              className="mb-5 text-[18px] leading-relaxed"
               key={index}
             >
               {paragraph}
             </p>
           ))}
           <a
-            className="button--primary inline-block rounded-xl font-black text-xl px-8 py-3 uppercase phablet:text-2xl"
+            className="button--primary inline-block rounded-xl font-black text-xl px-8 py-3 uppercase mt-5 phablet:text-2xl"
             href="#contact"
             title="Contact Us"
           >
@@ -23,7 +23,7 @@ export default function Interlude({ interludeText, interludeImageSrc }) {
           </a>
           </div> 
         </div>
-        <div className="xflex xjustify-center xitems-center laptop:basis-1/2">
+        <div className="laptop:basis-1/2">
           <div className="laptop:sticky laptop:top-0">
             <img
               className="mx-auto mb-8 laptop:mb-0"
