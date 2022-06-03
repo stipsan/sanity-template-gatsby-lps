@@ -2,6 +2,7 @@ const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.LP_SENDGRID_API_KEY);
 
 exports.handler = async function (event, context, callback) {
+  console.log('event ',event?.headers?.referer);
   const {
     recipients,
     hasClr,
@@ -12,8 +13,9 @@ exports.handler = async function (event, context, callback) {
     message,
     referral,
   } = JSON.parse(event.body).payload.data;
+  const url = event?.headers?.referer;
   const referralField = referral
-    ? `<strong>Referral:</strong> ${referral}`
+    ? `<strong>Referral:</strong> ${referral}<br />`
     : '';
   const recipientsArr = recipients.split(',').map(function (email) {
     return email.trim();
@@ -32,6 +34,7 @@ exports.handler = async function (event, context, callback) {
           <strong>New Customer?</strong> ${newCustomer}<br/>
           <strong>Message:</strong> ${message}<br/>
           ${referralField}
+          <br/><small>Form submitted from ${url}</small>
         `,
   };
 
