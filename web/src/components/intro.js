@@ -130,7 +130,7 @@ export default function Intro({ introText, introImage }) {
           </div>
         </div>
         <div className="laptop:basis-1/3">
-          <div className="laptop:pt-24 laptop:sticky laptop:top-0">
+          <div className="laptop:pt-24 laptop:sticky laptop:top-20">
             <img
               className="mx-auto"
               src={introImage}
