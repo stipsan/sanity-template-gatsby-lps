@@ -26,7 +26,6 @@ exports.handler = async function (event, context, callback) {
     bcc: bccRecipients,
     from: email, // Use the email address or domain you verified above
     subject: `PPC Form Submission - ${name}`,
-    //text: 'and easy to do anywhere, even with Node.js',
     html: `
           <strong>Name:</strong> ${name}<br/>
           <strong>Phone:</strong> ${phone}<br/>
@@ -34,7 +33,6 @@ exports.handler = async function (event, context, callback) {
           <strong>New Customer?</strong> ${newCustomer}<br/>
           <strong>Message:</strong> ${message}<br/>
           ${referralField}
-          <br/><small>Form submitted from ${url}</small>
         `,
   };
 
