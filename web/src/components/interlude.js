@@ -24,7 +24,7 @@ export default function Interlude({ interludeText, interludeImageSrc }) {
           </div> 
         </div>
         <div className="laptop:basis-1/2">
-          <div className="laptop:sticky laptop:top-0">
+          <div className="laptop:sticky laptop:top-48">
             <img
               className="mx-auto mb-8 laptop:mb-0"
               src={interludeImageSrc}
