@@ -20,11 +20,11 @@ export default function HeroSection({
       {...{ heroBackground }}
     >
       <div className="container mx-auto flex gap-4 justify-center tablet:gap-8 laptop:gap-12 laptop:justify-between">
-        <div className="text-white flex flex-col justify-center basis-full laptop:basis-auto">
+        <div className="text-white flex flex-col justify-center basis-full">
           <div className="uppercase flex flex-col gap-7">
             <a
               href="#specials"
-              className="border-highlight border-2 border-dashed rounded-2xl p-5 xmb-4 bg-black/50 text-center"
+              className="border-highlight border-2 border-dashed rounded-2xl p-5 bg-black/50 text-center"
             >
               <div className="font-extrabold leading-none text-2xl phablet:leading-snug phablet:text-4xl tablet:leading-snug laptop:text-6xl desktop:leading-tight">
                 {heroTitle}
