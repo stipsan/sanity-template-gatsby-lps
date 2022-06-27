@@ -110,13 +110,23 @@ export default class SidebarForm extends React.Component {
             classNames="rounded-md"
           />
         </div>
-        <TextInput
+        {/* <TextInput
           name="newCustomer"
           placeholder="Are You A New Customer?"
           value={this.state.fields.newCustomer.value}
           updateField={this.updateField}
           classNames="rounded-md"
-        />
+        /> */}
+        <select
+          name="newCustomer"
+          className="mb-4 w-full border-none rounded-md text-gray-500"
+          onChange={(e) => this.updateField(e)}
+          value={this.state.fields.newCustomer.value}
+        >
+          <option value="" disabled>Are you a new customer?</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
         <textarea
           className="rounded-md mb-4 border-none resize-none"
           name="message"
