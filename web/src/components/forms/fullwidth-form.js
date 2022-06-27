@@ -120,12 +120,22 @@ export default class FullwidthForm extends React.Component {
             </div>
           </div>
           <div className={`text-center flex flex-col flex-1`}>
-            <TextInput
+            {/* <TextInput
               name="newCustomer"
               placeholder="Are You A New Customer?"
               value={this.state.fields.newCustomer.value}
               updateField={this.updateField}
-            />
+            /> */}
+            <select
+              name="newCustomer"
+              className="mb-4 w-full border-none text-gray-500"
+              onChange={(e) => this.updateField(e)}
+              value={this.state.fields.newCustomer.value}
+            >
+              <option value="" disabled>Are you a new customer?</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
             <TextInput
               name="message"
               placeholder="Inquiry About..."
