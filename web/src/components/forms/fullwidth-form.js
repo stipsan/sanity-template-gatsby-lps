@@ -144,7 +144,7 @@ export default class FullwidthForm extends React.Component {
             />
             <TextInput
               name="referral"
-              placeholder="How Did You Hear About Us?"
+              placeholder="How did you hear about us?"
               value={this.state.fields.referral.value}
               updateField={this.updateField}
             />
