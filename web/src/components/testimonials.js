@@ -56,8 +56,8 @@ export default function Testimonials({
       </blockquote>
     ));
   let settings = {
-    dots: true,
-    arrows: false,
+    dots: false,
+    arrows: true,
     infinite: true,
     speed: 500,
     slidesToShow: 2,
