@@ -60,7 +60,7 @@ export function handleSubmit(event) {
 
   if (validForm) {
     let formData = new FormData(event.target);
-    fetch('/', {
+    fetch('/api/mailer', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(formData).toString(),
