@@ -51,7 +51,7 @@ export const query = graphql`
           tagline
         }
         label
-        callout_image {
+        calloutBadge {
           secure_url
         }
         intro_image {
