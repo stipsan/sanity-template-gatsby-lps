@@ -118,13 +118,13 @@ export default {
     },
     {
       name: 'intro_image',
-      title: 'Image',
+      title: 'Intro Image',
       type: 'cloudinary.asset',
       fieldset: 'imagery',
     },
     {
       name: 'interlude_image',
-      title: 'Image',
+      title: 'Interlude Image',
       type: 'cloudinary.asset',
       fieldset: 'imagery',
     },
