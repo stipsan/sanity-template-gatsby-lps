@@ -138,8 +138,8 @@ export default {
     },
     {
       //dont love the placement or naming of this section?
-      name: 'calloutBadge',
-      title: 'Callout Badge',
+      name: 'callout_image',
+      title: 'Callout Image',
       type: 'cloudinary.asset',
       fieldset: 'callout',
     },
