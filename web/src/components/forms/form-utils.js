@@ -59,11 +59,11 @@ export function handleSubmit(event) {
   this.setState({
     submitted: true,
   });
-
+    
   if (validForm) {
     let formData = new FormData(event.target);
-    console.log('target:', event.target);
-    console.log('formData', formData);
+    let formName = event.target.getAttribute('name'); 
+    
     let payload = {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -80,7 +80,7 @@ export function handleSubmit(event) {
             hasErrors: false,
           },
           () => {
-            this.triggerEvent('formSubmitted', 'RYNO LP Conversion', 'footer');
+            this.triggerEvent('formSubmitted', 'RYNO LP Conversion', formName);
             this.flashFeedback('Form Submitted Successfully!');
             this.resetForm();
           }
