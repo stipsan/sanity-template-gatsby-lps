@@ -39,14 +39,16 @@ export function hideFeedback() {
   });
 }
 
-export function handleFetchErrors(response) {
-  if (!response.ok) {
-    this.setState({
-      hasErrors: true,
-    });
-    throw Error(response.statusText);
-  }
-  return response;
+export function handleFetchErrors(responses) {
+  responses.forEach(function(response){
+    if (!response?.value?.ok) {
+      this.setState({
+        hasErrors: true,
+      });
+      throw Error(response.statusText);
+    }
+  })
+  return responses;
 }
 
 export function handleSubmit(event) {
@@ -57,14 +59,20 @@ export function handleSubmit(event) {
   this.setState({
     submitted: true,
   });
-
+    
   if (validForm) {
     let formData = new FormData(event.target);
-    fetch('/', {
+    let formName = event.target.getAttribute('name'); 
+    
+    let payload = {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(formData).toString(),
-    })
+    }
+    Promise.allSettled([
+      fetch('/api/mailer', payload),
+      fetch('/', payload)  
+    ])
       .then(this.handleFetchErrors) //extra step due to error handling with Fetch
       .then(() => {
         this.setState(
@@ -72,7 +80,7 @@ export function handleSubmit(event) {
             hasErrors: false,
           },
           () => {
-            this.triggerEvent('formSubmitted', 'RYNO LP Conversion', 'footer');
+            this.triggerEvent('formSubmitted', 'RYNO LP Conversion', formName);
             this.flashFeedback('Form Submitted Successfully!');
             this.resetForm();
           }
