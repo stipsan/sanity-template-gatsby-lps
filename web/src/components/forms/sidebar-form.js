@@ -62,7 +62,7 @@ export default class SidebarForm extends React.Component {
       <form
         name="Sidebar Form"
         method="POST"
-        className="flex justify-center flex-col text-gray-alt min-w-275"
+        className="flex justify-center flex-col text-gray-alt min-w-275 min-w-0"
         data-netlify="true"
         ref={this.domRef}
         id="form"
@@ -128,7 +128,7 @@ export default class SidebarForm extends React.Component {
           <option value="no">No</option>
         </select>
         <textarea
-          className="rounded-md mb-4 border-none resize-none"
+          className="rounded-md mb-4 border-none resize-none max-w-[275px]"
           name="message"
           ref="message"
           rows="3"

@@ -43,7 +43,7 @@ export default function HeroSection({
             heroHideForm ? '' : 'laptop:flex'
           } max-w-sm self-end laptop:align-bottom laptop:pt-1`}
         >
-          <div className="bg--form py-6 pb-12 px-9 rounded-md relative tablet:-mb-8 tablet:mt-16 desktop:mt-34 desktop:-mb-16">
+          <div className="bg--form min-w-0 py-6 pb-12 px-9 rounded-md relative tablet:-mb-8 tablet:mt-16 desktop:mt-34 desktop:-mb-16">
             <div className="uppercase text-center text-3xl font-extrabold mb-5">
               Schedule Now
             </div>
