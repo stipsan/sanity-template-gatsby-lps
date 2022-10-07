@@ -17,21 +17,19 @@ const Bubble = styled.div`
     border-left: 30px solid transparent;
     border-right: 30px solid transparent;
   }
-
-  & .custom-scroller::-webkit-scrollbar {
-    width: 4px !important;
+  .custom-scroller::-webkit-scrollbar {
+    width: 4px;
   }
-  & .custom-scroller::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 10px !important;
-    border-radius: 10px !important;
-    background: #ccc !important;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5) !important;
+  .custom-scroller::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: #ccc;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
   }
-
-  & .custom-scroller::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3) !important;
-    -webkit-border-radius: 4px !important;
-    border-radius: 4px !important;
+  .custom-scroller::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
   }
 `;
 
