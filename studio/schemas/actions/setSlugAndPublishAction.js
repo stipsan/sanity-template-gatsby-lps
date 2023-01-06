@@ -5,8 +5,8 @@ import slugify from 'slugify';
 
 const sanityClientConfig = {
   projectId:
-    process.env.SANITY_STUDIO_API_PROJECT_ID || '<#< sanity.projectId >#>',
-  dataset: process.env.SANITY_STUDIO_API_DATASET || '<#< sanity.dataset >#>',
+    process.env.SANITY_STUDIO_API_PROJECT_ID,
+  dataset: process.env.SANITY_STUDIO_API_DATASET,
   useCdn: false,
 };
 

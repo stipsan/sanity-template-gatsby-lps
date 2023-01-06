@@ -1,5 +1,14 @@
+[template]
+  incoming-hooks = ["Sanity"]
+
+[template.environment]
+  SANITY_PROJECT_ID="Your Sanity Project ID"
+  SANITY_DATASET="Your Sanity Dataset"
+  SANITY_TOKEN="Your Sanity API Read Token"
+
 [functions]
     directory = "serverless"
+
 [[redirects]]
     from = "/api/*"
     to = "/.netlify/functions/:splat"

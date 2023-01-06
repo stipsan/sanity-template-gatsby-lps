@@ -1,4 +1,10 @@
+[template.environment]
+  SANITY_STUDIO_API_PROJECT_ID="Your Sanity Project ID"
+  SANITY_STUDIO_API_DATASET="Your Sanity Dataset"
+  SANITY_AUTH_TOKEN="Your Sanity GraphQL API DeployToken"
+
 [[redirects]]
   from = "/*"
   to = "/"
   status = 200
+
